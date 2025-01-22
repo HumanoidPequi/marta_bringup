@@ -1,0 +1,6 @@
+[submodule "src/marta_gazebo"]
+	path = src/marta_gazebo
+	url = git@github.com:HumanoidPequi/marta_gazebo.git
+[submodule "src/marta_description"]
+	path = src/marta_description
+	url = git@github.com:HumanoidPequi/marta_description.git
