@@ -1,10 +1,26 @@
 <launch>
-    <!-- Incluindo launch da simulacao -->
+    <!-- Declaração do parâmetro 'sim' com valor padrão 'true' -->
+    <param name="sim" value="true" />
+
+    <!-- Incluindo launch da simulação, somente se 'sim' for true -->
     <include file="$(find marta_gazebo)/launch/gazebo.launch">
+        <if condition="$(param sim)" />
     </include>
 
-    <!-- inicia o brodcast das juntass -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
-    <remap from="/joint_states" to="/marta/joint_states"/>
-  </node> 
+    <!-- Inicia o broadcast das juntas -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
+        <remap from="/joint_states" to="/marta/joint_states"/>
+    </node>
+
+    <!-- Inicia o nó imu_diagnostic.py -->
+    <node pkg="marta_bringup" type="imu_diagnostic.py" name="imu_diagnostics" output="screen">
+        <param name="imu_topic" value="/marta/imu" />
+        <param name="imu_update_frequency" value="50.0" />
+    </node>
+
+    <!-- Configura o diagnostic_aggregator -->
+    <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator" output="screen">
+        <rosparam command="load" file="$(find marta_bringup)/config/diagnostic_aggregator.yaml" />
+    </node>
+
 </launch>
