@@ -1,0 +1,10 @@
+<launch>
+    <!-- Incluindo launch da simulacao -->
+    <include file="$(find marta_gazebo)/launch/gazebo.launch">
+    </include>
+
+    <!-- inicia o brodcast das juntass -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
+    <remap from="/joint_states" to="/marta/joint_states"/>
+  </node> 
+</launch>
