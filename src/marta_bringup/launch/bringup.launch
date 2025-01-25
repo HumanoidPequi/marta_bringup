@@ -1,11 +1,22 @@
 <launch>
     <!-- Declaração do parâmetro 'sim' com valor padrão 'true' -->
     <param name="sim" value="true" />
+    <param name="rviz" value="true" />
 
     <!-- Incluindo launch da simulação, somente se 'sim' for true -->
-    <include file="$(find marta_gazebo)/launch/gazebo.launch">
-        <if condition="$(param sim)" />
-    </include>
+    <group if="$(arg sim)">
+        <include file="$(find marta_gazebo)/launch/gazebo.launch" />
+    </group>
+
+
+    <group if="$(eval not arg('sim'))">
+
+        <!-- Carregar URDF/Xacro -->
+        <param name="robot_description" command="$(find xacro)/xacro $(find marta_description)/urdf/marta.xacro" />    
+
+        
+
+    </group>
 
     <!-- Inicia o broadcast das juntas -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
@@ -22,5 +33,4 @@
     <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator" output="screen">
         <rosparam command="load" file="$(find marta_bringup)/config/diagnostic_aggregator.yaml" />
     </node>
-
 </launch>
