@@ -1,27 +1,33 @@
 <launch>
     <!-- Declaração do parâmetro 'sim' com valor padrão 'true' -->
-    <param name="sim" value="true" />
-    <param name="rviz" value="true" />
+    <arg name="sim" default="true" />
+    <arg name="rviz" default="true"/>
+
+    <!-- Carregar URDF/Xacro -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find marta_description)/urdf/marta.xacro' use_sim:=$(arg sim) " />    
+
 
     <!-- Incluindo launch da simulação, somente se 'sim' for true -->
     <group if="$(arg sim)">
         <include file="$(find marta_gazebo)/launch/gazebo.launch" />
+
+        <node pkg="marta_gazebo" type="real_to_sim_topics.py" name="sim_convert_topics" output="screen"/>
+
+        <!-- Inicia o broadcast das juntas -->
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="log">
+            <remap from="/joint_states" to="/marta/joint_states"/>
+        </node>
     </group>
 
 
-    <group if="$(eval not arg('sim'))">
-
-        <!-- Carregar URDF/Xacro -->
-        <param name="robot_description" command="$(find xacro)/xacro $(find marta_description)/urdf/marta.xacro" />    
-
-        
-
-    </group>
+    <!-- <group if="$(eval not arg('sim'))">
+        <param name="robot_description" command="$(find xacro)/xacro '$(find marta_description)/urdf/marta.xacro' use_sim:=$(arg sim) " />    
+    </group> -->
 
     <!-- Inicia o broadcast das juntas -->
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
+    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="log">
         <remap from="/joint_states" to="/marta/joint_states"/>
-    </node>
+    </node> -->
 
     <!-- Inicia o nó imu_diagnostic.py -->
     <node pkg="marta_bringup" type="imu_diagnostic.py" name="imu_diagnostics" output="screen">
@@ -33,4 +39,9 @@
     <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator" output="screen">
         <rosparam command="load" file="$(find marta_bringup)/config/diagnostic_aggregator.yaml" />
     </node>
+
+    <!-- Iniciar o RViz com configuracao predefinida para visualizacao do robo--> 
+  <group if="$(arg rviz)">
+    <include file="$(find marta_gazebo)/launch/rviz.launch"/>
+  </group>
 </launch>
