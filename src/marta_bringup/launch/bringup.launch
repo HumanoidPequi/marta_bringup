@@ -1,44 +1,50 @@
 <launch>
-    <!-- Declaração do parâmetro 'sim' com valor padrão 'true' -->
+    <!-- Define as variáveis de ambiente no início do launch -->
+    <env name="LIBGL_ALWAYS_SOFTWARE" value="0" />
+    <env name="LIBGL_ALWAYS_INDIRECT" value="0" />
+
     <arg name="sim" default="true" />
     <arg name="rviz" default="true"/>
 
     <!-- Carregar URDF/Xacro -->
-    <param name="robot_description" command="$(find xacro)/xacro '$(find marta_description)/urdf/marta.xacro' use_sim:=$(arg sim) " />    
+    <param name="robot_description" command="$(find xacro)/xacro '$(find marta_description)/urdf/marta.xacro' use_sim:=$(arg sim) " />
 
-
-    <!-- Incluindo launch da simulação, somente se 'sim' for true -->
+    <!-- Grupo para simulação -->
     <group if="$(arg sim)">
         <include file="$(find marta_gazebo)/launch/gazebo.launch" />
-
-        <node pkg="marta_gazebo" type="real_to_sim_topics.py" name="sim_convert_topics" output="screen"/>
 
         <!-- Inicia o broadcast das juntas -->
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="log">
             <remap from="/joint_states" to="/marta/joint_states"/>
         </node>
+
+        <node pkg="marta_gazebo" type="real_to_sim_topics.py" name="sim_convert_topics" output="screen"/>
     </group>
 
-
+    <!-- Grupo para não simulação -->
     <group if="$(eval not arg('sim'))">
-        <!-- inicia o publisher para pegar os states do dynamixel e converter para tf -->
         <node pkg="marta_bringup" type="joint_to_tf_publisher" name="joint_to_tf_publisher" output="screen" />
     </group>
 
-
-    <!-- Inicia o nó imu_diagnostic.py -->
+    <!-- Nó para diagnóstico do IMU -->
     <node pkg="marta_bringup" type="imu_diagnostic.py" name="imu_diagnostics" output="screen">
         <param name="imu_topic" value="/marta/imu" />
         <param name="imu_update_frequency" value="50.0" />
     </node>
 
-    <!-- Configura o diagnostic_aggregator -->
+    <!-- Configuração do diagnostic_aggregator -->
     <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator" output="screen">
         <rosparam command="load" file="$(find marta_bringup)/config/diagnostic_aggregator.yaml" />
     </node>
 
-    <!-- Iniciar o RViz com configuracao predefinida para visualizacao do robo--> 
-  <group if="$(arg rviz)">
-    <include file="$(find marta_gazebo)/launch/rviz.launch"/>
-  </group>
+    <!-- Grupo para iniciar o RViz com as flags ajustadas -->
+    <group if="$(arg rviz)">
+        <!-- Sobrescreve as variáveis de ambiente para o RViz -->
+        <env name="LIBGL_ALWAYS_SOFTWARE" value="1" />
+        <env name="LIBGL_ALWAYS_INDIRECT" value="0" />
+        <include file="$(find marta_gazebo)/launch/rviz.launch"/>
+    </group>
+
+    <!-- Inclusão do script tf_to_cm -->
+    <node pkg="marta_bringup" type="tf_to_cm" name="tf_to_cm" output="screen" />
 </launch>

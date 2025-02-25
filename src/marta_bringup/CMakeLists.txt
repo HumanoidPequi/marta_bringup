@@ -194,8 +194,14 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 
-add_executable(joint_to_tf_publisher scripts/joint_to_tf_publisher.cpp)
+
+## SCRIPTS EXTRAS
+add_executable(joint_to_tf_publisher include/joint_to_tf_publisher.cpp)
 target_link_libraries(joint_to_tf_publisher ${catkin_LIBRARIES})
+
+add_executable(tf_to_cm include/tf_to_cm.cpp)
+target_link_libraries(tf_to_cm ${catkin_LIBRARIES})
+
 
 #############
 ## Testing ##
