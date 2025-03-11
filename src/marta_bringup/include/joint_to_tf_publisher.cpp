@@ -72,7 +72,7 @@ void rightArmCallback(const std_msgs::Float64MultiArray::ConstPtr& msg, tf2_ros:
 // Callback para o estado do braço esquerdo e cabeça
 void leftArmHeadCallback(const std_msgs::Float64MultiArray::ConstPtr& msg, tf2_ros::TransformBroadcaster& broadcaster) {
     publishTransform("base_link", "neck_1", 0, 0, msg->data[0], broadcaster);           // Head pan
-    publishTransform("neck_1", "head_1", msg->data[1], 0, 0, broadcaster);              // Head tilt
+    publishTransform("neck_1", "head_1", 0, msg->data[1], 0, broadcaster);              // Head tilt
     publishTransform("base_link", "l_shoulder_1", 0, msg->data[2], 0, broadcaster);     // Shoulder pitch
     publishTransform("l_shoulder_1", "l_arm_1", -msg->data[3], 0, 0, broadcaster);       // Shoulder roll
     publishTransform("l_arm_1", "l_hand_1", 0, msg->data[4], 0, broadcaster);           // Elbow pitch
