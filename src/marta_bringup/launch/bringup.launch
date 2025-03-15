@@ -12,6 +12,7 @@
     <!-- Grupo para simulação -->
     <group if="$(arg sim)">
         <include file="$(find marta_gazebo)/launch/gazebo.launch" />
+        <!--<include file="$(find marta_bringup)/launch/controller.launch" />-->
 
         <!-- Inicia o broadcast das juntas -->
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="log">
@@ -46,5 +47,5 @@
     </group>
 
     <!-- Inclusão do script tf_to_cm -->
-    <node pkg="marta_bringup" type="tf_to_cm" name="tf_to_cm" output="screen" />
+    <!--<node pkg="marta_bringup" type="tf_to_cm" name="tf_to_cm" output="screen" />-->
 </launch>

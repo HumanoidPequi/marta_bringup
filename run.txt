@@ -1,0 +1,3 @@
+roslaunch marta_bringup bringup.launch sim:=true rviz:=false
+
+rosrun image_view image_view image:=/marta/front_camera/image_raw

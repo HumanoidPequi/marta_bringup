@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="marta_controller" type="imu_node" name="imu_node" output="screen"/>
+    <node pkg="marta_controller" type="controller_node" name="controller_node" output="screen"/>
+</launch>
