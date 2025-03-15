@@ -1,0 +1,38 @@
+{
+    "trajectories": {
+        "path": "/root/marta_bringup/src/J_trajectory.csv",
+        "column_names": ["q1", "q2", "q3", "q4"]
+    }
+    ,
+    "command_paths": [
+        "/marta/l_sho_pitch_position/command",
+        "/marta/r_sho_pitch_position/command",
+        "/marta/l_sho_roll_position/command",
+        "/marta/r_sho_roll_position/command"
+    ],
+    "state_paths": [
+        "/marta/l_sho_pitch_position/state",
+        "/marta/r_sho_pitch_position/state",
+        "/marta/l_sho_roll_position/state",
+        "/marta/r_sho_roll_position/state"
+    ],
+    "client_paths": [
+        "/marta/l_sho_pitch_position/pid",
+        "/marta/r_sho_pitch_position/pid",
+        "/marta/l_sho_roll_position/pid",
+        "/marta/r_sho_roll_position/pid"
+    ],
+    "pid_bounds": {
+        "_comment": "50 2.5 0.05",
+        "p":[
+            0, 1000
+        ],
+        "i": [
+            0, 20
+        ], 
+        "d": [
+            0, 10
+        ]
+    }
+}
+
