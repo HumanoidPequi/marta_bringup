@@ -21,6 +21,15 @@
         <node pkg="marta_gazebo" type="real_to_sim_topics.py" name="sim_convert_topics" output="screen"/>
     </group>
 
+    <node pkg="marta_controller" type="imu_node" name="imu_node" output="screen">
+    </node>
+
+    <node pkg="marta_controller" type="levante_tras.py" name="levante_tras" output="screen">
+    </node>
+
+    <node pkg="marta_controller" type="levante_frente.py" name="levante_frente" output="screen">
+    </node>
+
     <!-- Grupo para não simulação -->
     <group if="$(eval not arg('sim'))">
         <node pkg="marta_bringup" type="joint_to_tf_publisher" name="joint_to_tf_publisher" output="screen" />

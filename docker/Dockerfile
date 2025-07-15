@@ -1,6 +1,18 @@
 # Use a imagem base do ROS Noetic com suporte a GPU
 FROM ros:noetic-ros-core
 
+# Comente temporariamente a fonte do ROS
+RUN sed -i 's|^deb .*ros.*|#&|' /etc/apt/sources.list.d/*.list || true
+
+# Atualize e instale curl e gnupg sem acessar o ROS
+RUN apt-get update && apt-get install -y curl gnupg
+
+# Etapa 3: Baixe e instale a nova chave GPG do ROS
+RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+# Etapa 4: Reative o repositório ROS usando o formato moderno com signed-by
+RUN echo "deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros/ubuntu focal main" > /etc/apt/sources.list.d/ros-latest.list
+
 # Instale dependências necessárias
 RUN apt-get update && apt-get install -y \
     python3-pip \
