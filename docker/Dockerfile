@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install -y \
     ros-$ROS_DISTRO-gazebo-plugins \
     ros-$ROS_DISTRO-gazebo-ros \
     ros-$ROS_DISTRO-rviz \
+    ros-$ROS_DISTRO-rqt-image-view \
     && rm -rf /var/lib/apt/lists/*
 
 
