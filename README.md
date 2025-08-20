@@ -71,6 +71,13 @@ Depois, inicie a imagem:
 docker run -it --net=host -e DISPLAY=$DISPLAY --gpus all marta_bringup:1.0
 ```
 
+#### Abrindo em outros terminais
+Caso um container já esteja aberto e você quer criar outros terminais para acessarem esse container faça:
+
+```
+docker exec marta_bringup -it
+```
+
 
 ## Executando o Sistema
 
