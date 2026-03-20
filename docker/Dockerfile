@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-catkin-tools \
     build-essential \
+    mesa-utils \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
