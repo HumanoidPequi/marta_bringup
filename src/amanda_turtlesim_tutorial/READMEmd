@@ -1,0 +1,196 @@
+# ROS Fase 3 - Turtlesim
+
+Pacote desenvolvido para a prática dos conceitos fundamentais de ROS 1 Noetic utilizando o ambiente de simulação Turtlesim.
+
+
+## Estrutura do pacote
+
+amanda_turtlesim_tutorial/
+├── CMakeLists.txt
+├── package.xml
+├── launch/
+│   └── turtlesimControle.launch
+├── msg/
+│   └── status.msg
+├── srv/
+│   └── diferenca.srv
+└── scripts/
+    ├── decisao.py
+    ├── leitura.py
+    ├── quadrado.py
+    ├── diferenca_cliente.py
+    └── diferenca_servidor.py
+    
+## Requisitos
+
+* Ubuntu 20.04
+* ROS 1 Noetic
+* Python 3
+* Turtlesim
+
+## Iniciando o ROS Master
+
+Antes de executar os nós, inicie o ROS Master
+---
+
+# Execução dos nós individualmente
+
+Para executar os nós individualmente, é necessário iniciar primeiro o Turtlesim.
+
+Em outro terminal:
+"rosrun turtlesim turtlesim_node"
+
+Depois, em um novo terminal, carregue o workspace:
+
+
+source ~/catkin_ws/devel/setup.bash
+
+
+## 1. Subscriber - leitura da pose
+
+O nó `leitura.py` é responsável por receber as informações de pose publicadas em `/turtle1/pose`.
+
+Execute:
+
+rosrun amanda_turtlesim_tutorial leitura.py
+
+O nó recebe informações como:
+
+* posição X;
+* posição Y;
+* orientação;
+* velocidade linear;
+* velocidade angular.
+
+---
+
+## 2. Publisher - movimento em quadrado
+
+O nó `quadrado.py` publica comandos de velocidade em:
+
+/turtle1/cmd_vel
+
+Execute:
+
+rosrun amanda_turtlesim_tutorial quadrado.py
+
+A tartaruga deverá realizar um movimento em formato de quadrado.
+
+---
+
+## 3. Controle em malha fechada
+
+O nó `decisao.py` utiliza a pose da tartaruga para tomar decisões sobre o movimento e publicar comandos de velocidade.
+
+Execute:
+
+rosrun amanda_turtlesim_tutorial decisao.py
+
+A tartaruga fara um cículo.
+
+---
+
+## Serviço customizado
+
+O pacote possui um serviço customizado chamado diferenca.
+
+O arquivo srv/diferenca.srv possui:
+
+int64 a
+int64 b
+---
+int64 sum
+
+O serviço recebe dois valores inteiros, a e b, e retorna o resultado da diferença entre eles.
+
+1. Iniciar o servidor
+
+Em um terminal, execute:
+
+rosrun amanda_turtlesim_tutorial diferenca_servidor.py
+
+O servidor ficará aguardando requisições.
+
+Para verificar se o serviço está disponível:
+
+rosservice list
+
+Deve aparecer:
+
+/diferenca
+
+3. Utilizar o cliente
+
+Com o servidor diferenca_servidor.py em execução, execute o cliente:
+
+rosrun amanda_turtlesim_tutorial diferenca_cliente.py 10 4
+
+resultado:
+
+10 - 4 = 6
+
+2. Fazer uma chamada pela CLI
+
+Os parâmetros podem ser informados diretamente no momento da chamada:
+
+rosservice call /diferenca "a: 10
+b: 4"
+
+Resultado esperado:
+
+sum: 6
+ ---
+
+# Mensagem customizada
+
+O pacote também possui uma mensagem customizada:
+
+msg/status.msg
+
+Conteúdo:
+
+string nome
+float64 bateria
+bool em_movimento
+
+Para verificar se a mensagem foi gerada corretamente:
+
+rosmsg show amanda_turtlesim_tutorial/status
+
+Resultado esperado:
+
+string nome
+float64 bateria
+bool em_movimento
+
+---
+
+# Execução com Launch
+
+O arquivo:
+
+launch/turtlesimControle.launch
+
+inicia automaticamente:
+
+1. O `turtlesim_node`;
+2. O nó `decisao.py`.
+
+Para executar:
+
+source ~/catkin_ws/devel/setup.bash
+roslaunch amanda_turtlesim_tutorial turtlesimControle.launch
+
+Não é necessário executar manualmente o `turtlesim_node` nesse caso, pois ele já é iniciado pelo próprio launch.
+
+A estrutura é:
+
+roslaunch
+   │
+   ├── turtlesim_node
+   │
+   └── decisao.py
+
+---
+
+

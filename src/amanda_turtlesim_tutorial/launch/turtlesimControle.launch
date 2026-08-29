@@ -1,0 +1,17 @@
+<launch>
+
+    <node
+        pkg="turtlesim"
+        type="turtlesim_node"
+        name="turtlesim"
+        output="screen"
+    />
+
+    <node
+        pkg="amanda_turtlesim_tutorial"
+        type="decisao.py"
+        name="decisao"
+        output="screen"
+    />
+
+</launch>
