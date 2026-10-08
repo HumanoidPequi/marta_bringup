@@ -22,7 +22,46 @@ RUN apt-get update && apt-get install -y \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
+# Instalar drivers NVIDIA e dependências OpenGL
+RUN apt-get update && apt-get install -y \
+    libglvnd0 \
+    libgl1 \
+    libglx0 \
+    libegl1 \
+    libgles2 \
+    libgl1-mesa-dri \
+    libgl1-mesa-glx \
+    libglu1-mesa \
+    mesa-utils \
+    libxkbcommon-x11-0 \
+    libxcb-icccm4 \
+    libxcb-image0 \
+    libxcb-keysyms1 \
+    libxcb-randr0 \
+    libxcb-render-util0 \
+    libxcb-xinerama0 \
+    libxcb-xfixes0 \
+    libxcb-shape0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Configurar variáveis de ambiente para forçar NVIDIA
+ENV MESA_LOADER_DRIVER_OVERRIDE=nvidia
+ENV __GLX_VENDOR_LIBRARY_NAME=nvidia
+ENV LIBGL_ALWAYS_INDIRECT=0
+ENV GALLIUM_DRIVER=nvidia
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=all
+
 # Instale o pacote ROS desejado
+# Telemetria e visualizacao: matplotlib para as figuras (o rosbag so existe
+# dentro do container, entao a analise inteira roda aqui e nao precisa de CSV
+# intermediario); plotjuggler para inspecao ao vivo e por bag.
+RUN apt-get update && apt-get install -y \
+    python3-matplotlib \
+    ros-$ROS_DISTRO-plotjuggler \
+    ros-$ROS_DISTRO-plotjuggler-ros \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN apt-get update && apt-get install -y \
     ros-$ROS_DISTRO-swri-console \
     ros-$ROS_DISTRO-swri-roscpp \
@@ -36,6 +75,7 @@ RUN apt-get update && apt-get install -y \
     ros-$ROS_DISTRO-gazebo-ros \
     ros-$ROS_DISTRO-rviz \
     ros-$ROS_DISTRO-rqt-image-view \
+    ros-$ROS_DISTRO-diagnostic-aggregator \
     && rm -rf /var/lib/apt/lists/*
 
 

@@ -23,7 +23,21 @@
         <node pkg="marta_gazebo" type="real_to_sim_topics.py" name="sim_convert_topics" output="screen"/>
     </group>
 
-    <node pkg="marta_controller" type="imu_node" name="imu_node" output="screen">
+    <!-- Estimacao de atitude do tronco (filtro complementar + passa-baixa no giro).
+         Publica /marta/torso_attitude = [pitch, pitch_rate, roll, roll_rate],
+         com pitch > 0 tombando para frente e roll > 0 tombando para a direita. -->
+    <node pkg="marta_controller" type="torso_attitude_node" name="torso_attitude_node" output="screen">
+        <param name="imu_topic" value="/marta/imu" />
+        <param name="attitude_topic" value="/marta/torso_attitude" />
+        <param name="expected_rate_hz" value="100.0" />
+        <!-- alpha = 0.998 -> tau ~ 5 s: bem acima do periodo do passo (0.4 s),
+             para que o balanco do LIPM nao entre como inclinacao falsa. -->
+        <param name="alpha" value="0.998" />
+        <param name="gyro_cutoff_hz" value="15.0" />
+        <param name="accel_trust_band" value="2.0" />
+        <!-- Rotacao do frame do sensor para o frame do corpo. [0, pi, 0] = R_y(pi),
+             a montagem declarada no URDF para a simulacao. No robo real, medir. -->
+        <rosparam param="imu_mount_rpy">[0.0, 3.14159265358979, 0.0]</rosparam>
     </node>
 
     <node pkg="marta_controller" type="levante_tras.py" name="levante_tras" output="screen">

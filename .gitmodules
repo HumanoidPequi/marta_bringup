@@ -7,8 +7,8 @@
 [submodule "src/marta_control"]
 	path = src/marta_control
 	url = git@github.com:HumanoidPequi/marta_control.git
-	branch = caminhada_bringup
+	branch = classic-walk
 [submodule "src/ball_tracking"]
 	path = src/ball_tracking
 	url = git@github.com:HumanoidPequi/ball_tracking.git
-	branch = bringup
+	branch = classic-walk

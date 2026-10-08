@@ -2,3 +2,6 @@
 /build
 /devel
 src/CMakeLists.txt
+src/marta_bringup/experiments/yaw/dados/
+__pycache__/
+.vscode/
