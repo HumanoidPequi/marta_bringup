@@ -24,6 +24,21 @@ README). Uso em [desvio_de_direcao.md](desvio_de_direcao.md).
 `/marta/stabilizer_debug` de 7 para 9 (`heading_error`, `heading_correction` no
 fim). Os índices antigos não mudaram.
 
+Desde 2026-10-08, o `walk_telemetry_node` também publica para visualização
+(Foxglove; ver o README, §5):
+
+| tópico | tipo | conteúdo |
+|---|---|---|
+| `/tf`: `odom → base_link` | TF | pose do tronco no mundo, verdade de solo (desliga com `~publish_world_tf:=false`) |
+| `/robot_description` | `std_msgs/String`, latched | cópia do URDF do parâmetro, para entrar no bag |
+| `/marta/viz/rumo` | `visualization_msgs/MarkerArray` | setas do rumo atual (azul) e do rumo desejado (laranja) |
+| `/marta/viz/rumo_graus` | `std_msgs/Float64MultiArray` | `[yaw_verdadeiro, rumo_desejado, erro]` em graus |
+
+O rumo desejado no frame da verdade é `yaw_true − heading_error` (a malha guarda a
+referência no yaw estimado; mesma conta do `experiments/plot_rumo.py`). O
+`walk_test.py` grava esses tópicos e `/tf_static`; o bag fica ~30% maior.
+`_bag_viz:=false` deixa tudo de fora.
+
 O CoM real é soma massa×posição sobre os 21 links dinâmicos, com massas lidas de
 `/robot_description` e poses/twists de `/gazebo/link_states` — velocidade sem
 derivada numérica. Massa somada: **4,7811 kg**, idêntica ao URDF.

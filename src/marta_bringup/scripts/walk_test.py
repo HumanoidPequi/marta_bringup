@@ -355,6 +355,11 @@ class WalkTest(object):
                    '/marta/torso_attitude', '/marta/stabilizer_debug',
                    '/marta/joint_states', '/marta/imu', '/clock']
         topicos += ['/marta/%s_position/state' % j for j in self.JUNTAS]
+        # Visualizacao (Foxglove): TF do mundo e das juntas, URDF e setas de
+        # rumo. _bag_viz:=false deixa de fora (bag menor, para campanhas).
+        if rospy.get_param('~bag_viz', True):
+            topicos += ['/tf', '/tf_static', '/robot_description', '/marta/viz/rumo',
+                        '/marta/viz/rumo_graus']
         self.bag_proc = subprocess.Popen(
             ['rosbag', 'record', '-O', self.bag_out, '__name:=walk_bag'] + topicos,
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)

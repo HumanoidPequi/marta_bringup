@@ -1,0 +1,358 @@
+{
+  "configById": {
+    "3D!marta": {
+      "cameraState": {
+        "distance": 1.6,
+        "perspective": true,
+        "phi": 60,
+        "thetaOffset": 135,
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.01,
+        "far": 100
+      },
+      "followMode": "follow-position",
+      "followTf": "base_link",
+      "scene": {
+        "enableStats": false,
+        "backgroundColor": "#fcfcfb",
+        "meshUpAxis": "z_up"
+      },
+      "transforms": {
+        "editable": false,
+        "showLabel": false,
+        "labelSize": 0.02,
+        "axisScale": 0.05,
+        "lineWidth": 1,
+        "frame:odom": {
+          "visible": false
+        },
+        "frame:base_link": {
+          "visible": false
+        },
+        "frame:imu_position": {
+          "visible": false
+        },
+        "frame:neck_1": {
+          "visible": false
+        },
+        "frame:head_1": {
+          "visible": false
+        },
+        "frame:l_hip_1": {
+          "visible": false
+        },
+        "frame:l_waist_1": {
+          "visible": false
+        },
+        "frame:l_thigh_1": {
+          "visible": false
+        },
+        "frame:l_shin_1": {
+          "visible": false
+        },
+        "frame:l_ankle_1": {
+          "visible": false
+        },
+        "frame:l_feet_1": {
+          "visible": false
+        },
+        "frame:l_shoulder_1": {
+          "visible": false
+        },
+        "frame:l_arm_1": {
+          "visible": false
+        },
+        "frame:l_hand_1": {
+          "visible": false
+        },
+        "frame:r_hip_1": {
+          "visible": false
+        },
+        "frame:r_waist_1": {
+          "visible": false
+        },
+        "frame:r_thigh_1": {
+          "visible": false
+        },
+        "frame:r_shin_1": {
+          "visible": false
+        },
+        "frame:r_ankle_1": {
+          "visible": false
+        },
+        "frame:r_feet_1": {
+          "visible": false
+        },
+        "frame:r_shoulder_1": {
+          "visible": false
+        },
+        "frame:r_arm_1": {
+          "visible": false
+        },
+        "frame:r_hand_1": {
+          "visible": false
+        }
+      },
+      "topics": {
+        "/marta/viz/rumo": {
+          "visible": true
+        },
+        "/robot_description": {
+          "visible": false
+        }
+      },
+      "layers": {
+        "grade": {
+          "layerId": "foxglove.Grid",
+          "visible": true,
+          "frameId": "odom",
+          "size": 10,
+          "divisions": 20,
+          "lineWidth": 1,
+          "color": "#9b9a96",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "order": 1
+        },
+        "urdf": {
+          "layerId": "foxglove.Urdf",
+          "visible": true,
+          "sourceType": "topic",
+          "topic": "/robot_description",
+          "displayMode": "visual",
+          "fallbackColor": "#8a8984",
+          "order": 2
+        }
+      },
+      "publish": {
+        "type": "point"
+      },
+      "imageMode": {}
+    },
+    "Plot!rumo": {
+      "title": "Rumo: atual × desejado [°]",
+      "paths": [
+        {
+          "value": "/marta/viz/rumo_graus.data[0]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "yaw verdadeiro",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/viz/rumo_graus.data[1]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "rumo desejado",
+          "color": "#eb6834"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 20
+    },
+    "Plot!malha": {
+      "title": "Malha de rumo: correction [rad/s] e erro [rad]",
+      "paths": [
+        {
+          "value": "/marta/stabilizer_debug.data[8]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "correction",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/stabilizer_debug.data[7]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "heading_error",
+          "color": "#eb6834"
+        }
+      ],
+      "minYValue": -0.4,
+      "maxYValue": 0.4,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 20
+    },
+    "Plot!atitude": {
+      "title": "Atitude do tronco [°]",
+      "paths": [
+        {
+          "value": "/marta/walk/telemetry.roll_true.@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "roll verdadeiro",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/walk/telemetry.pitch_true.@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "pitch verdadeiro",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/walk/telemetry.roll.@degrees",
+          "enabled": false,
+          "timestampMethod": "receiveTime",
+          "label": "roll estimado",
+          "color": "#1baf7a"
+        },
+        {
+          "value": "/marta/walk/telemetry.pitch.@degrees",
+          "enabled": false,
+          "timestampMethod": "receiveTime",
+          "label": "pitch estimado",
+          "color": "#eda100"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 20
+    },
+    "Plot!juntas": {
+      "title": "Torque das juntas de roll e joelho [N·m]",
+      "paths": [
+        {
+          "value": "/marta/l_hip_roll_position/state.command",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_roll E",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/r_hip_roll_position/state.command",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_roll D",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/l_ank_roll_position/state.command",
+          "enabled": false,
+          "timestampMethod": "receiveTime",
+          "label": "ank_roll E",
+          "color": "#1baf7a"
+        },
+        {
+          "value": "/marta/r_ank_roll_position/state.command",
+          "enabled": false,
+          "timestampMethod": "receiveTime",
+          "label": "ank_roll D",
+          "color": "#eda100"
+        },
+        {
+          "value": "/marta/l_knee_position/state.command",
+          "enabled": false,
+          "timestampMethod": "receiveTime",
+          "label": "joelho E",
+          "color": "#e87ba4"
+        },
+        {
+          "value": "/marta/r_knee_position/state.command",
+          "enabled": false,
+          "timestampMethod": "receiveTime",
+          "label": "joelho D",
+          "color": "#008300"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 20
+    },
+    "StateTransitions!apoio": {
+      "paths": [
+        {
+          "value": "/marta/walk/telemetry.support_state",
+          "timestampMethod": "receiveTime",
+          "label": "apoio (0 duplo, 1 esq, 2 dir)"
+        }
+      ],
+      "isSynced": true
+    },
+    "RawMessages!debug": {
+      "topicPath": "/marta/stabilizer_debug",
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "direction": "row",
+    "first": "3D!marta",
+    "second": {
+      "direction": "column",
+      "first": {
+        "direction": "column",
+        "first": "Plot!rumo",
+        "second": "Plot!malha",
+        "splitPercentage": 50
+      },
+      "second": {
+        "direction": "column",
+        "first": {
+          "direction": "column",
+          "first": "Plot!atitude",
+          "second": "Plot!juntas",
+          "splitPercentage": 50
+        },
+        "second": {
+          "direction": "row",
+          "first": "StateTransitions!apoio",
+          "second": "RawMessages!debug",
+          "splitPercentage": 60
+        },
+        "splitPercentage": 70
+      },
+      "splitPercentage": 45
+    },
+    "splitPercentage": 50
+  }
+}

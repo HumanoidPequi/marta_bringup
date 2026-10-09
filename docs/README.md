@@ -238,6 +238,41 @@ docker exec -it marta_stab -e LIBGL_ALWAYS_SOFTWARE=1 -e MESA_LOADER_DRIVER_OVER
   Conferir com `glxinfo -B | grep renderer` dentro do container: tem que
   aparecer a RTX 3050.
 
+### Visualização no Foxglove
+
+Uma tela só com o robô 3D andando no mundo e os gráficos sincronizados: rumo
+atual × desejado, `correction` da malha de rumo, roll e pitch verdadeiros,
+torque das juntas e estado de apoio. Layout pronto em
+[`src/marta_bringup/foxglove/marta_marcha.json`](../src/marta_bringup/foxglove/marta_marcha.json).
+
+**Uma vez só, no host:**
+1. Instalar o Foxglove (pacote `.deb` em foxglove.dev/download) e entrar com a
+   conta.
+2. Em *Settings → Desktop app → ROS_PACKAGE_PATH*, pôr
+   `/home/<usuario>/Documents/ic/marta_bringup/src`. É assim que o app acha as
+   malhas `package://marta_description/...` quando abre um bag.
+3. *Layouts → Import from file* → `marta_marcha.json`.
+
+**Armadilha:** STL não guarda qual eixo é "para cima", e o Foxglove assume Y-up por
+default. Com isso o robô aparece deitado e cada peça gira em torno da própria
+origem (as partes parecem se espalhar). O layout já fixa *3D → Scene → Mesh up
+axis = Z-up*, como no RViz e no Gazebo. Num layout novo, ajuste isso à mão. Os
+rótulos e eixos das TFs também vêm desligados, porque no tamanho default ficam
+maiores que o robô.
+
+**Ao vivo:** suba o terminal 1 acima com `foxglove:=true` no `roslaunch` (o
+container já roda com `--network host`) e, no app, *Open connection → Foxglove
+WebSocket → `ws://localhost:8765`*. Ao vivo, as malhas vêm pelo próprio bridge.
+
+**Por bag:** toda corrida do `walk_test.py` com `_bag_out:=...` já grava TF,
+URDF e as setas de rumo. Abra o `.bag` no app (*Open local file*). Dá para
+pausar e arrastar a linha do tempo.
+
+**Custo:** sem cliente conectado, o RTF não muda (0,999 com o bridge, 0,998
+sem). Com o app conectado, o bridge serializa tudo que o layout assina. Confira
+o RTF antes de usar ao vivo em medidas, e nas campanhas deixe `foxglove`
+desligado (default).
+
 ### Knobs de realismo (todos com default = modelo original)
 
 `foot_mu`, `joint_effort`, `joint_damping`, `joint_friction`, `contact_kp/kd`,

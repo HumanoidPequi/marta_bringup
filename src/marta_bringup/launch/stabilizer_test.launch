@@ -71,6 +71,9 @@
          (kp=1, sat=0,3: ver docs/desvio_de_direcao.md §8). kp em rad/s por rad de
          erro; a correcao satura em max_heading_rate. -->
     <arg name="heading_enabled" default="true"/>
+    <!-- Visualizacao: foxglove_bridge ao vivo e taxa da TF das juntas. -->
+    <arg name="foxglove" default="false"/>
+    <arg name="tf_rate" default="50.0"/>
     <!-- Pula os passos de ajuste depois do Agacha() (para direto). -->
     <arg name="skip_initial_stop_steps" default="false"/>
     <arg name="kp_heading" default="1.0"/>
@@ -125,7 +128,16 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher"
           type="robot_state_publisher" output="log">
         <remap from="/joint_states" to="/marta/joint_states"/>
+        <param name="publish_frequency" value="$(arg tf_rate)"/>
     </node>
+
+    <!-- Foxglove ao vivo: o app no host conecta em ws://localhost:8765 (o
+         container roda com network host). Desligado por default: o bridge
+         serializa os topicos assinados e pode baixar o RTF das campanhas. -->
+    <include if="$(arg foxglove)"
+             file="$(find foxglove_bridge)/launch/foxglove_bridge.launch">
+        <arg name="port" value="8765"/>
+    </include>
 
     <!-- Estimacao de atitude (Fase 1) -->
     <node pkg="marta_controller" type="torso_attitude_node" name="torso_attitude_node"

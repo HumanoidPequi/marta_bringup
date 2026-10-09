@@ -83,6 +83,12 @@ RUN pip3 install \
     pandas \
     onnxruntime
 
+# Foxglove ao vivo (stabilizer_test.launch foxglove:=true, ws://localhost:8765).
+# Camada propria, depois das pesadas, para nao invalidar o cache delas.
+RUN apt-get update && apt-get install -y \
+    ros-$ROS_DISTRO-foxglove-bridge \
+    && rm -rf /var/lib/apt/lists/*
+
 
 # Copiar o diretório pacotes da Marta
 RUN mkdir -p /root/marta_bringup/src
