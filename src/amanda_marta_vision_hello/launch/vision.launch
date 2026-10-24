@@ -1,0 +1,22 @@
+<launch>
+
+    <arg name="image_topic"
+         default="/marta/front_camera/image_raw"/>
+
+    <arg name="output_topic"
+         default="/marta/front_camera/image_gray"/>
+
+    <node pkg="amanda_marta_vision_hello"
+          type="process_image.py"
+          name="image_processor"
+          output="screen">
+
+        <param name="image_topic"
+               value="$(arg image_topic)"/>
+
+        <param name="output_topic"
+               value="$(arg output_topic)"/>
+
+    </node>
+
+</launch>

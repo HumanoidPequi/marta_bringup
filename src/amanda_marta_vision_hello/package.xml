@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+
+  <name>amanda_marta_vision_hello</name>
+  <version>0.1.0</version>
+
+  <description>
+    Pacote ROS para processamento de imagens da camera da Marta.
+    Recebe imagens e publica uma versao em tons de cinza.
+  </description>
+
+  <maintainer email="amanda@example.com">Amanda</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+
+  <export>
+  </export>
+
+</package>
