@@ -1,0 +1,56 @@
+06:15:06  panorama: src/marta_bringup/experiments/panorama/desenho_D2.csv, semente 20261034, 18 corridas a fazer
+06:15:06  [1/18] D_m0.67_z0.239_x0.0036_g0.5_csf1.064_r1
+        RESULTADO .................. CAIU em 3.5 s  por pitch
+        fator de tempo real ........  0.998
+06:15:56  [2/18] D_m0.67_z0.269_x0.0036_g0.5_csf1.054_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:17:16  [3/18] D_m0.5_z0.250_x0.0036_g0.5_estoff_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:18:36  [4/18] D_m1.0_z0.260_x0.0036_g0.5_estoff_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:19:34  [5/18] D_m0.5_z0.250_x0.0036_g0.5_csf1.043_r1
+        RESULTADO .................. CAIU em 5.0 s  por roll
+        fator de tempo real ........  0.999
+06:20:26  [6/18] D_m0.83_z0.260_x0.0036_g0.5_estoff_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:21:24  [7/18] D_m0.67_z0.260_x0.0036_g0.5_csf1.057_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:22:44  [8/18] D_m0.5_z0.239_x0.0036_g0.5_csf1.049_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:24:03  [9/18] D_m1.0_z0.250_x0.0036_g0.5_estoff_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:25:02  [10/18] D_m0.35_z0.250_x0.0036_g0.5_estoff_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:26:22  [11/18] D_m0.67_z0.250_x0.0036_g0.5_csf1.059_r1
+        RESULTADO .................. CAIU em 3.4 s  por pitch
+        fator de tempo real ........  0.999
+06:27:12  [12/18] D_m0.67_z0.250_x0.0036_g0.5_estoff_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:28:09  [13/18] D_m0.67_z0.260_x0.0036_g0.5_estoff_r1
+        RESULTADO .................. CAIU em 3.7 s  por pitch
+        fator de tempo real ........  0.999
+06:29:00  [14/18] D_m0.5_z0.269_x0.0036_g0.5_csf1.038_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:30:20  [15/18] D_m0.83_z0.250_x0.0036_g0.5_estoff_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:31:18  [16/18] D_m0.5_z0.260_x0.0036_g0.5_estoff_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:32:38  [17/18] D_m0.35_z0.260_x0.0036_g0.5_estoff_r1
+        RESULTADO .................. CAIU em 11.3 s  por pitch
+        fator de tempo real ........  0.999
+06:33:36  [18/18] D_m0.5_z0.260_x0.0036_g0.5_csf1.040_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:34:56  fim.

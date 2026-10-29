@@ -1,0 +1,104 @@
+23:29:07  campanha pe: 16 corridas
+23:29:07  [1/16] tms0.5_tau1000_mu1e10_r1
+        RESULTADO .................. andou 32 s sem cair
+        distancia percorrida .......  2.071 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +2.065 / +0.148 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:30:27  [2/16] tms0.5_tau1000_mu1.0_r1
+        RESULTADO .................. CAIU em 20.1 s  por pitch
+        distancia percorrida .......  1.616 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +1.573 / -0.367 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:31:35  [3/16] tms0.5_tau6_mu1e10_r1
+        RESULTADO .................. andou 32 s sem cair
+        distancia percorrida .......  1.999 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +1.999 / +0.015 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:32:55  [4/16] tms0.5_tau6_mu1.0_r1
+        RESULTADO .................. CAIU em 9.1 s  por pitch
+        distancia percorrida .......  0.770 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +0.733 / -0.234 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:33:52  [5/16] tms0.5_tau1000_mu1e10_r2
+        RESULTADO .................. CAIU em 10.3 s  por pitch
+        distancia percorrida .......  0.975 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +0.931 / -0.289 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:34:49  [6/16] tms0.5_tau1000_mu1.0_r2
+        RESULTADO .................. andou 32 s sem cair
+        distancia percorrida .......  2.443 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +2.439 / +0.148 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:36:09  [7/16] tms0.5_tau6_mu1e10_r2
+        RESULTADO .................. andou 33 s sem cair
+        distancia percorrida .......  1.925 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +1.909 / +0.248 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:37:31  [8/16] tms0.5_tau6_mu1.0_r2
+        RESULTADO .................. CAIU em 4.0 s  por pitch
+        distancia percorrida .......  0.426 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +0.369 / +0.213 m  (frame do rumo inicial)
+        fator de tempo real ........  0.998
+23:38:23  [9/16] tms0.5_tau1000_mu1e10_r3
+        RESULTADO .................. andou 32 s sem cair
+        distancia percorrida .......  2.331 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +2.331 / +0.036 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:39:43  [10/16] tms0.5_tau1000_mu1.0_r3
+        RESULTADO .................. andou 32 s sem cair
+        distancia percorrida .......  2.327 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +2.327 / -0.011 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:41:03  [11/16] tms0.5_tau6_mu1e10_r3
+        RESULTADO .................. andou 32 s sem cair
+        distancia percorrida .......  1.506 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +1.504 / +0.091 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:42:22  [12/16] tms0.5_tau6_mu1.0_r3
+        RESULTADO .................. andou 32 s sem cair
+        distancia percorrida .......  1.557 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +1.543 / +0.208 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:43:42  [13/16] tms0.5_tau1000_mu1e10_r4
+        RESULTADO .................. andou 32 s sem cair
+        distancia percorrida .......  2.823 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +2.822 / -0.066 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:45:02  [14/16] tms0.5_tau1000_mu1.0_r4
+        RESULTADO .................. CAIU em 5.2 s  por roll
+        distancia percorrida .......  0.306 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... -0.232 / +0.200 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:45:54  [15/16] tms0.5_tau6_mu1e10_r4
+        RESULTADO .................. andou 32 s sem cair
+        distancia percorrida .......  2.414 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +2.400 / +0.258 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:47:14  [16/16] tms0.5_tau6_mu1.0_r4
+        RESULTADO .................. CAIU em 10.2 s  por pitch
+        distancia percorrida .......  0.220 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... +0.220 / -0.002 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:48:11  fim.
+23:48:11  campanha pe: 4 corridas
+23:48:11  [1/4] tms1.0_tau6_mu1e10_r1
+        RESULTADO .................. CAIU em 3.0 s  por pitch
+        distancia percorrida .......  0.196 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... -0.192 / +0.041 m  (frame do rumo inicial)
+        fator de tempo real ........  0.997
+23:49:01  [2/4] tms1.0_tau6_mu1e10_r2
+        RESULTADO .................. CAIU em 3.6 s  por pitch
+        distancia percorrida .......  0.243 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... -0.170 / +0.173 m  (frame do rumo inicial)
+        fator de tempo real ........  0.999
+23:49:52  [3/4] tms1.0_tau6_mu1e10_r3
+        RESULTADO .................. CAIU em 3.6 s  por pitch
+        distancia percorrida .......  0.232 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... -0.159 / +0.169 m  (frame do rumo inicial)
+        fator de tempo real ........  0.998
+23:50:43  [4/4] tms1.0_tau6_mu1e10_r4
+        RESULTADO .................. CAIU em 3.9 s  por pitch
+        distancia percorrida .......  0.096 m  (hypot; mistura avanco e deriva)
+        avanco / lateral ........... -0.096 / +0.007 m  (frame do rumo inicial)
+        fator de tempo real ........  0.998
+23:51:33  fim.

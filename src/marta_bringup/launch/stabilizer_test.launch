@@ -50,6 +50,17 @@
     <!-- 1.0 = como o gerador sempre esteve; 0.734 casa o tZMP com a altura
          real do CoM medida pela telemetria (0.218 m em vez de 0.2975 m). -->
     <arg name="com_swing_factor" default="1.0"/>
+    <!-- Parametros do gerador. Defaults = os do gerador (OmnidirectionalWalkZMP.cpp),
+         valores de out/2026 (docs/ajustes_marcha.md); z_com e a altura do
+         tronco na IK (subir estica a perna). -->
+    <arg name="z_com" default="0.252"/>
+    <arg name="z_step" default="0.08"/>
+    <arg name="step_period" default="0.6"/>
+    <arg name="double_support_ratio" default="0.3"/>
+    <arg name="y_separation" default="0.06"/>
+    <!-- Somado ao hip pitch depois da IK [graus]; -5 inclina o tronco ~5 graus para
+         a frente quando os servos nao cedem (panorama_parametros.md). -->
+    <arg name="hip_pitch_offset_deg" default="-5.0"/>
     <arg name="use_link_states" default="true"/>
     <arg name="telemetry" default="true"/>
 
@@ -91,11 +102,31 @@
     <arg name="imu_accel_noise" default="0.0"/>
     <arg name="imu_gyro_bias"   default="0.0"/>
     <arg name="foot_collision"  default="box"/>
+    <!-- Escala da massa do tronco (1.0 = modelo original); ver marta.xacro. -->
+    <arg name="torso_mass_scale" default="1.0"/>
+    <!-- Modelo de servo: amortecimento implicito (com joint_damping) e ganhos
+         alternativos carregados por cima do controller.yaml. -->
+    <arg name="implicit_damping" default="false"/>
+    <arg name="joint_velocity" default="0.01"/>
+    <!-- Compensacao de gravidade (feedforward tau/Kp nas pernas;
+         LegGravityCompensation.h). Default desligada. -->
+    <arg name="gravity_comp_enabled" default="false"/>
+    <arg name="gravity_comp_joints" default="hip_roll,knee"/>
+    <arg name="gravity_comp_gain" default="1.0"/>
+    <arg name="max_gravity_comp" default="0.35"/>
+    <arg name="gravity_comp_swing" default="false"/>
+    <!-- x do quadril em relacao ao tronco na IK [m]; default = o do codigo
+         (RobotPhysicalParameters.cpp). URDF: 0,0036. -->
+    <arg name="hip_offset_x" default="0.013349"/>
+    <arg name="gains" default=""/>
 
     <param name="robot_description"
            command="$(find xacro)/xacro '$(find marta_description)/urdf/marta.xacro'
                     foot_mu:=$(arg foot_mu)
                     joint_effort:=$(arg joint_effort)
+                    torso_mass_scale:=$(arg torso_mass_scale)
+                    implicit_damping:=$(arg implicit_damping)
+                    joint_velocity:=$(arg joint_velocity)
                     joint_damping:=$(arg joint_damping)
                     joint_friction:=$(arg joint_friction)
                     contact_kp:=$(arg contact_kp)
@@ -124,6 +155,7 @@
           args="-param robot_description -urdf -model marta -x 0 -y 0 -z 0.3609"/>
 
     <include file="$(find marta_gazebo)/launch/controller.launch"/>
+    <rosparam if="$(eval gains != '')" file="$(arg gains)" command="load"/>
 
     <node name="robot_state_publisher" pkg="robot_state_publisher"
           type="robot_state_publisher" output="log">
@@ -183,6 +215,18 @@
         <param name="fall_recovery_enabled" value="false"/>
         <param name="stabilizer_enabled" value="$(arg stabilizer_enabled)"/>
         <param name="com_swing_factor" value="$(arg com_swing_factor)"/>
+        <param name="gravity_comp_enabled" value="$(arg gravity_comp_enabled)"/>
+        <param name="gravity_comp_joints" value="$(arg gravity_comp_joints)"/>
+        <param name="gravity_comp_gain" value="$(arg gravity_comp_gain)"/>
+        <param name="max_gravity_comp" value="$(arg max_gravity_comp)"/>
+        <param name="gravity_comp_swing" value="$(arg gravity_comp_swing)"/>
+        <param name="hip_offset_x" value="$(arg hip_offset_x)"/>
+        <param name="z_com" value="$(arg z_com)"/>
+        <param name="z_step" value="$(arg z_step)"/>
+        <param name="step_period" value="$(arg step_period)"/>
+        <param name="double_support_ratio" value="$(arg double_support_ratio)"/>
+        <param name="y_separation" value="$(arg y_separation)"/>
+        <param name="hip_pitch_offset_deg" value="$(arg hip_pitch_offset_deg)"/>
         <param name="kp_pitch" value="$(arg kp_pitch)"/>
         <param name="kd_pitch" value="$(arg kd_pitch)"/>
         <param name="max_pitch_correction" value="$(arg max_pitch_correction)"/>

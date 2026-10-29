@@ -1,0 +1,4 @@
+base,n,completou,caiu_antes,caiu_marcha,frente,tras,lado,sobrevida,avanco,pitch_parado,ced_joelho_parado,ced_soma_parado,soma_alvo_parado,pe_pitch_parado,pitch_apoio,pe_pitch_apoio,alvo_ik_apoio,comp_apoio,ced_apoio,pitch_marcha,pitch_rms,roll_rms,com_pe_mm,z_com_mm,joelho_flex,cedencia_joelho,joelho_sat,joelho_rms,pe_pico,raspou,ponta
+P_m0.5,1,1,0,0,0,0,0,30.000,2.949,1.545,3.367,3.267,-4.799,-0.001,4.453,-0.005,-4.302,-4.373,4.224,4.261,4.640,1.902,1.496,260.926,81.466,2.749,18.018,1.877,68.167,9.091,1.818
+P_m0.67,1,0,0,1,0,1,0,3.500,nan,-0.126,4.425,4.955,-4.819,-0.001,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,5.699,nan,nan,nan,nan,nan
+P_m1.0,1,0,1,0,0,1,0,0.000,nan,-5.959,7.397,10.814,-4.847,-0.005,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,-3.313,nan,nan,nan,nan,nan

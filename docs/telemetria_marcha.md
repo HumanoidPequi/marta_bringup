@@ -61,12 +61,24 @@ recebe 6,00** — 3,8× acima do disponível.
 ## Pipeline
 
 ```
-walk_test.py _bag_out:=...        grava ~13 MB por corrida de 20 s
-   ↓
+walk_test.py _bag_out:=...        ~0,6 MB/s sem os topicos de visualizacao,
+   ↓                              ~0,8 MB/s com eles (_bag_viz:=true, default)
 bag_para_csv.py <bag> <dir>       roda no container (precisa de rosbag)
-   ↓  <nome>_telemetria.csv + <nome>_juntas.csv
+   ↓  <nome>_telemetria.csv + <nome>_juntas.csv + <nome>_estabilizador.csv
 figuras_marcha.py <prefixo> <dir> roda em qualquer lugar (só matplotlib)
+plot_rumo.py / plot_correcao.py   yaw em torno do rumo e correcao da malha
+                                  (desvio_de_direcao.md §9)
 ```
+
+O `_estabilizador.csv` (desde 2026-10-08) traz o `/marta/stabilizer_debug` com
+as colunas `t, delta_pitch, pitch, pitch_rate, support, saturated,
+heading_error, heading_correction`. São o que o **controlador** enxerga: o erro
+de rumo vem do yaw estimado, não da verdade de solo. Bags anteriores à malha de
+rumo dão NaN nas duas últimas colunas.
+
+**Bag sem índice.** Se o `rosbag record` for morto sem SIGINT, o bag fica sem
+índice (`ROSBagUnindexedException`). `rosbag reindex` às vezes recupera; na
+corrida `rumo_kp0.5_r1` não recuperou ("Bag contains no message").
 
 `/gazebo/link_states` fica **fora** do bag de propósito: são ~700 KB/s e o nó de
 telemetria já destila dele tudo que importa.
@@ -93,6 +105,11 @@ Variáveis de ambiente: `LIMITE_TORQUE` (marca o limite nas figuras de junta) e
 CoM real fica a **0,2184 m** do ponto de contato — **36% de erro em `g/zc`**, que
 é o único parâmetro do 3D-LIPM. O `zCom` é a distância torso–pé usada pela
 cinemática inversa, não a altura do centro de massa.
+
+> **Nota (2026-10-15).** A altura do CoM varia com o limite de torque: de 0,212
+> a 0,220 m com o pé em caixa (README, tabela do §1). Os 0,2184 m acima e os
+> 0,2134 m do experimento abaixo são medidas de condições diferentes, e não
+> uma contradição.
 
 Consequência: a constante de tempo do gerador é `tZMP = 0,174 s` quando a física
 pede `sqrt(0,2184/9,81) = 0,149 s`. O parâmetro `comSwingFactor` existe

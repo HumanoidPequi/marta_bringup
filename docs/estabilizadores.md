@@ -144,15 +144,23 @@ estabilizador — jogam o CoM para fora da região de captura.
 
 ---
 
-## 5. Fase 3 — roll: não iniciada, e com uma armadilha conhecida
+## 5. Fase 3 — roll: projetada, não implementada
 
 O roll é o **maior resíduo** em regime (6,4° contra 3,2° de pitch a 6 N·m) mas
 **não é o modo de falha** — as quedas reais são sagitais.
 
-A armadilha: a IK mantém `ankle_roll = −hip_roll`, ou seja, os pés são mantidos
-paralelos ao solo por construção. Corrigir roll **só no quadril inclina o pé
-lateralmente**, em vez de manter a planta no chão. Isso precisa ser resolvido no
-projeto antes de implementar, senão a Fase 3 contamina também a Fase 2.
+O projeto completo está em [plano_fase3_roll.md](plano_fase3_roll.md):
+- **o que se mediu:** o tronco tomba ±5,9° para o lado da perna no ar a cada
+  apoio simples (τ = 6), e ~3,9° disso é cedência de `hip_roll` + `ank_roll`
+  abaixo do limite de torque. A estimativa de roll tem viés de +2,4°;
+- **o desenho:** compensação de gravidade feedforward (Maximo, doutorado §4.3)
+  mais o estabilizador de roll em quadril e tornozelo (§4.4.2), com a variante
+  só na cintura (Raibert) como comparação;
+- **o protocolo de teste.**
+
+A armadilha da IK (`ankle_roll = −hip_roll`) foi refinada lá, na §3. Ela vale
+para a perna em balanço e para o apoio duplo com as duas pernas, não para a
+perna de apoio em apoio simples.
 
 ---
 
@@ -196,7 +204,11 @@ garantia de que a perna oscilante não é tocada e a convergência em malha fech
   medida (robô parado e vertical → os quatro campos de atitude em ~0;
   inclinando para frente à mão → pitch sobe positivo).
 - O plano frontal segue em malha aberta.
-- **Não há realimentação nenhuma em yaw** — nem estimativa (o filtro
-  complementar só faz pitch e roll; sem magnetômetro não há referência absoluta)
-  nem controle. O giro sistemático que se via na simulação era artefato do pé
-  em malha (achado I do README); resta um resíduo de ~1 °/s.
+- **Yaw:** desde 2026-10-07 o estimador integra o giro (`yaw`, `yaw_rate` no
+  `/marta/torso_attitude`). Sem magnetômetro não há referência absoluta, e o
+  yaw deriva, como em Maximo (doutorado, §4.4.1). A **malha de rumo**
+  (`ControllerNode::headingCorrection`, só P) soma uma correção ao comando de
+  rotação do gerador. Ela não é um estabilizador de atitude: age no
+  planejamento dos passos, não nas juntas. Por ser só P, deixa erro de regime
+  (`desvio_de_direcao.md` §9). Detalhes em
+  [desvio_de_direcao.md](desvio_de_direcao.md) §6–§9.

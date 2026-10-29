@@ -1,0 +1,3 @@
+tag,tau,stab,rep,caiu,motivo,t_queda,dur,rms_pitch_v,pico_pitch_v,media_pitch_v,rms_roll_v,pico_roll_v,rms_pitch_est,vies,dist,z_min,delta_pico,frac_sat,trocas,rtf,divergiu,deriva_energia,deriva_energia_ger,zc_medido,n_fases,csf,psi_final,psi_pico,psi_taxa,avanco,lateral,caranguejo,foot_mu
+todas05_x_r1,2.5,1,1,1,pitch,2.49,2.49,89.997,-90.000,-89.997,130.092,179.987,86.627,-3.370,0.0017,0.0987,-9.998,1.0000,2,,0,0.29809,0.05019,-0.0499,1,1.0,1367.505,3347.883,381.0179,0.0016,0.0005,nan,
+todas05_x_r2,2.5,1,2,1,pitch,2.49,2.49,89.997,-90.000,-89.997,130.759,-179.661,86.626,-3.372,0.0017,0.0987,-9.998,1.0000,2,,0,0.27592,0.04644,-0.0498,1,1.0,-13.084,3281.193,-801.1875,0.0009,-0.0015,nan,

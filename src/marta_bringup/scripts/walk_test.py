@@ -70,6 +70,7 @@ class WalkTest(object):
         self.attitude = None
         self.sim_clock = None
         self.rtf_marks = None
+        self.rtf_end = None
         self.diverged = False
         # Estado bruto do LIPM, nao a energia ja pronta: a energia depende de
         # QUAL zc se usa como regua, e essa escolha pertence a analise.
@@ -449,6 +450,10 @@ class WalkTest(object):
                 break
             rate.sleep()
 
+        # Fecha a janela do RTF aqui, antes do pos-queda e do fechamento do bag.
+        if self.rtf_marks and self.rtf_marks[0] is not None and self.sim_clock is not None:
+            self.rtf_end = (self.sim_clock - self.rtf_marks[0],
+                            _time.time() - self.rtf_marks[1])
         self.recording = False
         end_pos = self.position
         self.set_walking(False)
@@ -566,12 +571,22 @@ class WalkTest(object):
         rospy.loginfo('Linha acrescentada em %s', self.campanha_csv)
 
     def real_time_factor(self):
-        """Tempo simulado por segundo de tempo real, medido na janela da marcha."""
+        """Tempo simulado por segundo de tempo real, medido na janela da marcha.
+
+        A janela fecha no fim do laco de observacao (queda ou prazo), antes de
+        parar a marcha e fechar o bag. Antes, ela ia ate o relatorio: com o robo
+        caido no chao a fisica fica ~2x mais lenta (muitos contatos), e toda
+        corrida que caia cedo saia com RTF ~0,5 -- consequencia da queda, nao
+        causa (medido em 2026-10-15, plano_comparacao_darwin.md).
+        """
         import time as _time
         if not self.rtf_marks or self.rtf_marks[0] is None or self.sim_clock is None:
             return None
-        d_sim = self.sim_clock - self.rtf_marks[0]
-        d_real = _time.time() - self.rtf_marks[1]
+        if getattr(self, 'rtf_end', None) is not None:
+            d_sim, d_real = self.rtf_end
+        else:
+            d_sim = self.sim_clock - self.rtf_marks[0]
+            d_real = _time.time() - self.rtf_marks[1]
         if d_real <= 0.0:
             return None
         return d_sim / d_real

@@ -1,0 +1,4 @@
+base,torso_mass_scale,z_com,hip_offset_x,gain,nrep,extra
+P_m0.5,0.5,0.250,0.0036,0.5,1,
+P_m0.67,0.67,0.250,0.0036,0.5,1,
+P_m1.0,1.0,0.250,0.0036,0.5,1,

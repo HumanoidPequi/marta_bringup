@@ -5,12 +5,26 @@
 **Pergunta:** por que o robô muda de direção andando, comandado a andar reto
 (`rotationZ_ = 0`)?
 
-**Resposta (2026-10-07), parcial:** o giro grande e sistemático para a ESQUERDA
-era um **artefato da colisão do pé em malha STL no ODE**. Com a colisão em caixa
-(hoje o padrão, `foot_collision:=box`), ele some. **Mas sobra uma curva para a
-DIREITA, que não é desprezível:** com τ = 6 e o estabilizador ligado (o regime
-de operação), −48 ± 15° em 30 s, 10/10 corridas, ~−28° deles nos primeiros 5 s;
-visível a olho nu. Essa curva **não está explicada**.
+**Resposta (atualizada em 2026-10-15), em camadas:**
+1. **Artefato do pé em malha.** O giro grande e sistemático para a ESQUERDA era
+   artefato da colisão do pé em malha STL no ODE (§4). Com a colisão em caixa
+   (padrão desde 2026-10-07, `foot_collision:=box`), ele some.
+2. **Bug do `restart()`.** O `restart()` comandava 17° nas hip_yaw no primeiro
+   passo de toda marcha (§3). Corrigido.
+3. **Partida da marcha.** Sobrou uma curva para a direita (τ = 6, estabilizador
+   ligado: −48 ± 15° em 30 s, 10/10 corridas). Ela vem da partida: o teste do
+   espelho mostra que o lado acompanha o pé que balança primeiro (§5). A
+   partida suave tira o viés, mas cada corrida ainda curva ~50° para um lado
+   sorteado.
+4. **Malha de rumo.** A deriva que resta é corrigida pela malha (§6), ligada por
+   default na simulação: o desvio lateral em 30 s cai de −0,69 m para +0,03 m.
+5. **Erro de regime da malha.** A malha é só proporcional, e por isso deixa um
+   **erro de regime** de ~0,13–0,15 rad/s ÷ kp, com lado sorteado por corrida.
+   O tronco oscila ±7° a cada passo e a média passeia ±20–30° (§9). Próximo
+   passo: termo integral.
+
+O lado de cada corrida e o evento dos primeiros passos continuam sem explicação
+(§10).
 
 ---
 
@@ -314,7 +328,123 @@ não afetar outros launches nem o robô real. `rodar_yaw.sh` passa
 `heading_enabled` explicitamente, então as campanhas antigas continuam
 reproduzíveis.
 
-## 9. Em aberto
+## 9. Oscilação em torno do rumo e erro de regime da malha (2026-10-08)
+
+**Pergunta:** com a malha de rumo ligada, como o yaw se comporta em torno do
+rumo desejado em uma marcha longa? O rumo desejado hoje é o de partida, mas no
+futuro a visão vai movê-lo para apontar para a bola.
+
+**Desenho:**
+- configuração do dia: pé em caixa, τ = 6, estabilizador de pitch ligado,
+  malha de rumo ligada, 0,1 m/s;
+- **60 s** por corrida, com bag guardado;
+- kp ∈ {1,0; 0,5; 0,3}, sempre com saturação 0,3 rad/s;
+- RTF das corridas com kp = 1: 0,966–0,975. **O RTF das corridas com
+  kp = 0,5 e 0,3 não foi registrado**; elas foram rodadas pelo usuário, com o
+  comando abaixo.
+
+```bash
+# uma corrida (dentro do loop de repeticoes; KP e TAG variam)
+roslaunch marta_bringup stabilizer_test.launch gui:=false joint_effort:=6 kp_heading:=$KP
+rosrun marta_bringup walk_test.py _duration:=60 _velocity_x:=0.1 _tag:=$TAG \
+  _bag_out:=/ws/src/marta_bringup/experiments/yaw/dados/rumo_bags/$TAG.bag
+python3 src/marta_bringup/experiments/bag_para_csv.py <bag> <dir>   # gera tambem _estabilizador.csv
+```
+
+Dados em `experiments/yaw/dados/rumo_bags/` (ignorado pelo git):
+- `rumo_atual_r1..r5`: kp = 1, 5 corridas;
+- `rumo_kp0.5_r2..r4`: kp = 0,5, 3 corridas. A `r1` ficou com o bag
+  corrompido ("Unindexed" e, depois do reindex, "Bag contains no message"), e
+  a `r5` não foi rodada;
+- `rumo_kp0.3_r1..r4`: kp = 0,3, 4 corridas.
+
+**Como o rumo desejado é medido.** A malha guarda a referência no yaw
+**estimado** (giro integrado), e o erro que ela corrige é `e = ψ_est − ψ_ref`.
+As figuras usam a verdade de solo e levam a referência para esse frame:
+`ψ_ref_verdade = mediana(ψ_verdade − e)`. O desvio-padrão dessa diferença mede a
+deriva do estimador dentro da corrida: 1,4–3,9°, pequena.
+
+**Scripts:**
+- `experiments/plot_rumo.py <dir> <prefixo> <saida.png>`: o yaw verdadeiro
+  menos o rumo desejado, com a média por passada (0,8 s), um zoom de 4 s com o
+  pé de apoio e todas as corridas;
+- `experiments/plot_correcao.py <dir> <saida.png> rumo_atual=1.0 rumo_kp0.5=0.5 rumo_kp0.3=0.3`:
+  a `correction` (o que a malha soma ao comando de rotação) e o
+  `heading_error`, uma linha por ganho.
+
+Os dois cortam a série 1 s antes de qualquer queda (|pitch| ou |roll| > 30°, ou
+altura < 0,2 m) e consideram só o trecho com a malha ativa.
+
+**Figuras:**
+
+| arquivo | conteúdo |
+|---|---|
+| `figuras_marcha/fig_rumo_oscilacao.png` | kp = 1 |
+| `figuras_marcha/fig_rumo_oscilacao_kp0.5.png` | kp = 0,5 |
+| `figuras_marcha/fig_rumo_oscilacao_kp0.3.png` | kp = 0,3 |
+| `figuras_marcha/fig_rumo_correcao.png` | `correction` e erro com kp = 1 |
+| `figuras_marcha/fig_rumo_correcao_kp.png` | os três ganhos lado a lado |
+
+### Resultado
+
+| kp | n | vaivém por passo (p-p) | yaw − ψ_ref RMS (t ≥ 10 s) | \|erro médio\| por corrida | kp · \|erro médio\| | correção saturada |
+|---|---|---|---|---|---|---|
+| 1,0 | 5 | 16,1 ± 0,6° | 12,2 ± 2,0° | 7,5 ± 3,7° | 7,5° = 0,13 rad/s | 15,5% do tempo |
+| 0,5 | 3 | 13,9 ± 0,1° | 20,0 ± 3,0° | 17,5 ± 2,6° | 8,8° = 0,15 rad/s | 3,7% |
+| 0,3 | 4 | 13,2 ± 0,4° | 30,6 ± 2,0° | 27,8 ± 1,7° | 8,3° = 0,15 rad/s | 0,2% |
+
+O vaivém por passo é o percentil 97,5 − 2,5 do yaw menos a sua média por
+passada. "\|erro médio\|" é o erro médio da malha por corrida, em módulo (a
+média com sinal se cancela entre as corridas, porque o lado é sorteado).
+
+**Leitura:**
+- **O tronco gira ~±7° a cada passo** (16° pico a pico com kp = 1), quase
+  independente do ganho. É o balanço de yaw da própria marcha. A malha não deve
+  persegui-lo, e ele não indica falha.
+- **A média por passada não fica em zero; ela se fixa num desvio de lado
+  sorteado,** e o desvio cresce quando o ganho cai. O produto kp · \|erro\| fica
+  constante, ~0,13–0,15 rad/s. É a assinatura de um controlador **só
+  proporcional** contra uma perturbação constante: para sustentar a correção
+  `d` de que a marcha precisa para não curvar, a malha precisa de um erro
+  `d/kp`. A correção média medida (\|correction\| ≈ 0,12–0,14 rad/s) bate com
+  isso.
+- Nas palavras do problema: **a marcha tem uma tendência de giro própria,
+  diferente a cada corrida.** No comando de rotação ela equivale a ~0,13 rad/s,
+  e a malha P só a compensa aceitando um erro de regime.
+- **Correção de uma hipótese anterior.** Eu tinha sugerido que a oscilação
+  lenta vinha da malha reagindo ao vaivém de cada passo, porque com kp = 1 a
+  correção satura 15% do tempo. O experimento refuta isso: com kp menor a
+  saturação some (0,2%), mas o desvio **aumenta**. **Ganho menor é pior.**
+- Ganho maior também não serve: kp = 2 e kp = 3 derrubam o robô (§8).
+
+**Quedas no fim das corridas longas.**
+- **9 das 12 corridas caíram para trás** (em pitch) entre 52 e 61 s de marcha:
+  - kp = 1: 5/5;
+  - kp = 0,5: 3/3;
+  - kp = 0,3: 1/4.
+- **A maioria caiu perto dos 60 s**, quando o `walk_test.py` manda parar
+  (`requestStop()`). Uma caiu aos 52,5 s, claramente andando (kp = 1, r4).
+- **Não dá para atribuir a causa à parada:** o relógio do `walk_test` e o
+  início da malha diferem ~1–2 s, e a malha para de publicar justamente na
+  queda.
+- As campanhas de 30 s nunca mostraram isso. Fica em aberto se é a parada ou
+  algo que se acumula com o tempo de marcha (§10). É um achado à parte, não
+  investigado.
+
+**Implicação para a visão.** Com a visão comandando um rumo para a bola, a malha
+atual chega com erro de regime de 7–10° (kp = 1) para um lado arbitrário, e o
+tronco ainda oscila ±7° por passo. Para apontar com precisão, a malha precisa
+de **termo integral** (PI) ou de um feedforward da tendência. O integral
+precisa de anti-windup, porque a correção satura em ±0,3 rad/s.
+
+## 10. Em aberto
+
+- **Termo integral na malha de rumo** (§9), com anti-windup. Predição: o erro
+  médio por corrida vai a ~0 e o RMS do yaw cai para o nível do vaivém por
+  passo (~5–6°).
+- **Quedas para trás entre 52 e 61 s** nas corridas de 60 s (§9), 9/12.
+  Separar a parada do tempo de marcha: rodar 90 s e ver se as quedas acompanham
+  o instante da parada ou o tempo andado.
 
 - **O evento dos primeiros passos** (~−20° em ~2 s, sempre presente; o maior
   pedaço no apoio duplo após o 2º apoio esquerdo, com os dois pés pivotando

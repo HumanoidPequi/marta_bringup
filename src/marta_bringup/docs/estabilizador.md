@@ -3,6 +3,14 @@
 Guia de operação da malha de estabilização da Marta em simulação: o robô parado
 sob perturbação e o robô caminhando.
 
+> **Atualizações posteriores a este guia** (o mapa central é o
+> [docs/README.md](../../../docs/README.md), §5):
+> - **malha de rumo**, ligada por default no `stabilizer_test.launch` (`heading_enabled`);
+> - **pé em caixa** como padrão (`foot_collision`);
+> - **visualização no Foxglove** (`foxglove:=true`, layout em `foxglove/marta_marcha.json`);
+> - `/marta/torso_attitude` agora tem 6 campos (`yaw`, `yaw_rate` no fim) e
+>   `/marta/stabilizer_debug` tem 9 (`heading_error`, `heading_correction` no fim).
+
 ## O que está no ar
 
 ```

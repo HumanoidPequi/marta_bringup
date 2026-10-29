@@ -1,0 +1,166 @@
+00:51:10  servo/e3: 28 corridas (per 0.6 ds 0.3 tronco 0.5)
+00:51:10  [1/28] atual_tau2.5_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+      kp joelho: 50.0
+00:52:05  [2/28] mx28_tau2.5_r1
+        RESULTADO .................. CAIU em 32.3 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+00:53:26  [3/28] atual_tau4_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+00:54:46  [4/28] mx28_tau4_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+00:56:06  [5/28] atual_tau6_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+00:57:26  [6/28] mx28_tau6_r1
+        RESULTADO .................. CAIU em 5.7 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+00:58:19  [7/28] mx28_tau1000_r1
+        RESULTADO .................. CAIU em 6.5 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+00:59:13  [8/28] atual_tau2.5_r2
+        RESULTADO .................. CAIU em 3.7 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:00:04  [9/28] mx28_tau2.5_r2
+        RESULTADO .................. CAIU em 26.5 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:01:19  [10/28] atual_tau4_r2
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:02:39  [11/28] mx28_tau4_r2
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.998
+      kp joelho: 12.74
+01:04:00  [12/28] atual_tau6_r2
+        RESULTADO .................. CAIU em 6.3 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:04:54  [13/28] mx28_tau6_r2
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:06:15  [14/28] mx28_tau1000_r2
+        RESULTADO .................. CAIU em 31.5 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:07:36  [15/28] atual_tau2.5_r3
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+      kp joelho: 50.0
+01:08:31  [16/28] mx28_tau2.5_r3
+        RESULTADO .................. CAIU em 31.8 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:09:51  [17/28] atual_tau4_r3
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:11:11  [18/28] mx28_tau4_r3
+        RESULTADO .................. CAIU em 5.7 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:12:04  [19/28] atual_tau6_r3
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:13:24  [20/28] mx28_tau6_r3
+        RESULTADO .................. CAIU em 31.8 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:14:44  [21/28] mx28_tau1000_r3
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:16:06  [22/28] atual_tau2.5_r4
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+      kp joelho: 50.0
+01:17:03  [23/28] mx28_tau2.5_r4
+        RESULTADO .................. CAIU em 32.2 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:18:25  [24/28] atual_tau4_r4
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:19:45  [25/28] mx28_tau4_r4
+        RESULTADO .................. CAIU em 6.2 s  por roll
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:20:38  [26/28] atual_tau6_r4
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:21:58  [27/28] mx28_tau6_r4
+        RESULTADO .................. CAIU em 8.1 s  por roll
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:22:52  [28/28] mx28_tau1000_r4
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:24:13  fim.
+01:24:13  servo/massa: 4 corridas (per 0.6 ds 0.3 tronco 0.75)
+01:24:13  [1/4] mx28_tau2.5_r1
+        RESULTADO .................. CAIU em 3.5 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 12.74
+01:25:03  [2/4] mx28_tau2.5_r2
+        RESULTADO .................. CAIU em 3.5 s  por pitch
+        fator de tempo real ........  0.998
+      kp joelho: 12.74
+01:25:54  [3/4] mx28_tau2.5_r3
+        RESULTADO .................. CAIU em 3.5 s  por pitch
+        fator de tempo real ........  0.998
+      kp joelho: 12.74
+01:26:45  [4/4] mx28_tau2.5_r4
+        RESULTADO .................. CAIU em 3.6 s  por pitch
+        fator de tempo real ........  0.984
+      kp joelho: 12.74
+01:27:35  fim.
+01:27:35  servo/vel: 8 corridas (per 0.6 ds 0.3 tronco 0.5)
+01:27:35  [1/8] vel0.01_tau6_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:28:55  [2/8] vel100_tau6_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+      kp joelho: 50.0
+01:29:47  [3/8] vel0.01_tau6_r2
+        RESULTADO .................. CAIU em 19.9 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:30:55  [4/8] vel100_tau6_r2
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+      kp joelho: 50.0
+01:31:47  [5/8] vel0.01_tau6_r3
+        RESULTADO .................. CAIU em 26.1 s  por pitch
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:33:02  [6/8] vel100_tau6_r3
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+      kp joelho: 50.0
+01:33:55  [7/8] vel0.01_tau6_r4
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+      kp joelho: 50.0
+01:35:14  [8/8] vel100_tau6_r4
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+      kp joelho: 50.0
+01:36:07  fim.

@@ -1,0 +1,22 @@
+22:43:41  gravidade: 2 corridas
+22:43:41  [1/2] todas05_x_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+22:44:43  [2/2] todas05_x_r2
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+22:45:44  fim.
+22:45:44  gravidade: 4 corridas
+22:45:44  [1/4] todas05_x_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+22:46:43  [2/4] off_x_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+22:47:42  [3/4] todas05_x_r2
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+22:48:41  [4/4] off_x_r2
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+22:49:40  fim.

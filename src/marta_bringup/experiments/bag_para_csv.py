@@ -10,6 +10,7 @@ de matplotlib e portanto roda em qualquer lugar.
 Gera, ao lado do bag:
     <nome>_telemetria.csv   uma linha por amostra de /marta/walk/telemetry
     <nome>_juntas.csv       uma linha por amostra de cada */state (formato longo)
+    <nome>_estabilizador.csv  uma linha por amostra de /marta/stabilizer_debug
 """
 import csv
 import os
@@ -113,8 +114,25 @@ def extrair(caminho_bag, saida_dir=None):
                         '%.6f' % msg.error, '%.6f' % msg.command, '%.2f' % msg.p])
             n_j += 1
 
+    # ---- estabilizador e malha de rumo (/marta/stabilizer_debug) ----
+    # O que o CONTROLADOR enxerga: o erro de rumo vem do yaw estimado pelo giro,
+    # nao da verdade de solo. Bags anteriores a malha de rumo tem 7 campos; os
+    # dois ultimos saem NaN.
+    p_e = os.path.join(saida_dir, base + '_estabilizador.csv')
+    n_e = 0
+    with open(p_e, 'w') as f:
+        w = csv.writer(f)
+        w.writerow(['t', 'delta_pitch', 'pitch', 'pitch_rate', 'support',
+                    'saturated', 'heading_error', 'heading_correction'])
+        for _, msg, t in bag.read_messages(topics=['/marta/stabilizer_debug']):
+            d = list(msg.data) + [float('nan')] * (9 - len(msg.data))
+            w.writerow(['%.4f' % (t.to_sec() - t0)]
+                       + ['%.6f' % d[i] for i in (0, 3, 4, 5, 6, 7, 8)])
+            n_e += 1
+
     bag.close()
-    print('  %s -> %d amostras de telemetria, %d de juntas' % (base, n_tel, n_j))
+    print('  %s -> %d amostras de telemetria, %d de juntas, %d do estabilizador'
+          % (base, n_tel, n_j, n_e))
     return p_tel, p_j
 
 

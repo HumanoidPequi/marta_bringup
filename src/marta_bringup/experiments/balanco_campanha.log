@@ -1,0 +1,74 @@
+00:06:32  campanha balanco: 24 corridas
+00:06:32  [1/24] per0.4_ds0.3_tms0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+00:07:51  [2/24] per0.4_ds0.2_tms0.5_r1
+        RESULTADO .................. CAIU em 16.1 s  por pitch
+        fator de tempo real ........  0.998
+00:08:54  [3/24] per0.5_ds0.3_tms0.5_r1
+        RESULTADO .................. CAIU em 30.3 s  por pitch
+        fator de tempo real ........  0.999
+00:10:12  [4/24] per0.5_ds0.2_tms0.5_r1
+        RESULTADO .................. CAIU em 6.7 s  por pitch
+        fator de tempo real ........  0.999
+00:11:07  [5/24] per0.6_ds0.3_tms0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+00:12:27  [6/24] per0.6_ds0.2_tms0.5_r1
+        RESULTADO .................. CAIU em 7.4 s  por pitch
+        fator de tempo real ........  0.989
+00:13:23  [7/24] per0.4_ds0.3_tms0.5_r2
+        RESULTADO .................. CAIU em 4.6 s  por pitch
+        fator de tempo real ........  0.999
+00:14:13  [8/24] per0.4_ds0.2_tms0.5_r2
+        RESULTADO .................. CAIU em 14.0 s  por roll
+        fator de tempo real ........  0.998
+00:15:15  [9/24] per0.5_ds0.3_tms0.5_r2
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.998
+00:16:36  [10/24] per0.5_ds0.2_tms0.5_r2
+        RESULTADO .................. CAIU em 5.0 s  por roll
+        fator de tempo real ........  0.998
+00:17:28  [11/24] per0.6_ds0.3_tms0.5_r2
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.998
+00:18:49  [12/24] per0.6_ds0.2_tms0.5_r2
+        RESULTADO .................. CAIU em 14.7 s  por pitch
+        fator de tempo real ........  0.997
+00:19:52  [13/24] per0.4_ds0.3_tms0.5_r3
+        RESULTADO .................. CAIU em 21.7 s  por pitch
+        fator de tempo real ........  0.997
+00:21:03  [14/24] per0.4_ds0.2_tms0.5_r3
+        RESULTADO .................. CAIU em 3.8 s  por pitch
+        fator de tempo real ........  0.997
+00:21:54  [15/24] per0.5_ds0.3_tms0.5_r3
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.998
+00:23:15  [16/24] per0.5_ds0.2_tms0.5_r3
+        RESULTADO .................. CAIU em 3.4 s  por roll
+        fator de tempo real ........  0.998
+00:24:06  [17/24] per0.6_ds0.3_tms0.5_r3
+        RESULTADO .................. CAIU em 21.6 s  por pitch
+        fator de tempo real ........  0.996
+00:25:17  [18/24] per0.6_ds0.2_tms0.5_r3
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.998
+00:26:38  [19/24] per0.4_ds0.3_tms0.5_r4
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.995
+00:28:01  [20/24] per0.4_ds0.2_tms0.5_r4
+        RESULTADO .................. CAIU em 3.8 s  por roll
+        fator de tempo real ........  0.972
+00:28:54  [21/24] per0.5_ds0.3_tms0.5_r4
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.953
+00:30:18  [22/24] per0.5_ds0.2_tms0.5_r4
+        RESULTADO .................. CAIU em 8.3 s  por pitch
+        fator de tempo real ........  0.997
+00:31:15  [23/24] per0.6_ds0.3_tms0.5_r4
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.998
+00:32:36  [24/24] per0.6_ds0.2_tms0.5_r4
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.998
+00:33:57  fim.

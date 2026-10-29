@@ -1,0 +1,10 @@
+base,torso_mass_scale,z_com,hip_offset_x,gain,nrep,extra
+D_m0.5_z0.250_x0.0036_g0.5_csf1.0,0.5,0.250,0.0036,0.5,3,com_swing_factor:=1.0
+D_m0.5_z0.250_x0.0036_g0.5_csf1.044,0.5,0.250,0.0036,0.5,3,com_swing_factor:=1.044
+D_m0.67_z0.239_x0.009_g0.5_csf1.0,0.67,0.239,0.009,0.5,3,com_swing_factor:=1.0
+D_m0.67_z0.239_x0.009_g0.5_csf1.065,0.67,0.239,0.009,0.5,3,com_swing_factor:=1.065
+D_m0.35_z0.250_x0.0036_g0.5_estoff,0.35,0.250,0.0036,0.5,2,stabilizer_enabled:=false
+D_m0.5_z0.250_x0.0036_g0.5_estoff,0.5,0.250,0.0036,0.5,2,stabilizer_enabled:=false
+D_m0.67_z0.239_x0.009_g0.5_estoff,0.67,0.239,0.009,0.5,2,stabilizer_enabled:=false
+D_m0.83_z0.269_x0.009_g0.5_estoff,0.83,0.269,0.009,0.5,2,stabilizer_enabled:=false
+D_m1.0_z0.260_x0.013_g0.5_estoff,1.0,0.260,0.013,0.5,2,stabilizer_enabled:=false

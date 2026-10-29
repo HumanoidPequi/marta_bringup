@@ -5,3 +5,5 @@ src/CMakeLists.txt
 src/marta_bringup/experiments/yaw/dados/
 __pycache__/
 .vscode/
+# dados brutos das campanhas (regeneraveis pelos rodar_*.sh; ~1,7 GB)
+src/marta_bringup/experiments/**/dados/

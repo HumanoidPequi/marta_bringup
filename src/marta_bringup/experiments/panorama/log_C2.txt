@@ -1,0 +1,194 @@
+05:08:04  panorama: src/marta_bringup/experiments/panorama/desenho_C2.csv, semente 20261033, 64 corridas a fazer
+05:08:04  [1/64] C_m0.59_z0.269_x0.0036_g0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:09:24  [2/64] C_m0.59_z0.239_x0.0036_g0.3_r1
+        RESULTADO .................. CAIU em 32.3 s  por pitch
+        fator de tempo real ........  0.999
+05:10:45  [3/64] C_m0.75_z0.250_x0.013_g0.3_r1
+        RESULTADO .................. CAIU em 3.7 s  por roll
+        fator de tempo real ........  0.998
+05:11:36  [4/64] C_m0.59_z0.239_x0.013_g0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:12:56  [5/64] C_m0.59_z0.260_x0.009_g0.5_r1
+        RESULTADO .................. CAIU em 5.3 s  por roll
+        fator de tempo real ........  0.999
+05:13:48  [6/64] C_m0.59_z0.239_x-0.004_g0.3_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:14:50  [7/64] C_m0.75_z0.260_x0.009_g0.5_r1
+        RESULTADO .................. CAIU em 5.1 s  por roll
+        fator de tempo real ........  0.999
+05:15:41  [8/64] C_m0.59_z0.239_x0.009_g0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:17:02  [9/64] C_m0.59_z0.269_x-0.004_g0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:18:21  [10/64] C_m0.59_z0.250_x0.013_g0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:19:41  [11/64] C_m0.75_z0.260_x0.013_g0.3_r1
+        RESULTADO .................. CAIU em 5.4 s  por pitch
+        fator de tempo real ........  0.999
+05:20:34  [12/64] C_m0.59_z0.250_x0.009_g0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:21:54  [13/64] C_m0.75_z0.260_x0.009_g0.3_r1
+        RESULTADO .................. CAIU em 3.5 s  por pitch
+        fator de tempo real ........  0.998
+05:22:44  [14/64] C_m0.59_z0.260_x0.0036_g0.5_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+05:24:04  [15/64] C_m0.59_z0.269_x-0.004_g0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:25:24  [16/64] C_m0.75_z0.269_x0.0036_g0.5_r1
+        RESULTADO .................. CAIU em 28.6 s  por pitch
+        fator de tempo real ........  0.999
+05:26:41  [17/64] C_m0.75_z0.250_x0.0036_g0.5_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:27:38  [18/64] C_m0.59_z0.269_x0.013_g0.5_r1
+        RESULTADO .................. CAIU em 3.5 s  por roll
+        fator de tempo real ........  0.999
+05:28:29  [19/64] C_m0.75_z0.269_x0.013_g0.3_r1
+        RESULTADO .................. CAIU em 6.0 s  por roll
+        fator de tempo real ........  0.999
+05:29:22  [20/64] C_m0.59_z0.250_x0.0036_g0.3_r1
+        RESULTADO .................. CAIU em 5.9 s  por pitch
+        fator de tempo real ........  0.999
+05:30:15  [21/64] C_m0.75_z0.250_x0.009_g0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:31:35  [22/64] C_m0.59_z0.250_x0.0036_g0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:32:54  [23/64] C_m0.59_z0.250_x-0.004_g0.3_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:33:56  [24/64] C_m0.75_z0.250_x0.013_g0.5_r1
+        RESULTADO .................. CAIU em 3.8 s  por pitch
+        fator de tempo real ........  0.999
+05:34:47  [25/64] C_m0.75_z0.250_x0.009_g0.3_r1
+        RESULTADO .................. CAIU em 3.6 s  por pitch
+        fator de tempo real ........  0.999
+05:35:38  [26/64] C_m0.75_z0.239_x0.013_g0.5_r1
+        RESULTADO .................. CAIU em 5.3 s  por pitch
+        fator de tempo real ........  0.999
+05:36:30  [27/64] C_m0.75_z0.260_x0.0036_g0.5_r1
+        RESULTADO .................. CAIU em 3.1 s  por pitch
+        fator de tempo real ........  0.998
+05:37:20  [28/64] C_m0.59_z0.269_x0.009_g0.5_r1
+        RESULTADO .................. CAIU em 5.3 s  por pitch
+        fator de tempo real ........  0.999
+05:38:13  [29/64] C_m0.59_z0.250_x0.009_g0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:39:34  [30/64] C_m0.75_z0.239_x-0.004_g0.5_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:40:37  [31/64] C_m0.75_z0.260_x-0.004_g0.5_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:41:40  [32/64] C_m0.59_z0.239_x-0.004_g0.5_r1
+        RESULTADO .................. CAIU em 3.5 s  por pitch
+        fator de tempo real ........  0.998
+05:42:31  [33/64] C_m0.59_z0.250_x0.013_g0.5_r1
+        RESULTADO .................. CAIU em 4.7 s  por roll
+        fator de tempo real ........  0.999
+05:43:22  [34/64] C_m0.75_z0.269_x0.013_g0.5_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:44:14  [35/64] C_m0.59_z0.239_x0.013_g0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:45:33  [36/64] C_m0.75_z0.239_x0.0036_g0.3_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:46:31  [37/64] C_m0.59_z0.260_x0.013_g0.5_r1
+        RESULTADO .................. CAIU em 5.1 s  por roll
+        fator de tempo real ........  0.999
+05:47:23  [38/64] C_m0.75_z0.239_x0.009_g0.3_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:48:19  [39/64] C_m0.59_z0.260_x0.013_g0.3_r1
+        RESULTADO .................. CAIU em 6.5 s  por pitch
+        fator de tempo real ........  0.999
+05:49:12  [40/64] C_m0.59_z0.239_x0.0036_g0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:50:32  [41/64] C_m0.59_z0.269_x0.013_g0.3_r1
+        RESULTADO .................. CAIU em 3.5 s  por roll
+        fator de tempo real ........  1.000
+05:51:23  [42/64] C_m0.75_z0.239_x-0.004_g0.3_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:52:21  [43/64] C_m0.75_z0.260_x-0.004_g0.3_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:53:19  [44/64] C_m0.75_z0.269_x-0.004_g0.5_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+05:54:22  [45/64] C_m0.59_z0.260_x-0.004_g0.3_r1
+        RESULTADO .................. CAIU em 32.0 s  por pitch
+        fator de tempo real ........  0.999
+05:55:43  [46/64] C_m0.75_z0.269_x0.009_g0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:57:02  [47/64] C_m0.75_z0.269_x0.0036_g0.3_r1
+        RESULTADO .................. CAIU em 4.0 s  por pitch
+        fator de tempo real ........  0.998
+05:57:53  [48/64] C_m0.59_z0.260_x0.009_g0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:59:13  [49/64] C_m0.75_z0.269_x-0.004_g0.3_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:00:15  [50/64] C_m0.75_z0.239_x0.013_g0.3_r1
+        RESULTADO .................. CAIU em 3.7 s  por roll
+        fator de tempo real ........  0.998
+06:01:06  [51/64] C_m0.75_z0.239_x0.0036_g0.5_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:02:06  [52/64] C_m0.75_z0.260_x0.0036_g0.3_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:03:03  [53/64] C_m0.75_z0.250_x-0.004_g0.5_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:04:06  [54/64] C_m0.59_z0.269_x0.0036_g0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:05:26  [55/64] C_m0.59_z0.260_x0.0036_g0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:06:46  [56/64] C_m0.75_z0.250_x0.0036_g0.3_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:07:43  [57/64] C_m0.59_z0.239_x0.009_g0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:09:03  [58/64] C_m0.59_z0.269_x0.009_g0.3_r1
+        RESULTADO .................. CAIU em 3.6 s  por roll
+        fator de tempo real ........  0.999
+06:09:54  [59/64] C_m0.59_z0.250_x-0.004_g0.5_r1
+        RESULTADO .................. CAIU em 3.6 s  por pitch
+        fator de tempo real ........  0.999
+06:10:44  [60/64] C_m0.75_z0.260_x0.013_g0.5_r1
+        RESULTADO .................. CAIU em 4.1 s  por pitch
+        fator de tempo real ........  0.998
+06:11:35  [61/64] C_m0.59_z0.260_x-0.004_g0.5_r1
+        RESULTADO .................. CAIU em 3.6 s  por pitch
+        fator de tempo real ........  0.967
+06:12:26  [62/64] C_m0.75_z0.269_x0.009_g0.5_r1
+        RESULTADO .................. CAIU em 4.4 s  por pitch
+        fator de tempo real ........  0.999
+06:13:17  [63/64] C_m0.75_z0.239_x0.009_g0.5_r1
+        RESULTADO .................. CAIU em 3.5 s  por pitch
+        fator de tempo real ........  0.998
+06:14:08  [64/64] C_m0.75_z0.250_x-0.004_g0.3_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+06:15:06  fim.
