@@ -1,0 +1,5 @@
+tag,torso_mass_scale,z_com,hip_offset_x,omega,extra
+T_M34_w0.175_pD,0.534,0.239,0.0036,0.175,start_left_swing:=false
+T_M34_w0.175_pE,0.534,0.239,0.0036,0.175,start_left_swing:=true
+T_M34_w0.35_pD,0.534,0.239,0.0036,0.35,start_left_swing:=false
+T_M34_w0.35_pE,0.534,0.239,0.0036,0.35,start_left_swing:=true

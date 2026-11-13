@@ -1,0 +1,2 @@
+base,torso_mass_scale,z_com,hip_offset_x,gain,nrep,extra
+R2_M33_reta0.1,0.5,0.250,0.0036,0.3,3,walk_velocity_x:=0.1

@@ -1,11 +1,16 @@
 #!/bin/bash
 # Bateria do panorama de parametros (docs/panorama_parametros.md).
 #
-#   bash src/marta_bringup/experiments/rodar_panorama.sh <desenho.csv> [semente]
+#   bash src/marta_bringup/experiments/rodar_panorama.sh <desenho.csv> [semente] [saida]
 #
+# [saida]: diretorio da campanha, relativo a experiments/ (default: panorama).
+# O CSV da campanha fica em <saida>/campanha_panorama.csv e os dados em
+# <saida>/dados/ (marcha omnidirecional: omni/, ver docs/marcha_omnidirecional.md).
 # <desenho.csv>: uma condicao por linha, colunas
 #   base,torso_mass_scale,z_com,hip_offset_x,gain,nrep,extra
 # (extra = args adicionais do roslaunch, separados por espaco, ou vazio).
+# BAG_DIR=<dir relativo a raiz> guarda o rosbag de cada corrida ali (demo do
+# Foxglove; ~35 MB por corrida). Sem ele, o bag fica so no /tmp do container.
 # Cada condicao vira nrep corridas com tag <base>_r<k>. A lista completa e
 # embaralhada com a semente (registrada no log) e as tags ja presentes no CSV
 # da campanha sao puladas (retomada). Para depois de 3 falhas seguidas ou com
@@ -20,7 +25,7 @@ set -u
 RAIZ="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
 cd "$RAIZ"
 EXP=src/marta_bringup/experiments
-OUT="$EXP/panorama"
+OUT="$EXP/${3:-panorama}"
 CAMP="$OUT/campanha_panorama.csv"
 DESENHO="$1"
 SEMENTE="${2:-20261028}"
@@ -61,13 +66,14 @@ while IFS='|' read -r TAG TMS ZC HX G EXTRA; do
       $EXTRA > /tmp/l.log 2>&1 &
     sleep 24
     python3 /ws/$EXP/registrar_pe.py _out:=/ws/$OUT/dados/${TAG}_pe.csv > /dev/null 2>&1 &
-    rosrun marta_bringup walk_test.py _duration:=30 _velocity_x:=0.1 \
+    rosrun marta_bringup walk_test.py _duration:=30 \
       _tag:=$TAG _tau:=2.5 \
       _bag_out:=/tmp/$TAG.bag _campanha_csv:=/ws/$CAMP 2>&1 \
       | grep -E 'RESULTADO|tempo real'
     kill %2 2>/dev/null; sleep 1
     python3 /ws/$EXP/bag_para_csv.py /tmp/$TAG.bag /ws/$OUT/dados > /dev/null
     cp /tmp/l.log /ws/$OUT/dados/${TAG}_launch.log 2>/dev/null
+    [ -n \"${BAG_DIR:-}\" ] && mkdir -p /ws/${BAG_DIR:-x} && cp /tmp/$TAG.bag /ws/${BAG_DIR:-x}/ || true
   " 2>&1 | sed 's/^/      /'
   if grep -q "^$TAG," "$CAMP" 2>/dev/null; then FALHAS=0; else
     FALHAS=$((FALHAS + 1)); echo "      FALHOU ($FALHAS seguidas)"

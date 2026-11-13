@@ -47,6 +47,16 @@
     <arg name="kd_pitch" default="0.03"/>
     <arg name="max_pitch_correction" default="0.1745"/>
     <arg name="stabilizer_enabled" default="true"/>
+    <!-- Estabilizador de roll (Fase 3, plano_fase3_roll.md par. 4.3): P+D com
+         washout no hip roll e no ankle roll da perna de apoio. Desligado e com
+         ganhos zero por default (comportamento identico ao anterior). -->
+    <arg name="roll_stabilizer_enabled" default="false"/>
+    <arg name="kp_roll_hip" default="0.0"/>
+    <arg name="kd_roll_hip" default="0.0"/>
+    <arg name="kp_roll_ankle" default="0.0"/>
+    <arg name="kd_roll_ankle" default="0.0"/>
+    <arg name="roll_washout_tau" default="2.0"/>
+    <arg name="max_roll_correction" default="0.14"/>
     <!-- 1.0 = como o gerador sempre esteve; 0.734 casa o tZMP com a altura
          real do CoM medida pela telemetria (0.218 m em vez de 0.2975 m). -->
     <arg name="com_swing_factor" default="1.0"/>
@@ -73,6 +83,15 @@
     <arg name="walk_velocity_x" default="0.1"/>
     <arg name="walk_velocity_y" default="0.0"/>
     <arg name="walk_velocity_yaw" default="0.0"/>
+    <!-- Teleoperacao pelo teclado (scripts/teleop_marta.py, janela Tk; precisa
+         de DISPLAY/X11 no docker run, ver README secao 5). teleop:=true sobe a
+         janela e liga cmd_vel_enabled: a velocidade passa a vir de
+         /marta/cmd_vel e walk_velocity_* sao ignorados. A janela despausa a
+         simulacao sozinha; nao rode o walk_test.py junto. -->
+    <arg name="teleop" default="false"/>
+    <arg name="cmd_vel_enabled" default="$(arg teleop)"/>
+    <arg name="teleop_vx" default="0.1"/>
+    <arg name="teleop_omega" default="0.175"/>
     <!-- Pe que balanca no primeiro passo; true espelha a partida (teste do
          espelho do desvio de direcao). -->
     <arg name="start_left_swing" default="false"/>
@@ -85,6 +104,10 @@
     <!-- Visualizacao: foxglove_bridge ao vivo e taxa da TF das juntas. -->
     <arg name="foxglove" default="false"/>
     <arg name="tf_rate" default="50.0"/>
+    <!-- Telemetria derivada para o Foxglove (viz_marcha.py): torque exigido /
+         limite e erro alvo - real das juntas das pernas, e o LIPM no frame do
+         pe de apoio. Desligado por default. -->
+    <arg name="viz_marcha" default="false"/>
     <!-- Pula os passos de ajuste depois do Agacha() (para direto). -->
     <arg name="skip_initial_stop_steps" default="false"/>
     <arg name="kp_heading" default="1.0"/>
@@ -170,6 +193,16 @@
              file="$(find foxglove_bridge)/launch/foxglove_bridge.launch">
         <arg name="port" value="8765"/>
     </include>
+    <node if="$(arg teleop)" pkg="marta_bringup" type="teleop_marta.py" name="teleop_marta"
+          output="screen">
+        <param name="vx" value="$(arg teleop_vx)"/>
+        <param name="omega" value="$(arg teleop_omega)"/>
+    </node>
+
+    <node if="$(arg viz_marcha)" pkg="marta_bringup" type="viz_marcha.py" name="viz_marcha"
+          output="screen">
+        <param name="effort" value="$(arg joint_effort)"/>
+    </node>
 
     <!-- Estimacao de atitude (Fase 1) -->
     <node pkg="marta_controller" type="torso_attitude_node" name="torso_attitude_node"
@@ -203,6 +236,7 @@
         <param name="walk_velocity_x" value="$(arg walk_velocity_x)"/>
         <param name="walk_velocity_y" value="$(arg walk_velocity_y)"/>
         <param name="walk_velocity_yaw" value="$(arg walk_velocity_yaw)"/>
+        <param name="cmd_vel_enabled" value="$(arg cmd_vel_enabled)"/>
         <param name="start_left_swing" value="$(arg start_left_swing)"/>
         <param name="start_ramp_steps" value="$(arg start_ramp_steps)"/>
         <param name="heading_enabled" value="$(arg heading_enabled)"/>
@@ -229,6 +263,13 @@
         <param name="hip_pitch_offset_deg" value="$(arg hip_pitch_offset_deg)"/>
         <param name="kp_pitch" value="$(arg kp_pitch)"/>
         <param name="kd_pitch" value="$(arg kd_pitch)"/>
+        <param name="roll_stabilizer_enabled" value="$(arg roll_stabilizer_enabled)"/>
+        <param name="kp_roll_hip" value="$(arg kp_roll_hip)"/>
+        <param name="kd_roll_hip" value="$(arg kd_roll_hip)"/>
+        <param name="kp_roll_ankle" value="$(arg kp_roll_ankle)"/>
+        <param name="kd_roll_ankle" value="$(arg kd_roll_ankle)"/>
+        <param name="roll_washout_tau" value="$(arg roll_washout_tau)"/>
+        <param name="max_roll_correction" value="$(arg max_roll_correction)"/>
         <param name="max_pitch_correction" value="$(arg max_pitch_correction)"/>
     </node>
 </launch>

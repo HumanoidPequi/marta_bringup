@@ -177,7 +177,8 @@
       "legendDisplay": "floating",
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "followingViewWidth": 20
+      "followingViewWidth": 20,
+      "foxglovePanelTitle": "Rumo: atual × desejado [°]"
     },
     "Plot!malha": {
       "title": "Malha de rumo: correction [rad/s] e erro [rad]",
@@ -205,7 +206,8 @@
       "legendDisplay": "floating",
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "followingViewWidth": 20
+      "followingViewWidth": 20,
+      "foxglovePanelTitle": "Malha de rumo: correction [rad/s] e erro [rad]"
     },
     "Plot!atitude": {
       "title": "Atitude do tronco [°]",
@@ -245,7 +247,8 @@
       "legendDisplay": "floating",
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "followingViewWidth": 20
+      "followingViewWidth": 20,
+      "foxglovePanelTitle": "Atitude do tronco [°]"
     },
     "Plot!juntas": {
       "title": "Torque das juntas de roll e joelho [N·m]",
@@ -299,7 +302,8 @@
       "legendDisplay": "floating",
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "followingViewWidth": 20
+      "followingViewWidth": 20,
+      "foxglovePanelTitle": "Torque das juntas de roll e joelho [N·m]"
     },
     "StateTransitions!apoio": {
       "paths": [

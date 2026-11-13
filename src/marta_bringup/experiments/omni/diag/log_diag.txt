@@ -1,0 +1,37 @@
+09:13:57  DW_E5_M38_quatornK1_diag-0.03_pE
+        RESULTADO .................. CAIU em 29.7 s  por pitch
+        fator de tempo real ........  0.999
+09:15:16  DL_E5_M38_quatornK1_diag-0.03_pE
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:16:36  DL_E5_M38_quatornK1_diag+0.03_pD
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:17:56  DL_E1_M33_reta0.15_pD_h1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:19:16  DL_E1_M38_reta0.15_pD_h1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:20:36  DL_E5_M33_quatornK1_giro+0.175_pD
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:21:56  DW_E5_M33_off_giro+0.175_pD
+        RESULTADO .................. CAIU em 9.1 s  por pitch
+        fator de tempo real ........  0.999
+09:22:52  DL_E5_M33_off_giro+0.175_pD
+        RESULTADO .................. CAIU em 14.0 s  por pitch
+        fator de tempo real ........  0.999
+09:23:54  DW_E5_M33_off_lat-0.05_pD
+        RESULTADO .................. CAIU em 11.8 s  por pitch
+        fator de tempo real ........  0.999
+09:24:53  DL_E5_M33_off_lat-0.05_pD
+        RESULTADO .................. CAIU em 19.3 s  por roll
+        fator de tempo real ........  0.999
+09:26:00  DL_E6_M33_quatornK1_reta0.15_pD
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+09:27:20  DL_E6_M38_quatornK1_reta0.15_pD
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:28:40  fim.

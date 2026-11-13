@@ -1,0 +1,170 @@
+07:49:02  panorama: src/marta_bringup/experiments/omni/desenho_E6env.csv, semente 20261120, 56 corridas a fazer
+07:49:02  [1/56] E6_M38_quatornK1_curva-0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+07:50:22  [2/56] E6_M33_quatornK1_reta0.15_pD_r1
+        RESULTADO .................. CAIU em 23.5 s  por pitch
+        fator de tempo real ........  0.999
+07:51:34  [3/56] E6_M33_quatornK1_reta0.05_pE_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+07:52:54  [4/56] E6_M33_quatornK1_giro+0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+07:54:14  [5/56] E6_M38_quatornK1_curva+0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+07:55:34  [6/56] E6_M38_quatornK1_reta0.15_pD_r1
+        RESULTADO .................. CAIU em 23.0 s  por pitch
+        fator de tempo real ........  0.999
+07:56:45  [7/56] E6_M38_quatornK1_giro-0.25_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+07:58:05  [8/56] E6_M33_quatornK1_giro+0.25_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+07:59:24  [9/56] E6_M38_quatornK1_giro-0.25_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:00:44  [10/56] E6_M38_quatornK1_comb+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:02:04  [11/56] E6_M33_quatornK1_curva-0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:03:24  [12/56] E6_M33_quatornK1_curva+0.25_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:04:44  [13/56] E6_M38_quatornK1_giro+0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:06:04  [14/56] E6_M33_quatornK1_curva-0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:07:24  [15/56] E6_M38_quatornK1_lat+0.025_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:08:43  [16/56] E6_M38_quatornK1_curva+0.25_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:10:03  [17/56] E6_M33_quatornK1_lat+0.025_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:11:23  [18/56] E6_M33_quatornK1_giro-0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:12:43  [19/56] E6_M33_quatornK1_curva+0.25_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:14:02  [20/56] E6_M33_quatornK1_reta0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:15:22  [21/56] E6_M38_quatornK1_comb-0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:16:42  [22/56] E6_M38_quatornK1_comb+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:18:02  [23/56] E6_M38_quatornK1_lat-0.025_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:19:22  [24/56] E6_M38_quatornK1_giro+0.25_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:20:41  [25/56] E6_M38_quatornK1_comb-0.175_pE_r1
+        RESULTADO .................. CAIU em 4.8 s  por pitch
+        fator de tempo real ........  0.999
+08:21:33  [26/56] E6_M33_quatornK1_curva+0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:22:53  [27/56] E6_M33_quatornK1_comb+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:24:13  [28/56] E6_M38_quatornK1_lat-0.025_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:25:32  [29/56] E6_M33_quatornK1_giro-0.25_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:26:52  [30/56] E6_M33_quatornK1_lat-0.025_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:28:12  [31/56] E6_M38_quatornK1_reta0.15_pE_r1
+        RESULTADO .................. CAIU em 22.5 s  por pitch
+        fator de tempo real ........  0.999
+08:29:22  [32/56] E6_M33_quatornK1_reta0.15_pE_r1
+        RESULTADO .................. CAIU em 24.1 s  por pitch
+        fator de tempo real ........  0.999
+08:30:35  [33/56] E6_M38_quatornK1_giro-0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:31:55  [34/56] E6_M33_quatornK1_giro+0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:33:14  [35/56] E6_M38_quatornK1_curva+0.10_pE_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+08:34:34  [36/56] E6_M38_quatornK1_giro-0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:35:54  [37/56] E6_M33_quatornK1_giro-0.25_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+08:37:14  [38/56] E6_M33_quatornK1_lat+0.025_pE_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+08:38:34  [39/56] E6_M33_quatornK1_lat-0.025_pE_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+08:39:54  [40/56] E6_M38_quatornK1_reta0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:41:13  [41/56] E6_M38_quatornK1_lat+0.025_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:42:33  [42/56] E6_M33_quatornK1_curva-0.25_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:43:53  [43/56] E6_M38_quatornK1_curva-0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:45:13  [44/56] E6_M38_quatornK1_curva-0.25_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:46:33  [45/56] E6_M33_quatornK1_comb-0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:47:52  [46/56] E6_M33_quatornK1_giro-0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:49:12  [47/56] E6_M33_quatornK1_comb-0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:50:32  [48/56] E6_M33_quatornK1_giro+0.25_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:51:50  [49/56] E6_M38_quatornK1_curva+0.25_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:53:10  [50/56] E6_M33_quatornK1_curva+0.10_pE_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+08:54:30  [51/56] E6_M38_quatornK1_curva-0.25_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:55:50  [52/56] E6_M33_quatornK1_curva-0.25_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:57:10  [53/56] E6_M33_quatornK1_comb+0.175_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+08:58:29  [54/56] E6_M38_quatornK1_giro+0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+08:59:49  [55/56] E6_M38_quatornK1_giro+0.25_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:01:09  [56/56] E6_M38_quatornK1_reta0.05_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+09:02:29  fim.

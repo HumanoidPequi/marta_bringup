@@ -1,0 +1,3 @@
+base,torso_mass_scale,z_com,hip_offset_x,gain,nrep,extra
+R7_M33_ref_reta0.10_pD,0.5,0.250,0.0036,0.3,1,walk_velocity_x:=0.1 walk_velocity_y:=0 walk_velocity_yaw:=0 start_left_swing:=false roll_stabilizer_enabled:=true kp_roll_hip:=0.5 kd_roll_hip:=0.075 kp_roll_ankle:=0.5 kd_roll_ankle:=0.075 world_name:=/ws/src/marta_bringup/experiments/omni/diag/campo_livre.world
+R7_M38_ref_giro+0.175_pE,0.67,0.239,0.0090,0.3,1,walk_velocity_x:=0 walk_velocity_y:=0 walk_velocity_yaw:=0.175 start_left_swing:=true roll_stabilizer_enabled:=true kp_roll_hip:=0.5 kd_roll_hip:=0.075 kp_roll_ankle:=0.5 kd_roll_ankle:=0.075 world_name:=/ws/src/marta_bringup/experiments/omni/diag/campo_livre.world

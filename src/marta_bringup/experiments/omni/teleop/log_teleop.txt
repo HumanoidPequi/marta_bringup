@@ -1,0 +1,13 @@
+11:43:34  T_M34_w0.175_pD
+        RESULTADO .................. andou 94 s sem cair
+        fator de tempo real ........  0.998
+11:45:59  T_M34_w0.175_pE
+        RESULTADO .................. andou 94 s sem cair
+        fator de tempo real ........  0.999
+11:48:25  T_M34_w0.35_pD
+        RESULTADO .................. andou 94 s sem cair
+        fator de tempo real ........  0.999
+11:50:51  T_M34_w0.35_pE
+        RESULTADO .................. andou 94 s sem cair
+        fator de tempo real ........  0.999
+11:53:16  fim.

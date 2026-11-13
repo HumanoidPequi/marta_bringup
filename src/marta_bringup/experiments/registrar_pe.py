@@ -10,13 +10,16 @@ Caixa do pe no frame de l_feet_1 / r_feet_1 (marta.xacro): centro em
 
   rosrun ... registrar_pe.py _out:=/caminho/pe.csv
 Colunas: t (s, tempo simulado), support (0 duplo, 1 esq no chao, 2 dir no chao),
-torso_pitch (graus, verdade de solo), e para cada pe (l_, r_): z_centro,
-z_ponta, z_calcanhar (m, base da sola), pitch (graus, + = ponta para baixo) e,
-para hip_pitch, knee e ank_pitch daquele lado, o alvo (_sp) e o angulo real
+torso_pitch e torso_roll (graus, verdade de solo), e para cada pe (l_, r_):
+z_centro, z_ponta, z_calcanhar (m, base da sola), pitch (graus, + = ponta para
+baixo) e, para as 6 juntas da perna (hip_yaw, hip_roll, hip_pitch, knee,
+ank_pitch, ank_roll) daquele lado, o alvo (_sp) e o angulo real
 (_pv) em graus, no MESMO instante (alinhamento entre arquivos nao basta: o pe
 gira ~18 graus em ~100 ms no fim do balanco). Se a compensacao de gravidade
 estiver publicando (/marta/gravity_comp), _dg e a correcao somada ao alvo
-daquela junta (graus); o alvo da IK e _sp - _dg.
+daquela junta (graus); o alvo da IK e _sp - _dg. No fim, roll_err, roll_uh e
+roll_ua (graus): erro depois do washout e correcoes do estabilizador de roll
+(/marta/roll_stabilizer, antes do peso de carga); NaN se ele nao publica.
 """
 import csv
 import math
@@ -30,9 +33,9 @@ from std_msgs.msg import Float64MultiArray
 CX, CZ = 0.02445, -0.013
 HX, HZ = 0.1399 / 2, 0.048 / 2
 PES = (('l', 'marta::l_feet_1'), ('r', 'marta::r_feet_1'))
-JUNTAS = ('hip_pitch', 'knee', 'ank_pitch')
+JUNTAS = ('hip_yaw', 'hip_roll', 'hip_pitch', 'knee', 'ank_pitch', 'ank_roll')
 # indice da junta no vetor Delta de /marta/gravity_comp (depois de w_esq, w_dir, rampa)
-IDX_DG = {'hip_pitch': 2, 'knee': 3, 'ank_pitch': 4}
+IDX_DG = {j: i for i, j in enumerate(JUNTAS)}
 
 
 def rot(q):
@@ -52,20 +55,23 @@ class Registrador:
         self.poses = {}
         self.juntas = {}
         self.dg = None
+        self.rs = None
         out = rospy.get_param('~out')
         self.f = open(out, 'w')
         self.w = csv.writer(self.f)
-        cab = ['t', 'support', 'torso_pitch']
+        cab = ['t', 'support', 'torso_pitch', 'torso_roll']
         for lado, _ in PES:
             cab += ['%s_z_centro' % lado, '%s_z_ponta' % lado, '%s_z_calcanhar' % lado, '%s_pitch' % lado]
             for j in JUNTAS:
                 cab += ['%s_%s_sp' % (lado, j), '%s_%s_pv' % (lado, j), '%s_%s_dg' % (lado, j)]
                 rospy.Subscriber('/marta/%s_%s_position/state' % (lado, j), JointControllerState,
                                  self.cb_junta, callback_args='%s_%s' % (lado, j), queue_size=1)
+        cab += ['roll_err', 'roll_uh', 'roll_ua']
         self.w.writerow(cab)
         rospy.Subscriber('/gazebo/link_states', LinkStates, self.cb_links, queue_size=1)
         rospy.Subscriber('/marta/walk/telemetry', WalkTelemetry, self.cb_tel, queue_size=10)
         rospy.Subscriber('/marta/gravity_comp', Float64MultiArray, self.cb_dg, queue_size=1)
+        rospy.Subscriber('/marta/roll_stabilizer', Float64MultiArray, self.cb_rs, queue_size=1)
         rospy.on_shutdown(self.f.close)
 
     def cb_links(self, m):
@@ -76,13 +82,17 @@ class Registrador:
     def cb_dg(self, m):
         self.dg = m.data
 
+    def cb_rs(self, m):
+        self.rs = m.data
+
     def cb_junta(self, m, nome):
         self.juntas[nome] = (m.set_point, m.process_value)
 
     def cb_tel(self, m):
         if len(self.poses) < 2 or len(self.juntas) < 2 * len(JUNTAS):
             return
-        linha = ['%.3f' % rospy.get_time(), m.support_state, '%.2f' % math.degrees(m.pitch_true)]
+        linha = ['%.3f' % rospy.get_time(), m.support_state, '%.2f' % math.degrees(m.pitch_true),
+                 '%.2f' % math.degrees(m.roll_true)]
         for lado, nome in PES:
             p = self.poses[nome]
             zb = CZ - HZ
@@ -97,6 +107,10 @@ class Registrador:
                 if self.dg is not None and len(self.dg) >= 15:
                     dg = self.dg[3 + IDX_DG[j] + (0 if lado == 'l' else 6)]
                 linha += ['%.2f' % math.degrees(sp), '%.2f' % math.degrees(pv), '%.2f' % math.degrees(dg)]
+        if self.rs is not None and len(self.rs) >= 6:
+            linha += ['%.3f' % math.degrees(self.rs[i]) for i in (3, 4, 5)]
+        else:
+            linha += ['nan'] * 3
         self.w.writerow(linha)
 
 

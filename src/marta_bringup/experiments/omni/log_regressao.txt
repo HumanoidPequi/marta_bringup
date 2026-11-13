@@ -1,0 +1,11 @@
+23:21:55  panorama: src/marta_bringup/experiments/omni/desenho_regressao.csv, semente 20261112, 3 corridas a fazer
+23:21:55  [1/3] R_M33_giro+0.175_r1
+        RESULTADO .................. CAIU em 6.8 s  por roll
+        fator de tempo real ........  0.999
+23:22:48  [2/3] R_M38_curva0.1+0.1_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:24:07  [3/3] R_M33_reta0.1_r1
+        RESULTADO .................. CAIU em 5.2 s  por pitch
+        fator de tempo real ........  0.999
+23:25:00  fim.

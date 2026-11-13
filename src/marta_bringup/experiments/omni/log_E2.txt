@@ -1,0 +1,398 @@
+01:46:27  panorama: src/marta_bringup/experiments/omni/desenho_E2.csv, semente 20261115, 132 corridas a fazer
+01:46:27  [1/132] E2h_M33_giro-0.175_kh1.0_sat0.5_r1
+        RESULTADO .................. CAIU em 15.8 s  por roll
+        fator de tempo real ........  0.999
+01:47:30  [2/132] E2p_M38_lat+0.05_kp0.35_kd0.06_r1
+        RESULTADO .................. CAIU em 5.1 s  por pitch
+        fator de tempo real ........  0.997
+01:48:23  [3/132] E2p_M33_curva+0.175_kp0.1_kd0.015_r1
+        RESULTADO .................. CAIU em 6.6 s  por roll
+        fator de tempo real ........  0.999
+01:49:16  [4/132] E2h_M33_giro+0.175_kh1.0_sat0.3_r1
+        RESULTADO .................. CAIU em 17.6 s  por roll
+        fator de tempo real ........  0.999
+01:50:22  [5/132] E2p_M33_lat+0.05_kp0.35_kd0.03_r1
+        RESULTADO .................. CAIU em 13.9 s  por roll
+        fator de tempo real ........  0.998
+01:51:24  [6/132] E2h_M38_giro-0.175_kh1.0_sat0.5_r1
+        RESULTADO .................. CAIU em 4.7 s  por pitch
+        fator de tempo real ........  0.999
+01:52:16  [7/132] E2p_M38_lat+0.05_kp0.2_kd0.015_r1
+        RESULTADO .................. CAIU em 4.2 s  por pitch
+        fator de tempo real ........  0.999
+01:53:07  [8/132] E2h_M38_giro-0.175_kh2.0_sat0.3_r1
+        RESULTADO .................. CAIU em 4.7 s  por pitch
+        fator de tempo real ........  0.999
+01:53:59  [9/132] E2p_M38_curva+0.175_kp0.2_kd0.03_r1
+        RESULTADO .................. CAIU em 4.8 s  por pitch
+        fator de tempo real ........  0.998
+01:54:51  [10/132] E2h_M38_comb+0.175_kh2.0_sat0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+01:56:11  [11/132] E2p_M33_lat+0.05_kp0.35_kd0.015_r1
+        RESULTADO .................. CAIU em 9.1 s  por pitch
+        fator de tempo real ........  0.999
+01:57:08  [12/132] E2p_M38_giro+0.175_kp0.1_kd0.015_r1
+        RESULTADO .................. CAIU em 6.0 s  por pitch
+        fator de tempo real ........  0.999
+01:58:01  [13/132] E2h_M33_giro-0.175_kh2.0_sat0.3_r1
+        RESULTADO .................. CAIU em 25.8 s  por pitch
+        fator de tempo real ........  0.999
+01:59:15  [14/132] E2p_M38_curva+0.175_kp0.1_kd0.03_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:00:35  [15/132] E2p_M38_lat+0.05_kp0.35_kd0.015_r1
+        RESULTADO .................. CAIU em 4.7 s  por pitch
+        fator de tempo real ........  0.997
+02:01:27  [16/132] E2h_M33_comb+0.175_kh1.0_sat0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:02:47  [17/132] E2p_M38_lat+0.05_kp0.35_kd0.03_r1
+        RESULTADO .................. CAIU em 4.1 s  por pitch
+        fator de tempo real ........  0.999
+02:03:38  [18/132] E2h_M38_curva+0.175_kh2.0_sat0.5_r1
+        RESULTADO .................. CAIU em 4.3 s  por pitch
+        fator de tempo real ........  0.999
+02:04:29  [19/132] E2p_M38_giro+0.175_kp0.1_kd0.06_r1
+        RESULTADO .................. CAIU em 4.3 s  por pitch
+        fator de tempo real ........  0.999
+02:05:20  [20/132] E2h_M38_reta0.10_kh2.0_sat0.5_r1
+        RESULTADO .................. CAIU em 32.3 s  por pitch
+        fator de tempo real ........  0.999
+02:06:41  [21/132] E2h_M38_giro-0.175_kh0.5_sat0.3_r1
+        RESULTADO .................. CAIU em 5.3 s  por pitch
+        fator de tempo real ........  0.999
+02:07:33  [22/132] E2p_M33_giro+0.175_kp0.2_kd0.015_r1
+        RESULTADO .................. CAIU em 11.5 s  por pitch
+        fator de tempo real ........  0.999
+02:08:32  [23/132] E2p_M38_lat+0.05_kp0.2_kd0.03_r1
+        RESULTADO .................. CAIU em 4.1 s  por pitch
+        fator de tempo real ........  0.999
+02:09:23  [24/132] E2p_M33_lat+0.05_kp0.1_kd0.015_r1
+        RESULTADO .................. CAIU em 25.8 s  por pitch
+        fator de tempo real ........  0.999
+02:10:37  [25/132] E2p_M38_curva+0.175_kp0.2_kd0.06_r1
+        RESULTADO .................. CAIU em 4.8 s  por roll
+        fator de tempo real ........  0.999
+02:11:29  [26/132] E2p_M38_lat+0.05_kp0.1_kd0.03_r1
+        RESULTADO .................. CAIU em 4.2 s  por pitch
+        fator de tempo real ........  0.999
+02:12:20  [27/132] E2p_M33_lat+0.05_kp0.35_kd0.06_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:13:40  [28/132] E2h_M33_comb+0.175_kh2.0_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:14:59  [29/132] E2p_M33_giro+0.175_kp0.35_kd0.015_r1
+        RESULTADO .................. CAIU em 9.2 s  por pitch
+        fator de tempo real ........  0.999
+02:15:56  [30/132] E2p_M33_reta0.10_kp0.35_kd0.03_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:17:16  [31/132] E2h_M33_reta0.10_kh2.0_sat0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:18:37  [32/132] E2h_M33_reta0.10_kh0.5_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:19:57  [33/132] E2p_M38_reta0.10_kp0.1_kd0.06_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+02:21:17  [34/132] E2h_M33_curva+0.175_kh1.0_sat0.3_r1
+        RESULTADO .................. CAIU em 5.9 s  por pitch
+        fator de tempo real ........  0.999
+02:22:10  [35/132] E2p_M33_giro+0.175_kp0.35_kd0.03_r1
+        RESULTADO .................. CAIU em 9.2 s  por pitch
+        fator de tempo real ........  0.999
+02:23:06  [36/132] E2h_M38_comb+0.175_kh0.5_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:24:26  [37/132] E2p_M33_lat+0.05_kp0.1_kd0.03_r1
+        RESULTADO .................. CAIU em 13.9 s  por roll
+        fator de tempo real ........  0.999
+02:25:27  [38/132] E2h_M38_curva+0.175_kh0.5_sat0.5_r1
+        RESULTADO .................. CAIU em 4.3 s  por pitch
+        fator de tempo real ........  0.998
+02:26:19  [39/132] E2p_M33_giro+0.175_kp0.35_kd0.06_r1
+        RESULTADO .................. CAIU em 4.4 s  por roll
+        fator de tempo real ........  0.999
+02:27:10  [40/132] E2p_M33_giro+0.175_kp0.2_kd0.06_r1
+        RESULTADO .................. CAIU em 15.1 s  por pitch
+        fator de tempo real ........  0.999
+02:28:12  [41/132] E2h_M38_giro+0.175_kh0.5_sat0.5_r1
+        RESULTADO .................. CAIU em 4.4 s  por pitch
+        fator de tempo real ........  0.999
+02:29:04  [42/132] E2h_M33_giro+0.175_kh0.5_sat0.5_r1
+        RESULTADO .................. CAIU em 16.4 s  por roll
+        fator de tempo real ........  0.999
+02:30:08  [43/132] E2p_M33_curva+0.175_kp0.35_kd0.06_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:31:27  [44/132] E2h_M33_giro+0.175_kh2.0_sat0.5_r1
+        RESULTADO .................. CAIU em 11.6 s  por pitch
+        fator de tempo real ........  0.999
+02:32:26  [45/132] E2p_M38_reta0.10_kp0.2_kd0.06_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:33:47  [46/132] E2h_M38_curva+0.175_kh0.5_sat0.3_r1
+        RESULTADO .................. CAIU em 4.3 s  por pitch
+        fator de tempo real ........  0.998
+02:34:38  [47/132] E2h_M33_comb+0.175_kh1.0_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:35:58  [48/132] E2p_M38_reta0.10_kp0.1_kd0.03_r1
+        RESULTADO .................. CAIU em 32.2 s  por pitch
+        fator de tempo real ........  0.999
+02:37:19  [49/132] E2p_M38_giro+0.175_kp0.35_kd0.03_r1
+        RESULTADO .................. CAIU em 5.1 s  por pitch
+        fator de tempo real ........  0.999
+02:38:11  [50/132] E2h_M33_giro+0.175_kh0.5_sat0.3_r1
+        RESULTADO .................. CAIU em 12.8 s  por pitch
+        fator de tempo real ........  0.999
+02:39:11  [51/132] E2p_M33_giro+0.175_kp0.1_kd0.06_r1
+        RESULTADO .................. CAIU em 9.4 s  por pitch
+        fator de tempo real ........  0.999
+02:40:08  [52/132] E2h_M33_comb+0.175_kh0.5_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:41:27  [53/132] E2p_M33_curva+0.175_kp0.2_kd0.03_r1
+        RESULTADO .................. CAIU em 6.2 s  por roll
+        fator de tempo real ........  0.999
+02:42:20  [54/132] E2h_M38_giro+0.175_kh0.5_sat0.3_r1
+        RESULTADO .................. CAIU em 5.3 s  por pitch
+        fator de tempo real ........  0.999
+02:43:12  [55/132] E2h_M38_giro-0.175_kh0.5_sat0.5_r1
+        RESULTADO .................. CAIU em 4.8 s  por pitch
+        fator de tempo real ........  0.999
+02:44:04  [56/132] E2p_M33_reta0.10_kp0.1_kd0.06_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:45:24  [57/132] E2p_M33_reta0.10_kp0.2_kd0.03_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:46:45  [58/132] E2h_M38_comb+0.175_kh0.5_sat0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:48:05  [59/132] E2p_M33_reta0.10_kp0.1_kd0.015_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:49:25  [60/132] E2p_M38_giro+0.175_kp0.2_kd0.015_r1
+        RESULTADO .................. CAIU em 4.2 s  por pitch
+        fator de tempo real ........  0.999
+02:50:16  [61/132] E2p_M38_curva+0.175_kp0.35_kd0.015_r1
+        RESULTADO .................. CAIU em 4.6 s  por pitch
+        fator de tempo real ........  0.999
+02:51:07  [62/132] E2h_M33_curva+0.175_kh2.0_sat0.5_r1
+        RESULTADO .................. CAIU em 6.9 s  por pitch
+        fator de tempo real ........  0.999
+02:52:02  [63/132] E2h_M33_reta0.10_kh1.0_sat0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:53:22  [64/132] E2p_M33_reta0.10_kp0.35_kd0.06_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+02:54:43  [65/132] E2h_M33_curva+0.175_kh0.5_sat0.3_r1
+        RESULTADO .................. CAIU em 6.3 s  por roll
+        fator de tempo real ........  0.999
+02:55:35  [66/132] E2h_M38_curva+0.175_kh1.0_sat0.3_r1
+        RESULTADO .................. CAIU em 4.7 s  por pitch
+        fator de tempo real ........  0.999
+02:56:27  [67/132] E2p_M33_curva+0.175_kp0.2_kd0.015_r1
+        RESULTADO .................. CAIU em 23.5 s  por pitch
+        fator de tempo real ........  0.999
+02:57:39  [68/132] E2h_M38_giro+0.175_kh1.0_sat0.3_r1
+        RESULTADO .................. CAIU em 5.3 s  por pitch
+        fator de tempo real ........  0.999
+02:58:31  [69/132] E2p_M33_lat+0.05_kp0.2_kd0.015_r1
+        RESULTADO .................. CAIU em 12.0 s  por pitch
+        fator de tempo real ........  0.999
+02:59:30  [70/132] E2p_M38_curva+0.175_kp0.1_kd0.015_r1
+        RESULTADO .................. CAIU em 3.7 s  por roll
+        fator de tempo real ........  0.999
+03:00:20  [71/132] E2h_M33_curva+0.175_kh0.5_sat0.5_r1
+        RESULTADO .................. CAIU em 5.2 s  por roll
+        fator de tempo real ........  0.999
+03:01:12  [72/132] E2h_M38_giro-0.175_kh2.0_sat0.5_r1
+        RESULTADO .................. CAIU em 4.6 s  por pitch
+        fator de tempo real ........  0.999
+03:02:04  [73/132] E2h_M33_reta0.10_kh2.0_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:03:24  [74/132] E2p_M38_reta0.10_kp0.2_kd0.03_r1
+        RESULTADO .................. CAIU em 32.5 s  por pitch
+        fator de tempo real ........  0.999
+03:04:45  [75/132] E2h_M33_giro+0.175_kh1.0_sat0.5_r1
+        RESULTADO .................. CAIU em 20.6 s  por pitch
+        fator de tempo real ........  0.999
+03:05:53  [76/132] E2p_M33_reta0.10_kp0.1_kd0.03_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:07:13  [77/132] E2h_M38_comb+0.175_kh1.0_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:08:33  [78/132] E2p_M33_curva+0.175_kp0.35_kd0.015_r1
+        RESULTADO .................. CAIU em 6.7 s  por pitch
+        fator de tempo real ........  0.999
+03:09:27  [79/132] E2p_M33_lat+0.05_kp0.1_kd0.06_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:10:46  [80/132] E2p_M38_giro+0.175_kp0.2_kd0.03_r1
+        RESULTADO .................. CAIU em 5.3 s  por pitch
+        fator de tempo real ........  0.999
+03:11:39  [81/132] E2h_M33_giro-0.175_kh1.0_sat0.3_r1
+        RESULTADO .................. CAIU em 20.8 s  por pitch
+        fator de tempo real ........  0.999
+03:12:47  [82/132] E2h_M33_comb+0.175_kh0.5_sat0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:14:07  [83/132] E2p_M38_curva+0.175_kp0.1_kd0.06_r1
+        RESULTADO .................. CAIU em 4.3 s  por roll
+        fator de tempo real ........  0.999
+03:14:58  [84/132] E2h_M38_giro+0.175_kh2.0_sat0.5_r1
+        RESULTADO .................. CAIU em 4.2 s  por pitch
+        fator de tempo real ........  0.999
+03:15:49  [85/132] E2h_M33_giro-0.175_kh0.5_sat0.3_r1
+        RESULTADO .................. CAIU em 10.9 s  por pitch
+        fator de tempo real ........  0.999
+03:16:47  [86/132] E2p_M38_giro+0.175_kp0.1_kd0.03_r1
+        RESULTADO .................. CAIU em 4.2 s  por pitch
+        fator de tempo real ........  0.999
+03:17:38  [87/132] E2h_M38_giro+0.175_kh1.0_sat0.5_r1
+        RESULTADO .................. CAIU em 4.9 s  por pitch
+        fator de tempo real ........  0.999
+03:18:30  [88/132] E2p_M33_giro+0.175_kp0.1_kd0.015_r1
+        RESULTADO .................. CAIU em 10.0 s  por pitch
+        fator de tempo real ........  0.999
+03:19:27  [89/132] E2h_M33_curva+0.175_kh1.0_sat0.5_r1
+        RESULTADO .................. CAIU em 4.9 s  por roll
+        fator de tempo real ........  0.999
+03:20:19  [90/132] E2p_M38_reta0.10_kp0.2_kd0.015_r1
+        RESULTADO .................. CAIU em 32.4 s  por pitch
+        fator de tempo real ........  0.999
+03:21:40  [91/132] E2h_M38_giro-0.175_kh1.0_sat0.3_r1
+        RESULTADO .................. CAIU em 4.8 s  por pitch
+        fator de tempo real ........  0.999
+03:22:32  [92/132] E2h_M38_reta0.10_kh0.5_sat0.5_r1
+        RESULTADO .................. CAIU em 32.2 s  por pitch
+        fator de tempo real ........  0.999
+03:23:53  [93/132] E2h_M38_comb+0.175_kh2.0_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:25:13  [94/132] E2h_M38_curva+0.175_kh1.0_sat0.5_r1
+        RESULTADO .................. CAIU em 4.8 s  por pitch
+        fator de tempo real ........  0.999
+03:26:05  [95/132] E2p_M38_curva+0.175_kp0.35_kd0.03_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:27:24  [96/132] E2h_M33_curva+0.175_kh2.0_sat0.3_r1
+        RESULTADO .................. CAIU em 5.9 s  por pitch
+        fator de tempo real ........  0.999
+03:28:17  [97/132] E2h_M33_reta0.10_kh1.0_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:29:37  [98/132] E2p_M33_giro+0.175_kp0.2_kd0.03_r1
+        RESULTADO .................. CAIU em 6.9 s  por pitch
+        fator de tempo real ........  0.999
+03:30:31  [99/132] E2p_M38_reta0.10_kp0.35_kd0.06_r1
+        RESULTADO .................. CAIU em 32.3 s  por pitch
+        fator de tempo real ........  0.999
+03:31:52  [100/132] E2p_M38_curva+0.175_kp0.35_kd0.06_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:33:12  [101/132] E2h_M33_giro-0.175_kh0.5_sat0.5_r1
+        RESULTADO .................. CAIU em 9.8 s  por pitch
+        fator de tempo real ........  0.999
+03:34:09  [102/132] E2h_M38_reta0.10_kh2.0_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:35:30  [103/132] E2p_M38_giro+0.175_kp0.35_kd0.015_r1
+        RESULTADO .................. CAIU em 4.9 s  por pitch
+        fator de tempo real ........  0.999
+03:36:21  [104/132] E2h_M38_giro+0.175_kh2.0_sat0.3_r1
+        RESULTADO .................. CAIU em 4.2 s  por pitch
+        fator de tempo real ........  0.999
+03:37:12  [105/132] E2h_M33_comb+0.175_kh2.0_sat0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:38:32  [106/132] E2p_M33_reta0.10_kp0.2_kd0.06_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:39:53  [107/132] E2h_M33_giro-0.175_kh2.0_sat0.5_r1
+        RESULTADO .................. CAIU em 12.6 s  por pitch
+        fator de tempo real ........  0.999
+03:40:52  [108/132] E2p_M38_lat+0.05_kp0.1_kd0.015_r1
+        RESULTADO .................. CAIU em 4.8 s  por pitch
+        fator de tempo real ........  0.999
+03:41:44  [109/132] E2p_M33_curva+0.175_kp0.1_kd0.06_r1
+        RESULTADO .................. CAIU em 5.1 s  por roll
+        fator de tempo real ........  0.999
+03:42:35  [110/132] E2p_M33_lat+0.05_kp0.2_kd0.03_r1
+        RESULTADO .................. CAIU em 17.5 s  por roll
+        fator de tempo real ........  0.999
+03:43:40  [111/132] E2p_M33_lat+0.05_kp0.2_kd0.06_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:45:00  [112/132] E2p_M38_giro+0.175_kp0.2_kd0.06_r1
+        RESULTADO .................. CAIU em 5.4 s  por pitch
+        fator de tempo real ........  0.999
+03:45:52  [113/132] E2p_M38_reta0.10_kp0.1_kd0.015_r1
+        RESULTADO .................. CAIU em 32.2 s  por pitch
+        fator de tempo real ........  0.999
+03:47:13  [114/132] E2p_M33_curva+0.175_kp0.35_kd0.03_r1
+        RESULTADO .................. CAIU em 5.7 s  por pitch
+        fator de tempo real ........  0.999
+03:48:06  [115/132] E2p_M33_giro+0.175_kp0.1_kd0.03_r1
+        RESULTADO .................. CAIU em 18.4 s  por pitch
+        fator de tempo real ........  0.999
+03:49:12  [116/132] E2h_M38_reta0.10_kh1.0_sat0.3_r1
+        RESULTADO .................. CAIU em 32.4 s  por pitch
+        fator de tempo real ........  0.999
+03:50:33  [117/132] E2p_M33_reta0.10_kp0.2_kd0.015_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:51:53  [118/132] E2p_M38_reta0.10_kp0.35_kd0.03_r1
+        RESULTADO .................. CAIU em 32.4 s  por pitch
+        fator de tempo real ........  0.999
+03:53:14  [119/132] E2h_M38_reta0.10_kh1.0_sat0.5_r1
+        RESULTADO .................. CAIU em 32.2 s  por pitch
+        fator de tempo real ........  0.999
+03:54:35  [120/132] E2p_M33_reta0.10_kp0.35_kd0.015_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:55:56  [121/132] E2p_M38_curva+0.175_kp0.2_kd0.015_r1
+        RESULTADO .................. CAIU em 4.3 s  por pitch
+        fator de tempo real ........  0.999
+03:56:48  [122/132] E2h_M33_giro+0.175_kh2.0_sat0.3_r1
+        RESULTADO .................. CAIU em 18.6 s  por pitch
+        fator de tempo real ........  0.999
+03:57:54  [123/132] E2h_M38_reta0.10_kh0.5_sat0.3_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+03:59:14  [124/132] E2p_M38_giro+0.175_kp0.35_kd0.06_r1
+        RESULTADO .................. CAIU em 5.3 s  por pitch
+        fator de tempo real ........  0.999
+04:00:07  [125/132] E2h_M38_curva+0.175_kh2.0_sat0.3_r1
+        RESULTADO .................. CAIU em 4.8 s  por pitch
+        fator de tempo real ........  0.999
+04:00:58  [126/132] E2p_M38_lat+0.05_kp0.2_kd0.06_r1
+        RESULTADO .................. CAIU em 4.0 s  por pitch
+        fator de tempo real ........  0.999
+04:01:49  [127/132] E2p_M33_curva+0.175_kp0.2_kd0.06_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:03:09  [128/132] E2p_M38_reta0.10_kp0.35_kd0.015_r1
+        RESULTADO .................. CAIU em 31.7 s  por pitch
+        fator de tempo real ........  0.999
+04:04:29  [129/132] E2h_M33_reta0.10_kh0.5_sat0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:05:50  [130/132] E2h_M38_comb+0.175_kh1.0_sat0.5_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:07:09  [131/132] E2p_M33_curva+0.175_kp0.1_kd0.03_r1
+        RESULTADO .................. CAIU em 4.8 s  por roll
+        fator de tempo real ........  0.999
+04:08:01  [132/132] E2p_M38_lat+0.05_kp0.1_kd0.06_r1
+        RESULTADO .................. CAIU em 4.0 s  por pitch
+        fator de tempo real ........  0.999
+04:08:52  fim.

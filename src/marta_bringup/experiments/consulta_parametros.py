@@ -3,7 +3,8 @@
 
 Consulta a bateria do panorama (docs/panorama_parametros.md, 354 corridas,
 servo MX-28) e devolve postura, hip_offset_x, ganho da compensacao e a linha
-do roslaunch. A mesma logica, em tabela, esta em docs/consulta_parametros.md.
+do roslaunch; o bloco 6 da as velocidades seguras da marcha omnidirecional
+(docs/marcha_omnidirecional.md). A mesma logica, em tabela, esta em docs/consulta_parametros.md.
 
   python3 consulta_parametros.py                 # pergunta cada valor (Enter = Marta atual)
   python3 consulta_parametros.py --massa 3.5 --coxa 95 --canela 95 -n
@@ -61,6 +62,33 @@ COM_PE = {2.85: 2.8, 3.30: 1.6, 3.56: 1.7, 3.80: 8.8, 4.04: 12.3}
 # a IK estatica superestima o joelho parado da Marta (estado inicial do
 # gerador): delta = joelho_ik - joelho_medido, linear no joelho medido
 CORR_A, CORR_B, CORR_J0 = 1.73, 0.0457, 53.17
+
+
+# ---- velocidades seguras (docs/marcha_omnidirecional.md: E1, E4, E5, E6env e
+# diagnostico sem gol; docs/consulta_parametros.md passo 6) -------------------
+# "anda" = 30 s nos dois pes iniciais. Dois niveis testados: M33 (I 2,53) e
+# M38 (I 2,92). Notas: (1) 0,15 so sem o gol do campo; (2) lateral sai torto
+# (avanco espurio do gerador, erro de direcao 12-34 graus); (3) quedas no gol
+# e na bola, anda sem eles; (4) varia entre corridas.
+VEL_MOVS = [  # (movimento, faixa testada)
+    ('reta vx [m/s]', '0,05-0,15'),
+    ('giro no lugar w [rad/s]', '+-0,10 a +-0,35'),
+    ('curva (vx 0,1; w)', '+-0,10 a +-0,25'),
+    ('lateral vy [m/s]', '+-0,025 e +-0,05'),
+    ('diagonal (0,1; vy)', '+-0,03'),
+    ('combinado (0,1; 0,03; w)', '+-0,175'),
+]
+VEL = {  # nivel -> (I, com roll, sem roll), na ordem de VEL_MOVS
+    'M33': (2.53, ['0,05-0,15 (1)', 'toda', 'toda', 'toda (2)', 'toda', 'toda'],
+            ['0,05-0,15 (1)', 'nenhuma', 'so +0,10', '+-0,025 (2)', 'toda', 'so +0,175']),
+    'M38': (2.92, ['0,05-0,15 (1)', 'toda', 'toda', 'toda (2)', 'toda (3)', '+0,175 (-0,175: 1 de 2)'],
+            ['0,10-0,15 (1)', 'nenhuma', 'so -0,10', 'nenhuma', 'instavel (4)', 'so +0,175']),
+}
+ROLL_ARGS = ['roll_stabilizer_enabled:=true', 'kp_roll_hip:=0.5', 'kd_roll_hip:=0.075',
+             'kp_roll_ankle:=0.5', 'kd_roll_ankle:=0.075']
+# kd de pitch 0,06 com roll: E7 (docs/marcha_omnidirecional.md), -10% de pitch RMS,
+# 41/44 pares melhores; o default do launch segue 0,03 para reproduzir E0-E7.
+PITCH_ARGS = ['kd_pitch:=0.06']
 
 
 def joelho_para_zcom(joelho, r):
@@ -179,7 +207,8 @@ def relatorio(r, s):
             'gravity_comp_gain:=%s' % ganho, 'hip_pitch_offset_deg:=-5',
             'joint_effort:=%.2f' % s['stall'], 'joint_velocity:=100', 'implicit_damping:=true',
             'joint_damping:=0.43', 'gains:=/ws/src/marta_description/config/controller_mx28.yaml',
-            'foot_collision:=box', 'stabilizer_enabled:=true', 'heading_enabled:=true']
+            'foot_collision:=box', 'stabilizer_enabled:=true', 'heading_enabled:=true'] + ROLL_ARGS + PITCH_ARGS + [
+            'walk_velocity_x:=0.1', 'walk_velocity_y:=0', 'walk_velocity_yaw:=0']
     if marta:
         esc = (r['massa'] - MASSA_FIXA) / MASSA_TRONCO
         args.insert(0, 'torso_mass_scale:=%.3f' % max(esc, 0.0))
@@ -190,6 +219,29 @@ def relatorio(r, s):
     if not marta:
         w('    (o modelo simulado continua sendo a Marta: torso_mass_scale e a geometria')
         w('     do URDF nao mudam com estas entradas; z_com/hip_offset_x sao para o robo novo)')
+    w('    (roll quatorn K1 confirmado na E5; walk_velocity_* sao lidas so na partida:')
+    w('     troque pela velocidade desejada, dentro da tabela do bloco 6)')
+    w('')
+    if s['I'] <= VEL['M33'][0] + 0.05:
+        nivel, nota = 'M33', ('I abaixo do menor testado: espera-se ao menos isto (extrapolacao)'
+                              if s['I'] < VEL['M33'][0] - 0.05 else 'nivel testado')
+    else:
+        nivel = 'M38'
+        if abs(s['I'] - VEL['M38'][0]) <= 0.05:
+            nota = 'nivel testado'
+        elif s['I'] < VEL['M38'][0]:
+            nota = 'entre os niveis testados: usa o mais pesado (conservador)'
+        else:
+            nota = 'EXTRAPOLACAO: I acima do maior testado (2,92); nenhuma velocidade garantida'
+    w(' 6. Velocidades seguras (marcha omnidirecional; 30 s nos dois pes iniciais)')
+    w('    tabela do nivel %s (I = %.2f): %s' % (nivel, VEL[nivel][0], nota))
+    w('    %-26s %-16s %-24s %s' % ('movimento', 'faixa testada', 'com roll', 'sem roll'))
+    for (mv, fx), com, sem in zip(VEL_MOVS, VEL[nivel][1], VEL[nivel][2]):
+        w('    %-26s %-16s %-24s %s' % (mv, fx, com, sem))
+    w('    (1) 0,15 so testada sem o gol do campo (world.world tem gol em x = 3 m)')
+    w('    (2) o lateral sai torto: avanco espurio do gerador, erro de direcao 12-34 graus')
+    w('    (3) quedas no gol e (inferencia) na bola; sem eles anda   (4) varia entre corridas')
+    w('    Sem roll o giro nao anda: use o estabilizador de roll fora da reta.')
     w('')
     w(' Avisos')
     if not marta:
@@ -202,7 +254,7 @@ def relatorio(r, s):
               % (prop, MARTA['coxa'] / MARTA['canela']))
     w('  - z_com usa a IK do robo + correcao empirica da Marta (a IK estatica superestima o')
     w('    joelho parado em 1,7-3,1 graus); confira o joelho real no log/telemetria.')
-    w('  - quedas de lado limitam as posturas esticadas enquanto nao ha estabilizador de roll.')
+    w('  - postura (bloco 2) medida sem roll; com roll, posturas mais esticadas nao foram testadas.')
     w('  - simulacao (Gazebo/ODE, modelo de servo da tese do Maximo); robo real tem folga,')
     w('    aquecimento e queda de tensao.')
     w('=' * 72)

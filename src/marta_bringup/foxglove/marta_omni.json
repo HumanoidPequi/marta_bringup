@@ -1,0 +1,800 @@
+{
+  "configById": {
+    "3D!marta": {
+      "cameraState": {
+        "distance": 1.6,
+        "perspective": true,
+        "phi": 60,
+        "thetaOffset": 135,
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.01,
+        "far": 100
+      },
+      "followMode": "follow-position",
+      "followTf": "base_link",
+      "scene": {
+        "enableStats": false,
+        "backgroundColor": "#fcfcfb",
+        "meshUpAxis": "z_up"
+      },
+      "transforms": {
+        "editable": false,
+        "showLabel": false,
+        "labelSize": 0.02,
+        "axisScale": 0.05,
+        "lineWidth": 1,
+        "frame:odom": {
+          "visible": false
+        },
+        "frame:base_link": {
+          "visible": false
+        },
+        "frame:imu_position": {
+          "visible": false
+        },
+        "frame:neck_1": {
+          "visible": false
+        },
+        "frame:head_1": {
+          "visible": false
+        },
+        "frame:l_hip_1": {
+          "visible": false
+        },
+        "frame:l_waist_1": {
+          "visible": false
+        },
+        "frame:l_thigh_1": {
+          "visible": false
+        },
+        "frame:l_shin_1": {
+          "visible": false
+        },
+        "frame:l_ankle_1": {
+          "visible": false
+        },
+        "frame:l_feet_1": {
+          "visible": false
+        },
+        "frame:l_shoulder_1": {
+          "visible": false
+        },
+        "frame:l_arm_1": {
+          "visible": false
+        },
+        "frame:l_hand_1": {
+          "visible": false
+        },
+        "frame:r_hip_1": {
+          "visible": false
+        },
+        "frame:r_waist_1": {
+          "visible": false
+        },
+        "frame:r_thigh_1": {
+          "visible": false
+        },
+        "frame:r_shin_1": {
+          "visible": false
+        },
+        "frame:r_ankle_1": {
+          "visible": false
+        },
+        "frame:r_feet_1": {
+          "visible": false
+        },
+        "frame:r_shoulder_1": {
+          "visible": false
+        },
+        "frame:r_arm_1": {
+          "visible": false
+        },
+        "frame:r_hand_1": {
+          "visible": false
+        }
+      },
+      "topics": {
+        "/marta/viz/rumo": {
+          "visible": true
+        },
+        "/robot_description": {
+          "visible": false
+        }
+      },
+      "layers": {
+        "grade": {
+          "layerId": "foxglove.Grid",
+          "visible": true,
+          "frameId": "odom",
+          "size": 10,
+          "divisions": 20,
+          "lineWidth": 1,
+          "color": "#9b9a96",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "order": 1
+        },
+        "urdf": {
+          "layerId": "foxglove.Urdf",
+          "visible": true,
+          "sourceType": "topic",
+          "topic": "/robot_description",
+          "displayMode": "visual",
+          "fallbackColor": "#8a8984",
+          "order": 2
+        }
+      },
+      "publish": {
+        "type": "point"
+      },
+      "imageMode": {}
+    },
+    "Plot!torque_l": {
+      "title": "Torque exigido / máximo — perna esquerda (>1 = saturada)",
+      "paths": [
+        {
+          "value": "/marta/viz/torque_pernas.data[0]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_yaw",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[1]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_roll",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[2]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_pitch",
+          "color": "#1baf7a"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[3]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "knee",
+          "color": "#eda100"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[4]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "ank_pitch",
+          "color": "#e87ba4"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[5]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "ank_roll",
+          "color": "#008300"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[12]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "limite (1,0 = joint_effort)",
+          "color": "#898781"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "minYValue": 0,
+      "maxYValue": 1.6,
+      "foxglovePanelTitle": "Torque exigido / máximo — perna esquerda (>1 = saturada)"
+    },
+    "Plot!torque_r": {
+      "title": "Torque exigido / máximo — perna direita (>1 = saturada)",
+      "paths": [
+        {
+          "value": "/marta/viz/torque_pernas.data[6]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_yaw",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[7]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_roll",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[8]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_pitch",
+          "color": "#1baf7a"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[9]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "knee",
+          "color": "#eda100"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[10]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "ank_pitch",
+          "color": "#e87ba4"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[11]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "ank_roll",
+          "color": "#008300"
+        },
+        {
+          "value": "/marta/viz/torque_pernas.data[12]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "limite (1,0 = joint_effort)",
+          "color": "#898781"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "minYValue": 0,
+      "maxYValue": 1.6,
+      "foxglovePanelTitle": "Torque exigido / máximo — perna direita (>1 = saturada)"
+    },
+    "Plot!erro_l": {
+      "title": "Erro alvo − real [°] — perna esquerda",
+      "paths": [
+        {
+          "value": "/marta/viz/erro_pernas.data[0]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_yaw",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/viz/erro_pernas.data[1]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_roll",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/viz/erro_pernas.data[2]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_pitch",
+          "color": "#1baf7a"
+        },
+        {
+          "value": "/marta/viz/erro_pernas.data[3]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "knee",
+          "color": "#eda100"
+        },
+        {
+          "value": "/marta/viz/erro_pernas.data[4]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "ank_pitch",
+          "color": "#e87ba4"
+        },
+        {
+          "value": "/marta/viz/erro_pernas.data[5]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "ank_roll",
+          "color": "#008300"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "Erro alvo − real [°] — perna esquerda"
+    },
+    "Plot!erro_r": {
+      "title": "Erro alvo − real [°] — perna direita",
+      "paths": [
+        {
+          "value": "/marta/viz/erro_pernas.data[6]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_yaw",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/viz/erro_pernas.data[7]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_roll",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/viz/erro_pernas.data[8]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "hip_pitch",
+          "color": "#1baf7a"
+        },
+        {
+          "value": "/marta/viz/erro_pernas.data[9]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "knee",
+          "color": "#eda100"
+        },
+        {
+          "value": "/marta/viz/erro_pernas.data[10]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "ank_pitch",
+          "color": "#e87ba4"
+        },
+        {
+          "value": "/marta/viz/erro_pernas.data[11]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "ank_roll",
+          "color": "#008300"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "Erro alvo − real [°] — perna direita"
+    },
+    "Plot!pitch": {
+      "title": "Pitch [°]: verdadeiro, estimado e correção do estabilizador",
+      "paths": [
+        {
+          "value": "/marta/walk/telemetry.pitch_true.@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "pitch verdadeiro",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/walk/telemetry.pitch.@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "pitch estimado",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/stabilizer_debug.data[0].@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "Δ quadril (pitch)",
+          "color": "#1baf7a"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "Pitch [°]: verdadeiro, estimado e correção do estabilizador"
+    },
+    "Plot!roll": {
+      "title": "Roll [°]: verdadeiro, estimado, erro pós-washout e correções",
+      "paths": [
+        {
+          "value": "/marta/walk/telemetry.roll_true.@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "roll verdadeiro",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/roll_stabilizer.data[3].@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "erro (φ − φ̄)",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/roll_stabilizer.data[4].@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "u quadril",
+          "color": "#1baf7a"
+        },
+        {
+          "value": "/marta/roll_stabilizer.data[5].@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "u tornozelo",
+          "color": "#eda100"
+        },
+        {
+          "value": "/marta/walk/telemetry.roll.@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "roll estimado",
+          "color": "#e87ba4"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "Roll [°]: verdadeiro, estimado, erro pós-washout e correções"
+    },
+    "Plot!rumo": {
+      "title": "Rumo [°]: yaw real × referência; correção da malha [°/s]",
+      "paths": [
+        {
+          "value": "/marta/viz/rumo_graus.data[0]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "yaw verdadeiro",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/viz/rumo_graus.data[1]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "rumo desejado",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/stabilizer_debug.data[8].@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "correção (°/s)",
+          "color": "#1baf7a"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "Rumo [°]: yaw real × referência; correção da malha [°/s]"
+    },
+    "Plot!gravidade": {
+      "title": "Compensação de gravidade Δ [°] (hip_roll e joelho)",
+      "paths": [
+        {
+          "value": "/marta/gravity_comp.data[4].@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "esq hip_roll",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/gravity_comp.data[6].@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "esq joelho",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/gravity_comp.data[10].@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "dir hip_roll",
+          "color": "#1baf7a"
+        },
+        {
+          "value": "/marta/gravity_comp.data[12].@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "dir joelho",
+          "color": "#eda100"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "Compensação de gravidade Δ [°] (hip_roll e joelho)"
+    },
+    "Plot!lipm_x": {
+      "title": "CoM x no frame do apoio [m]: medido × planejado (fig. 5 do Kajita)",
+      "paths": [
+        {
+          "value": "/marta/viz/lipm.data[0]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "x medido",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/viz/lipm.data[2]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "x planejado",
+          "color": "#898781"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "CoM x no frame do apoio [m]: medido × planejado (fig. 5 do Kajita)"
+    },
+    "Plot!lipm_y": {
+      "title": "CoM y no frame do apoio [m]: medido × planejado",
+      "paths": [
+        {
+          "value": "/marta/viz/lipm.data[1]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "y medido",
+          "color": "#eb6834"
+        },
+        {
+          "value": "/marta/viz/lipm.data[3]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "y planejado",
+          "color": "#898781"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "CoM y no frame do apoio [m]: medido × planejado"
+    },
+    "Plot!lipm_E": {
+      "title": "Energia orbital, eq. (28)(29) — constante no apoio simples",
+      "paths": [
+        {
+          "value": "/marta/viz/lipm.data[6]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "E_x (sagital)",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/viz/lipm.data[7]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "E_y (frontal)",
+          "color": "#eb6834"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "Energia orbital, eq. (28)(29) — constante no apoio simples"
+    },
+    "Plot!lipm_fase": {
+      "title": "Plano de fase sagital (x, ẋ) — hipérboles da eq. (40)",
+      "paths": [
+        {
+          "value": "/marta/viz/lipm.data[4]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "ẋ",
+          "color": "#2a78d6"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "custom",
+      "followingViewWidth": 10,
+      "xAxisPath": {
+        "value": "/marta/viz/lipm.data[0]",
+        "enabled": true
+      },
+      "foxglovePanelTitle": "Plano de fase sagital (x, ẋ) — hipérboles da eq. (40)"
+    },
+    "Plot!dcm": {
+      "title": "DCM no frame do apoio [m]",
+      "paths": [
+        {
+          "value": "/marta/viz/lipm.data[8]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "dcm x",
+          "color": "#2a78d6"
+        },
+        {
+          "value": "/marta/viz/lipm.data[9]",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "dcm y",
+          "color": "#eb6834"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "DCM no frame do apoio [m]"
+    },
+    "Plot!giro": {
+      "title": "Taxa de giro do tronco [°/s] (verdade de solo)",
+      "paths": [
+        {
+          "value": "/marta/walk/telemetry.yaw_rate_true.@degrees",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "label": "ω real",
+          "color": "#2a78d6"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "Taxa de giro do tronco [°/s] (verdade de solo)"
+    },
+    "StateTransitions!apoio": {
+      "paths": [
+        {
+          "value": "/marta/walk/telemetry.support_state",
+          "timestampMethod": "receiveTime",
+          "label": "apoio (0 duplo, 1 esq, 2 dir)"
+        }
+      ],
+      "isSynced": true
+    },
+    "Tab!abas": {
+      "activeTabIdx": 0,
+      "tabs": [
+        {
+          "title": "Torque/limite",
+          "layout": {
+            "direction": "column",
+            "first": "Plot!torque_l",
+            "second": "Plot!torque_r",
+            "splitPercentage": 50
+          }
+        },
+        {
+          "title": "Erro das juntas",
+          "layout": {
+            "direction": "column",
+            "first": "Plot!erro_l",
+            "second": "Plot!erro_r",
+            "splitPercentage": 50
+          }
+        },
+        {
+          "title": "Controladores",
+          "layout": {
+            "direction": "column",
+            "first": {
+              "direction": "column",
+              "first": "Plot!pitch",
+              "second": "Plot!roll",
+              "splitPercentage": 50
+            },
+            "second": {
+              "direction": "column",
+              "first": "Plot!rumo",
+              "second": "Plot!gravidade",
+              "splitPercentage": 50
+            },
+            "splitPercentage": 50
+          }
+        },
+        {
+          "title": "LIPM (Kajita)",
+          "layout": {
+            "direction": "row",
+            "first": {
+              "direction": "column",
+              "first": "Plot!lipm_x",
+              "second": "Plot!lipm_y",
+              "splitPercentage": 50
+            },
+            "second": {
+              "direction": "column",
+              "first": "Plot!lipm_E",
+              "second": "Plot!lipm_fase",
+              "splitPercentage": 50
+            },
+            "splitPercentage": 50
+          }
+        },
+        {
+          "title": "Marcha",
+          "layout": {
+            "direction": "column",
+            "first": {
+              "direction": "column",
+              "first": "StateTransitions!apoio",
+              "second": "Plot!giro",
+              "splitPercentage": 35
+            },
+            "second": "Plot!dcm",
+            "splitPercentage": 60
+          }
+        }
+      ]
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "direction": "row",
+    "first": "3D!marta",
+    "second": "Tab!abas",
+    "splitPercentage": 40
+  }
+}

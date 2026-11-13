@@ -9,7 +9,7 @@ tempo de execucao, mede por alguns segundos e manda parar.
 Uso (com o stabilizer_test.launch ja rodando):
 
     rosrun marta_bringup walk_test.py
-    rosrun marta_bringup walk_test.py _duration:=20 _velocity_x:=0.05
+    rosrun marta_bringup walk_test.py _duration:=20
 
 Para comparar com e sem estabilizador, suba a simulacao duas vezes - depois de
 cair o robo nao volta a uma condicao limpa:
@@ -19,7 +19,9 @@ cair o robo nao volta a uma condicao limpa:
 
 Parametros (~):
     duration    (double, 15.0) tempo de marcha medido [s]
-    velocity_x  (double, 0.1)  velocidade de avanco [m/s]
+    velocity_x  (double)       IGNORADO pelo controlador: as velocidades
+                               (walk_velocity_x/y/yaw) vem do roslaunch e sao
+                               lidas so na partida; se divergir, sai um aviso
     settle      (double, 5.0)  espera fixa entre o laco entrar em regime e a
                                marcha comecar [s]
     bag_out     (string, '')   se informado, grava um rosbag da corrida com toda
@@ -34,8 +36,8 @@ O que e medido, e por que:
     - distancia percorrida: um estabilizador que "segura" o robo as custas de
       travar a marcha nao serve;
     - RMS e pico de pitch: e o que o estabilizador deveria reduzir;
-    - RMS e pico de roll: o plano frontal ainda NAO tem realimentacao (Fase 3),
-      entao serve de referencia do que sobra;
+    - RMS e pico de roll: com roll_stabilizer_enabled:=false o plano frontal
+      fica sem realimentacao e isso mede o que sobra;
     - correcao no quadril e fracao do tempo em saturacao: saturar muito durante
       a marcha significa que os ganhos estao altos para o regime dinamico;
     - trocas de apoio observadas: confirma que a maquina de estados esta
@@ -54,6 +56,39 @@ RAD2DEG = 180.0 / math.pi
 FALL_THRESHOLD_DEG = 45.0
 SUPPORT_NAMES = {0: 'duplo', 1: 'esquerdo', 2: 'direito'}
 
+
+
+def esperar_controladores(timeout=90.0, log=None):
+    """Espera os controladores de junta (/marta/<junta>_position) estarem
+    carregados ANTES de despausar o Gazebo.
+
+    Despausar antes deixa o robo com as juntas soltas ate o spawner terminar:
+    com a maquina carregada (GUI, Foxglove, outra simulacao) isso o derruba
+    para tras na partida (reproduzido: 3/3 quedas contra 0/3 esperando,
+    docs/marcha_omnidirecional.md, secao Teleop). Com a simulacao pausada o
+    list_controllers fica bloqueado pelo switch_controller do spawner; por
+    isso o sinal e o topico <junta>_position/state, que cada controlador
+    anuncia ao ser carregado. O numero esperado vem do servidor de parametros.
+    """
+    import time as _t
+    t0 = _t.time()
+    esperado, n = 0, -1
+    while not rospy.is_shutdown() and _t.time() - t0 < timeout:
+        try:
+            esperado = sum(1 for p in rospy.get_param_names()
+                           if p.startswith('/marta/') and p.endswith('_position/type'))
+            tops = {t for t, _ in rospy.get_published_topics()}
+            n = sum(1 for t in tops if t.startswith('/marta/') and t.endswith('_position/state'))
+        except Exception:  # noqa: BLE001
+            pass
+        if esperado and n >= esperado:
+            _t.sleep(0.5)
+            return True
+        if log:
+            log(n, esperado)
+        _t.sleep(0.2)
+    rospy.logwarn('Controladores de junta nao carregaram em %.0f s (%d de %d).', timeout, n, esperado)
+    return False
 
 class WalkTest(object):
     def __init__(self):
@@ -106,6 +141,7 @@ class WalkTest(object):
     def unpause_gazebo(self):
         try:
             from std_srvs.srv import Empty
+            esperar_controladores()
             rospy.wait_for_service('/gazebo/unpause_physics', timeout=15.0)
             rospy.ServiceProxy('/gazebo/unpause_physics', Empty)()
             rospy.loginfo('Simulacao despausada.')
@@ -354,13 +390,15 @@ class WalkTest(object):
         os.makedirs(os.path.dirname(self.bag_out) or '.', exist_ok=True)
         topicos = ['/marta/walk/telemetry', '/marta/walk/reference',
                    '/marta/torso_attitude', '/marta/stabilizer_debug',
-                   '/marta/joint_states', '/marta/imu', '/clock']
+                   '/marta/joint_states', '/marta/imu', '/clock',
+                   '/marta/gravity_comp', '/marta/roll_stabilizer']
         topicos += ['/marta/%s_position/state' % j for j in self.JUNTAS]
         # Visualizacao (Foxglove): TF do mundo e das juntas, URDF e setas de
         # rumo. _bag_viz:=false deixa de fora (bag menor, para campanhas).
         if rospy.get_param('~bag_viz', True):
             topicos += ['/tf', '/tf_static', '/robot_description', '/marta/viz/rumo',
-                        '/marta/viz/rumo_graus']
+                        '/marta/viz/rumo_graus', '/marta/viz/torque_pernas',
+                        '/marta/viz/erro_pernas', '/marta/viz/lipm']
         self.bag_proc = subprocess.Popen(
             ['rosbag', 'record', '-O', self.bag_out, '__name:=walk_bag'] + topicos,
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -391,12 +429,19 @@ class WalkTest(object):
     def run(self):
         self.wait_for_control_loop()
 
-        rospy.set_param('/controller_node/walk_velocity_x', self.velocity_x)
+        # O controller_node le walk_velocity_x/y/yaw so na partida (achado U):
+        # escrever o parametro aqui nao muda a marcha e so deixaria o rosparam
+        # mentindo. O comando vem do roslaunch; aqui so e lido e mostrado.
+        cmd = [rospy.get_param('/controller_node/walk_velocity_' + k, 0.0)
+               for k in ('x', 'y', 'yaw')]
+        if rospy.has_param('~velocity_x') and abs(self.velocity_x - cmd[0]) > 1e-9:
+            rospy.logwarn('_velocity_x:=%.3f ignorado: o controlador usa '
+                          'walk_velocity_x:=%.3f do roslaunch.', self.velocity_x, cmd[0])
         start_pos = self.position
 
         self.start_attitude = self.attitude
-        rospy.loginfo('Iniciando a marcha a %.2f m/s por %.0f s ...',
-                      self.velocity_x, self.duration)
+        rospy.loginfo('Iniciando a marcha: vx %.3f m/s, vy %.3f m/s, giro %.3f rad/s, '
+                      'por %.0f s ...', cmd[0], cmd[1], cmd[2], self.duration)
         self.samples = []
         self.truth_samples = []
         self.rows = []
@@ -644,8 +689,10 @@ class WalkTest(object):
         print('  caranguejo (rumo - yaw) .... %+6.1f graus' % my['caranguejo'])
         print('  pitch  RMS / pico .......... %6.2f / %6.2f graus'
               % (rms(pitches), max(pitches, key=abs)))
-        print('  roll   RMS / pico .......... %6.2f / %6.2f graus   (sem'
-              ' estabilizador; Fase 3)' % (rms(rolls), max(rolls, key=abs)))
+        roll_on = rospy.get_param('/controller_node/roll_stabilizer_enabled', False)
+        print('  roll   RMS / pico .......... %6.2f / %6.2f graus   (estabilizador de'
+              ' roll %s)' % (rms(rolls), max(rolls, key=abs),
+                             'LIGADO' if roll_on else 'desligado'))
         print('  correcao no quadril pico ... %6.2f graus' % max(deltas, key=abs))
         print('  tempo em saturacao ......... %6.1f %%' % (100.0 * sat_fraction))
         print('  trocas de apoio ............ %d' % transitions)

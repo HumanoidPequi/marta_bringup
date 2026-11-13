@@ -11,6 +11,13 @@ esperando encontrar <prefixo>_telemetria.csv e <prefixo>_juntas.csv.
 
 Nao precisa de ROS: so numpy e matplotlib. Roda no host ou no container.
 
+Frame do apoio: a telemetria poe a origem no pe de apoio mas mantem os eixos do
+mundo. Em linha reta da no mesmo; no giro e na curva, x e y misturariam avanco
+e lateral. Por isso, por default, sup_x/sup_y, com_vx/com_vy, E_x/E_y e
+dcm_x/dcm_y sao girados pelo yaw do pe de apoio (girar_frame_apoio), o mesmo
+frame da referencia do gerador (ref_x/ref_y). FRAME=mundo reproduz as figuras
+antigas sem o giro.
+
 Referencias de equacao: Kajita et al., "The 3D Linear Inverted Pendulum Mode",
 IROS 2001.
 """
@@ -66,6 +73,38 @@ def ler_telemetria(p):
             for k, v in r.items():
                 col[k].append(float(v))
     return {k: np.array(v) for k, v in col.items()}
+
+
+def girar_frame_apoio(d):
+    """Gira as grandezas do LIPM para o frame do pe de apoio (ver docstring).
+
+    psi = yaw do pe de apoio (apoio duplo: media circular dos dois pes). As
+    energias sao recalculadas com o g/z_c do gerador, recuperado da propria
+    telemetria: E_x = -(w2/2) x^2 + vx^2/2  =>  w2 = (vx^2 - 2 E_x) / x^2
+    (mediana sobre |x| > 1 cm; constante na corrida).
+    """
+    if 'l_foot_yaw' not in d:
+        return d
+    sup = d['support']
+    psi = np.where(sup == 1, d['l_foot_yaw'],
+                   np.where(sup == 2, d['r_foot_yaw'],
+                            np.arctan2(np.sin(d['l_foot_yaw']) + np.sin(d['r_foot_yaw']),
+                                       np.cos(d['l_foot_yaw']) + np.cos(d['r_foot_yaw']))))
+    xw, yw = d['com_x'] - d['foot_x'], d['com_y'] - d['foot_y']
+    vxw, vyw = d['com_vx'], d['com_vy']
+    m = np.abs(xw) > 0.01
+    w2 = float(np.median((vxw[m] ** 2 - 2 * d['E_x'][m]) / xw[m] ** 2)) if m.sum() > 10 else G / 0.25
+    t_c = 1.0 / math.sqrt(w2)
+    c, s = np.cos(psi), np.sin(psi)
+    d = dict(d)
+    d['sup_x'], d['sup_y'] = c * xw + s * yw, -s * xw + c * yw
+    d['com_vx'], d['com_vy'] = c * vxw + s * vyw, -s * vxw + c * vyw
+    d['E_x'] = -0.5 * w2 * d['sup_x'] ** 2 + 0.5 * d['com_vx'] ** 2
+    d['E_y'] = -0.5 * w2 * d['sup_y'] ** 2 + 0.5 * d['com_vy'] ** 2
+    d['dcm_x'] = d['sup_x'] + t_c * d['com_vx']
+    d['dcm_y'] = d['sup_y'] + t_c * d['com_vy']
+    d['psi_apoio'] = psi
+    return d
 
 
 def ler_juntas(p):
@@ -171,9 +210,14 @@ def fig_paper4(d, saida):
     marcados = []
     for i in range(1, len(t)):
         if sup[i] != sup[i - 1] and sup[i] in (1, 2):
-            p = (d['foot_x'][i], d['foot_y'][i])
+            yaw = d['l_foot_yaw' if sup[i] == 1 else 'r_foot_yaw'][i] if 'l_foot_yaw' in d else 0.0
+            p = (d['foot_x'][i], d['foot_y'][i], yaw)
             if all(math.hypot(p[0] - q[0], p[1] - q[1]) > 0.02 for q in marcados):
                 marcados.append(p)
+    # orientacao de cada pegada (yaw do pe): no giro e na curva, mostra a rotacao
+    for x0, y0, yaw in marcados:
+        ax.plot([x0, x0 + 0.035 * math.cos(yaw)], [y0, y0 + 0.035 * math.sin(yaw)],
+                color=SEM, lw=1.4, zorder=3)
     if marcados:
         ax.scatter([p[0] for p in marcados], [p[1] for p in marcados],
                    s=70, facecolor='white', edgecolor=SEM, lw=1.8, zorder=3,
@@ -357,6 +401,8 @@ if __name__ == '__main__':
     limite = float(os.environ.get('LIMITE_TORQUE', '0')) or None
 
     d = ler_telemetria(pref + '_telemetria.csv')
+    if os.environ.get('FRAME', 'apoio') != 'mundo':
+        d = girar_frame_apoio(d)
     juntas = ler_juntas(pref + '_juntas.csv')
     print('%d amostras de telemetria, %d juntas' % (len(d['t']), len(juntas)))
     print('figuras:')

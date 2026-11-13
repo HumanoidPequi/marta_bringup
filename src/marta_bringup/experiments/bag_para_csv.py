@@ -11,6 +11,8 @@ Gera, ao lado do bag:
     <nome>_telemetria.csv   uma linha por amostra de /marta/walk/telemetry
     <nome>_juntas.csv       uma linha por amostra de cada */state (formato longo)
     <nome>_estabilizador.csv  uma linha por amostra de /marta/stabilizer_debug
+    <nome>_roll.csv           uma linha por amostra de /marta/roll_stabilizer
+                              (RollStabilizer: roll, washout, u_hip, u_ankle, pesos)
 """
 import csv
 import os
@@ -130,9 +132,20 @@ def extrair(caminho_bag, saida_dir=None):
                        + ['%.6f' % d[i] for i in (0, 3, 4, 5, 6, 7, 8)])
             n_e += 1
 
+    # ---- estabilizador de roll (/marta/roll_stabilizer; bags anteriores: vazio) ----
+    p_r = os.path.join(saida_dir, base + '_roll.csv')
+    n_r = 0
+    with open(p_r, 'w') as f:
+        w = csv.writer(f)
+        w.writerow(['t', 'enabled', 'roll', 'roll_mean', 'error', 'u_hip', 'u_ankle',
+                    'w_left', 'w_right', 'saturated'])
+        for _, msg, t in bag.read_messages(topics=['/marta/roll_stabilizer']):
+            w.writerow(['%.4f' % (t.to_sec() - t0)] + ['%.6f' % v for v in msg.data[:9]])
+            n_r += 1
+
     bag.close()
-    print('  %s -> %d amostras de telemetria, %d de juntas, %d do estabilizador'
-          % (base, n_tel, n_j, n_e))
+    print('  %s -> %d amostras de telemetria, %d de juntas, %d do estabilizador, %d do roll'
+          % (base, n_tel, n_j, n_e, n_r))
     return p_tel, p_j
 
 

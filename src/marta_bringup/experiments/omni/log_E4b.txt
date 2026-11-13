@@ -1,0 +1,38 @@
+05:46:57  panorama: src/marta_bringup/experiments/omni/desenho_E4b.csv, semente 20261118, 12 corridas a fazer
+05:46:57  [1/12] E4_M38_torn_K1_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:48:17  [2/12] E4_M38_quatorn_K0.5_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:49:37  [3/12] E4_M38_quatorn_K1_reta0.10_pD_r1
+        RESULTADO .................. CAIU em 31.5 s  por pitch
+        fator de tempo real ........  0.999
+05:50:57  [4/12] E4_M38_torn_K1_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:52:17  [5/12] E4_M38_torn_K1_reta0.10_pD_r1
+        RESULTADO .................. CAIU em 31.0 s  por pitch
+        fator de tempo real ........  0.999
+05:53:36  [6/12] E4_M38_quatorn_K1_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:54:56  [7/12] E4_M38_quatorn_K1_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:56:16  [8/12] E4_M38_quatorn_K0.5_reta0.10_pD_r1
+        RESULTADO .................. CAIU em 31.6 s  por pitch
+        fator de tempo real ........  0.999
+05:57:36  [9/12] E4_M38_quatorn_K0.5_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+05:58:56  [10/12] E4_M38_quatorn_K1_lat+0.05_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+06:00:16  [11/12] E4_M38_quatorn_K0.5_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:01:36  [12/12] E4_M38_torn_K1_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+06:02:55  fim.

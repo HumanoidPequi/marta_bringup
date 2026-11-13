@@ -2,14 +2,15 @@
 
 > Tabela de consulta da bateria do panorama
 > ([panorama_parametros.md](panorama_parametros.md): 354 corridas,
-> servo MX-28, marcha a 0,1 m/s, simulação).
+> servo MX-28, marcha a 0,1 m/s, simulação). O passo 6, de velocidades, vem
+> da marcha omnidirecional ([marcha_omnidirecional.md](marcha_omnidirecional.md)).
 >
 > A mesma lógica, como calculadora:
 > `python3 src/marta_bringup/experiments/consulta_parametros.py`. Ela pergunta
 > cada valor; Enter mantém o da Marta atual. Ou passe flags:
 > `--massa 3.5 --coxa 95 ... -n`.
 
-## Em 5 passos
+## Em 6 passos
 
 ### 1. Índice de carga: anda ou não anda?
 
@@ -110,6 +111,52 @@ joelho real (`l_knee` no log ou na telemetria) e ajuste o `z_com`.
 | `hip_pitch_offset_deg` | −5 | a compensação só entra no 1º passo; sem o −5°, o robô começa inclinado para trás e cai (19/24 contra 6/24) |
 | estabilizador de pitch | ligado | não muda a postura parada, mas sem ele 2 de 5 condições que andavam caem |
 
+### 6. Que velocidades usar
+
+Fonte: a marcha omnidirecional ([marcha_omnidirecional.md](marcha_omnidirecional.md);
+E1, E4, E5, E6env e o diagnóstico sem gol). Foram testados **dois níveis**:
+- **M33:** 3,30 kg, I = 2,53;
+- **M38:** 3,80 kg, I = 2,92.
+
+Cada um usa a postura deste guia (passos 2–5). "Anda" = 30 s nos dois pés
+iniciais. As velocidades são lidas só na partida (`walk_velocity_x/y/yaw`).
+
+| movimento | faixa testada | M33 com roll | M38 com roll | M33 sem roll | M38 sem roll |
+|---|---|---|---|---|---|
+| reta vx [m/s] | 0,05–0,15 | 0,05–0,15¹ | 0,05–0,15¹ | 0,05–0,15¹ | 0,10–0,15¹ (0,05 cai) |
+| giro no lugar ω [rad/s] | ±0,10 a ±0,35 | **toda** | **toda** | nenhuma | nenhuma |
+| curva (vx 0,1; ω) | ±0,10 a ±0,25 | toda | toda | só +0,10 | só −0,10 |
+| lateral vy [m/s] | ±0,025 e ±0,05 | toda² | toda² | ±0,025² | nenhuma |
+| diagonal (0,1; vy) | ±0,03 | toda | toda³ | toda | instável⁴ |
+| combinado (0,1; 0,03; ω) | ±0,175 | toda | +0,175 (−0,175: 1 de 2) | +0,175 | +0,175 |
+
+1. **0,15** só testada sem o gol do campo (pé direito, uma corrida por
+   braço). No `world.world`, a reta e a diagonal batem no gol em x = 3 m.
+2. **O lateral sai torto.** O gerador acrescenta um avanço de ~1 cm/s, e o
+   erro de direção fica em 12–19° a 0,05 m/s e 26–34° a 0,025 m/s.
+3. Duas quedas na E5, no gol e (inferência) na bola. Sem os obstáculos,
+   anda.
+4. Sem roll, o M38 na diagonal varia entre corridas e cai na partida em
+   algumas.
+
+**Recomendação:**
+- **Use o estabilizador de roll** (quatorn K1) para tudo que não seja reta.
+  Sem ele, o giro não anda em nenhuma massa.
+- **No M38, o combinado com ω < 0 é borda:** caiu na partida com o pé
+  esquerdo, numa corrida.
+- **Na faixa de I entre 2,53 e 2,92**, use a coluna do M38 (a mais
+  conservadora). **Acima de 2,92** não há dado: é extrapolação.
+
+**Linha do `roslaunch`:** a do passo 5 mais
+```
+roll_stabilizer_enabled:=true kp_roll_hip:=0.5 kd_roll_hip:=0.075 \
+  kp_roll_ankle:=0.5 kd_roll_ankle:=0.075 kd_pitch:=0.06 \
+  walk_velocity_x:=<vx> walk_velocity_y:=<vy> walk_velocity_yaw:=<ω>
+```
+
+O `kd_pitch:=0.06` vem da E7: com roll, reduz o pitch RMS em 10% (41 de 44
+pares). O `hip_offset_x` +5 mm foi testado na E7 e não ajuda.
+
 ## Exemplo: a Marta com 3,80 kg
 
 ```
@@ -127,8 +174,8 @@ python3 consulta_parametros.py -n --massa 3.80
 - **É ponto de partida, não garantia**, quando a geometria muda. A bateria
   variou só a massa do tronco de uma geometria.
 - **Não foi medido:**
-  - giro, marcha lateral ou outras velocidades;
   - robustez a empurrões;
-  - postura com estabilizador de roll, que ainda não existe e deve abrir as
-    posturas esticadas.
+  - posturas mais esticadas com o estabilizador de roll (o passo 2 é sem
+    roll; o roll existe desde 2026-11 e pode abrir essas posturas);
+  - velocidades fora das faixas do passo 6.
 - **Simulação:** o servo real tem folga, aquecimento e queda de tensão.

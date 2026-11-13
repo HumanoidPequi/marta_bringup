@@ -12,7 +12,9 @@ aponta para os dois documentos de detalhe.
 | [como_ler_as_figuras.md](como_ler_as_figuras.md) | interpretação de cada figura gerada |
 | [resultados_campanha.md](resultados_campanha.md) | a campanha de 78 corridas do estabilizador de pitch |
 | [desvio_de_direcao.md](desvio_de_direcao.md) | a investigação do giro em yaw: instrumentação, hipóteses, resultados, malha de rumo |
-| [plano_fase3_roll.md](plano_fase3_roll.md) | **Fase 3 projetada, não implementada**: compensação de gravidade + estabilizador de roll, referências com página, protocolo |
+| [plano_fase3_roll.md](plano_fase3_roll.md) | Fase 3, **implementada** (compensação de gravidade em out/2026, estabilizador de roll em nov/2026): desenho, referências com página, protocolo |
+| [marcha_omnidirecional.md](marcha_omnidirecional.md) | **marcha omnidirecional + estabilizador de roll (~520 corridas, nov/2026)**: giro, curva, lateral, diagonal e combinado a 3,3 e 3,8 kg; sintonia de pitch e rumo; o roll faz o giro andar; obstáculos no campo simulado; demo no Foxglove |
+| [marcha_omnidirecional_explicacao.md](marcha_omnidirecional_explicacao.md) | a mesma marcha omnidirecional em narrativa, para reunião |
 | [plano_comparacao_darwin.md](plano_comparacao_darwin.md) | comparação Marta × Darwin-OP (por que 6 N·m): modelo comum de MX-28, métricas, hipóteses; **E0 e E1c feitos** (postura × altura do pé, 72 corridas): o gargalo é a perna em balanço |
 | [ajustes_marcha.md](ajustes_marcha.md) | **ajustes de parâmetros de out/2026**: geometria da IK (tornozelo→sola, quadril em x) e marcha (`z_com`, apoio duplo, separação e altura dos pés): o que mudou, por quê e o que falta medir |
 | [panorama_parametros.md](panorama_parametros.md) | **panorama massa × parâmetros (354 corridas, MX-28)**: janela de marcha por massa (anda até ~3,6 kg), por que o tronco "pende" com a massa (−5° fixo no hip pitch + cedência dos servos), saturação do joelho de apoio, ganho da compensação e receita para a Marta nova |
@@ -21,15 +23,18 @@ aponta para os dois documentos de detalhe.
 
 ---
 
-## 0. Retomada rápida (estado em 2026-10-28)
+## 0. Retomada rápida (estado em 2026-11-12)
 
 **Ordem de leitura para retomar sem perder contexto:**
 1. este arquivo inteiro;
-2. [panorama_parametros.md](panorama_parametros.md) (o estudo mais recente) e
+2. [marcha_omnidirecional.md](marcha_omnidirecional.md) (o estudo mais
+   recente; narrativa em
+   [marcha_omnidirecional_explicacao.md](marcha_omnidirecional_explicacao.md)),
+   [panorama_parametros.md](panorama_parametros.md) e
    [consulta_parametros.md](consulta_parametros.md);
 3. [ajustes_marcha.md](ajustes_marcha.md): geometria da IK, marcha, modelo de
    servo e compensação de gravidade;
-4. [plano_fase3_roll.md](plano_fase3_roll.md): o próximo bloco, roll;
+4. [plano_fase3_roll.md](plano_fase3_roll.md): desenho do roll (implementado);
 5. [desvio_de_direcao.md](desvio_de_direcao.md) §6–10: malha de rumo e
    sintonia; [estabilizadores.md](estabilizadores.md) §4: estabilizador de
    pitch.
@@ -37,8 +42,10 @@ aponta para os dois documentos de detalhe.
 As referências bibliográficas (PDFs) estão em `~/Documents/ic/study` (§2).
 
 **Configuração de referência atual** (simulação "realista"): servo MX-28,
-compensação de gravidade ligada, Marta com 3,80 kg. Foi a melhor combinação
-da bateria para essa massa (3/3 corridas de 30 s):
+compensação de gravidade ligada, Marta com 3,80 kg. É a melhor combinação do
+panorama para essa massa (3/3 corridas de 30 s), **mais o estabilizador de
+roll** (quatorn K1, confirmado na E5 da marcha omnidirecional). Com ele, gira
+e anda em todas as direções testadas:
 
 ```bash
 roslaunch marta_bringup stabilizer_test.launch gui:=false \
@@ -46,8 +53,16 @@ roslaunch marta_bringup stabilizer_test.launch gui:=false \
   joint_effort:=2.5 joint_velocity:=100 implicit_damping:=true joint_damping:=0.43 \
   gains:=/ws/src/marta_description/config/controller_mx28.yaml \
   gravity_comp_enabled:=true gravity_comp_joints:=hip_roll,knee gravity_comp_gain:=0.3 \
-  torso_mass_scale:=0.67 z_com:=0.239 hip_offset_x:=0.009 hip_pitch_offset_deg:=-5
+  torso_mass_scale:=0.67 z_com:=0.239 hip_offset_x:=0.009 hip_pitch_offset_deg:=-5 \
+  roll_stabilizer_enabled:=true kp_roll_hip:=0.5 kd_roll_hip:=0.075 \
+  kp_roll_ankle:=0.5 kd_roll_ankle:=0.075 kd_pitch:=0.06 \
+  walk_velocity_x:=0.1 walk_velocity_y:=0 walk_velocity_yaw:=0
 ```
+
+As velocidades seguras por massa e movimento estão em
+[consulta_parametros.md](consulta_parametros.md) §6 e no bloco 6 da
+calculadora. **Atenção:** o `world.world` tem um gol em x = 3 m e uma bola em
+(2,0; −0,2) no caminho da reta (achado W).
 
 Para outra massa ou geometria, use
 `python3 src/marta_bringup/experiments/consulta_parametros.py`.
@@ -60,17 +75,24 @@ Para outra massa ou geometria, use
 - **Hoje** o regime é: MX-28 realista (2,5 N·m, Kp 12,74), IK corrigida,
   marcha nova, pé em caixa, compensação de gravidade, 3,3 a 3,8 kg.
 - **Os ganhos de pitch** (kp 0,2, kd 0,03) **e de rumo** (kp 1,0, saturação
-  0,3 rad/s) **foram sintonizados no regime antigo e nunca ressintonizados no
-  atual.** A fase D do panorama só mostrou que o estabilizador de pitch ajuda.
-  Sem ele, o pitch RMS sobe 0,9–1,4° e 2 de 5 condições que andavam passam a
-  cair. Não mostrou que os ganhos estão bons.
+  0,3 rad/s) vêm do regime antigo. **Foram verificados no atual** (E2 da
+  marcha omnidirecional, 3,3 e 3,8 kg, todos os movimentos): nenhuma
+  combinação os supera pelo critério pré-registrado. O rumo está bom.
+- **Com o roll ligado, o kd de pitch passa a 0,06** (E7, 2026-11-13): −10%
+  de pitch RMS, melhor em 41 de 44 pares, Holm 4·10⁻¹⁰. O default do launch
+  segue 0,03, para reproduzir as campanhas; os comandos recomendados passam
+  `kd_pitch:=0.06`. O `hip_offset_x` +5 mm não ajuda com roll: inclina o
+  tronco +1,6° para frente.
 
-**Em aberto: os próximos objetivos do usuário.**
-1. **Estabilizador de roll** (Fase 3, §7).
-2. **Curvas e giro no próprio eixo.** Nunca testados no regime atual: todas as
-   corridas recentes foram em linha reta a 0,1 m/s. Ver achado U.
-3. **Sintonia dos estabilizadores de pitch e de rumo** para a configuração de
-   3,80 kg.
+**Decisões do usuário (2026-11-12)** (detalhes em
+[marcha_omnidirecional.md](marcha_omnidirecional.md) §"Decisões"):
+1. **Roll:** quatorn K1, **adotado**.
+2. **Pitch:** "manter o que ficou melhor" → E7 → **kd 0,06 adotado**.
+3. **`hip_offset_x` +5 mm:** "então teste" → E7 → **não adotado**.
+4. **Mundo:** as campanhas automáticas usam o `campo_livre.world`
+   (`experiments/omni/diag/`). **Todo comando para rodar à mão usa o campo
+   completo** (`world.world`, o default). Com `gui:=true`, use as flags de
+   X11 do §5, senão o `gzclient` aborta.
 
 ---
 
@@ -389,6 +411,13 @@ repetições da mesma condição deram o mesmo desfecho. A estatística tem que
 ser feita **por condição**; contar corridas repetidas é pseudorreplicação.
 Para medir robustez, varie a condição: grade fina, perturbação ou empurrão.
 Os "n = 3" de campanhas antigas sofrem disso.
+- **Quase, não totalmente** (medido em nov/2026): em condições na borda, o
+  ruído de temporização do ROS muda o instante da queda entre corridas
+  idênticas. O giro +0,175 do M33 durou 6,8; 6,9; 12,6; 12,8 e 17,6 s em
+  cinco corridas.
+- O que se repete é o desfecho binário (anda os 30 s, ou cai na partida).
+- **Não compare braços pela sobrevida de uma corrida numa condição de
+  borda.**
 
 **T.** **A compensação de gravidade só entra no 1º passo**, com rampa de 1 s
 (`LegGravityCompensation`, `RAMP_TIME`). No agachamento e parado, Δ = 0.
@@ -402,22 +431,73 @@ Os "n = 3" de campanhas antigas sofrem disso.
 **U.** **Velocidades da marcha só são lidas na partida.**
 - O `controller_node` lê `walk_velocity_x/y/yaw` uma vez, no construtor
   (`controller.cpp`, l. 25–27).
-- O `_velocity_x` do `walk_test.py` grava o parâmetro, mas **não muda a
-  marcha**; coincidia com o default 0,1 do launch. O `walk_test.py` não tem
-  `_velocity_z`.
+- O `_velocity_x` do `walk_test.py` **não muda a marcha**. Até 2026-11-12
+  ele também sobrescrevia o parâmetro com 0,1 (o `rosparam` mentia no giro;
+  as análises leem o SUMMARY do `_launch.log` e não foram afetadas). Agora o
+  script só lê e mostra vx, vy e ω, e avisa se `_velocity_x` divergir.
 - Para girar ou fazer curva, passe `walk_velocity_yaw:=<rad/s>` (e
   `walk_velocity_x`) no **roslaunch**.
 - A malha de rumo integra o comando na referência
   (`headingRef += rotação·dt`), então acompanha o giro em vez de brigar com
   ele.
 - O launch passa `hip_yaw_sign:=-1` (achado L).
-- **Giro nunca foi testado no regime atual.**
+- **Giro testado em nov/2026** ([marcha_omnidirecional.md](marcha_omnidirecional.md)):
+  com roll, ω realizado entre 0,99 e 1,02 do comandado.
 
 **V.** **Nas massas que andam, quem derruba é o roll.**
 - No panorama, 52 das 102 quedas durante a marcha foram de lado.
 - Elas aumentam com `z_com` alto (perna esticada) e com `hip_offset_x`
   grande: 44 das 52 tinham x ≥ 9 mm.
-- O roll é hoje a principal limitação da janela de parâmetros (§7, item 1).
+- O roll era a principal limitação da janela de parâmetros. **O
+  estabilizador de roll (achado X) resolve isso** no giro, no lateral e na
+  partida do M38.
+
+**W.** **O campo simulado tem obstáculos no caminho da reta.** O `world.world`
+é o campo SPL da RoboCup 2009:
+- um **gol com colisão em x = +3,0 m** (traves em y = ±0,7 m, rede);
+- uma **bola de 26 g e 24 cm de diâmetro em (2,0; −0,2)**. O link tem
+  `<pose>2 0 0` no `model.sdf`, e o `/gazebo/model_states` mostra a pose do
+  modelo, (0; −0,2), e não a do link.
+
+A 0,1 m/s, a reta passa pela bola aos ~19 s e chega ao gol aos 30 s:
+- **toda reta e diagonal tomba no gol** (depois dos 30 s a 0,1 m/s, aos
+  22–24 s a 0,15 m/s);
+- **sem gol e sem bola**, a reta 0,15 anda 30 s.
+
+O panorama não é afetado (só quedas antes dos 30 s contam, e nenhuma é na
+bola). Para campanhas novas, use o `experiments/omni/diag/campo_livre.world`
+(mesma física, sem gol nem bola) ou corrija o modelo.
+
+**X.** **O estabilizador de roll faz o giro andar.**
+- É P+D sobre φ − φ̄ (washout de 2 s), no hip roll e no ankle roll da perna de
+  apoio, ponderado pela carga.
+- **Na E5** (88 corridas intercaladas), completaram 42/44 com roll contra
+  13/44 sem (sinal p = 1,3·10⁻⁷). Giro (±0,175 e ±0,35): 0/16 → 16/16; lateral ±0,05: 0/8 → 8/8 (as duas massas).
+- **O termo proporcional é o ingrediente:** só derivativo (o estabilizador do
+  mestrado do Maximo) completou 2 de 4.
+- **Custo:** +10–19% de pitch RMS na reta do M33.
+- Forçado a desligado no robô real.
+
+**Y.** **A partida suave (`start_ramp_steps`) derruba o robô no regime
+atual.** Ela escala pelo mesmo fator o balanço lateral do CoM e a altura do
+pé:
+- com rampa de 4 passos, o robô cai antes da marcha;
+- com 8, todas as 11 condições caem aos ~5,6 s.
+
+Deixe em 0.
+
+**Z.** **O LIPM da telemetria usa os eixos do mundo**, com origem no pé de
+apoio. Em reta dá no mesmo; no giro e na curva, a energia orbital, o DCM e a
+comparação com a referência precisam do frame do pé, girado pelo yaw dele.
+O `viz_marcha.py` e o `figuras_marcha.py` já fazem a rotação
+(`FRAME=mundo` reproduz as figuras antigas).
+
+**AA.** **O gerador tem um avanço espúrio** de v_x ≈ 0,010–0,017 m/s no
+lateral e no giro, com ou sem estabilizadores:
+- o lateral sai a 12–34° da direção comandada;
+- no giro no lugar, o tronco descreve um círculo de 8–15 cm.
+
+Ainda não foi investigado no `OmnidirectionalWalkZMP`.
 
 ---
 
@@ -476,6 +556,68 @@ docker exec -it marta_stab -e LIBGL_ALWAYS_SOFTWARE=1 -e MESA_LOADER_DRIVER_OVER
   `LIBGL_ALWAYS_SOFTWARE=1`:** isso funciona, mas renderiza na CPU (llvmpipe).
   Conferir com `glxinfo -B | grep renderer` dentro do container: tem que
   aparecer a RTX 3050.
+
+### Teleop pelo teclado (só simulação)
+
+Uma janela Tk ([`scripts/teleop_marta.py`](../src/marta_bringup/scripts/teleop_marta.py))
+publica em `/marta/cmd_vel`. Com `teleop:=true`, o launch abre a janela e liga
+`cmd_vel_enabled` no `controller_node`; os `walk_velocity_*` passam a ser
+ignorados. A janela despausa a simulação sozinha. **Não rode o
+`walk_test.py` junto.**
+
+**Comando** (M34 = 3,4 kg com roll, campo completo, GUI):
+
+```bash
+cd ~/Documents/ic/marta_bringup
+xhost +local:root
+docker run --rm -it --name marta_stab --network host --gpus all --device /dev/dri \
+  -e DISPLAY="$DISPLAY" -e QT_X11_NO_MITSHM=1 \
+  -e __GLX_VENDOR_LIBRARY_NAME=nvidia -e __NV_PRIME_RENDER_OFFLOAD=1 \
+  -v "$PWD":/ws -v /tmp/.X11-unix:/tmp/.X11-unix -w /ws marta_bringup:1.0 \
+  bash -c 'source /opt/ros/noetic/setup.bash && source devel/setup.bash && \
+    roslaunch marta_bringup stabilizer_test.launch gui:=true teleop:=true \
+      foot_collision:=box stabilizer_enabled:=true heading_enabled:=true \
+      joint_effort:=2.5 joint_velocity:=100 implicit_damping:=true joint_damping:=0.43 \
+      gains:=/ws/src/marta_description/config/controller_mx28.yaml \
+      gravity_comp_enabled:=true gravity_comp_joints:=hip_roll,knee gravity_comp_gain:=0.3 \
+      torso_mass_scale:=0.534 z_com:=0.239 hip_offset_x:=0.0036 hip_pitch_offset_deg:=-5 \
+      roll_stabilizer_enabled:=true kp_roll_hip:=0.5 kd_roll_hip:=0.075 \
+      kp_roll_ankle:=0.5 kd_roll_ankle:=0.075 kd_pitch:=0.06'
+```
+
+Para ver no Foxglove ao mesmo tempo, acrescente `foxglove:=true viz_marcha:=true`.
+
+**Teclas.** Clique na janela "Marta - teleop" para ela receber o teclado.
+Segure a tecla para manter o comando.
+
+Espere a janela mostrar "em pe - Enter para andar" (~15 s). W A S D valem
+como as setas. A janela mostra a última tecla recebida: se ela não muda, o
+teclado não está chegando à janela; clique nela de novo.
+
+| tecla | comando |
+|---|---|
+| ↑ ou W | reta, vx 0,1 m/s. Com o robô em pé, já dá a partida |
+| ← / → ou A / D | giro no lugar, ω ±0,175 rad/s (← = anti-horário) |
+| ↑ + ← / → | curva (0,1; ±ω); com o modo `c`, giro no lugar |
+| nenhuma | marcha no lugar |
+| ↓ ou S | para (o gerador dá ~3 passos e fica em pé) |
+| Enter | também dá a partida |
+| `c` | alterna ↑ + lado entre curva e giro no lugar |
+| `+` / `-` | ω = 0,35 / 0,175 rad/s |
+| `q` | sai |
+
+**Como funciona e limites:**
+- O controlador lê a velocidade a cada passo, isto é, a cada 0,6 s. A
+  resposta a uma tecla leva até um passo.
+- **Watchdog:** sem mensagem por 0,5 s, o comando vai a zero (marcha no
+  lugar).
+- **Limites no controlador:** |vx| ≤ 0,15, |vy| ≤ 0,05, |ω| ≤ 0,35. A janela
+  só gera comandos do envelope testado. Não anda para trás nem de lado.
+- **No campo completo** há uma bola em (2,0; −0,2) e um gol em x = 3 m. Bater
+  neles derruba o robô.
+- **Robô real:** não testado. O roll é forçado a desligado com `isReal`.
+- **Validação:** ver [marcha_omnidirecional.md](marcha_omnidirecional.md),
+  seção "Teleop".
 
 ### Visualização no Foxglove
 
@@ -544,6 +686,13 @@ Commits na raiz:
 |---|---|
 | `cb793af` | investigação do desvio de direção, estabilizador de pitch, telemetria de marcha |
 | `c1b7228` | visualização no Foxglove (bridge ao vivo, tópicos no bag, layout) |
+| `7f32370` | ajustes da marcha, compensação de gravidade e panorama de parâmetros |
+
+**Commit pendente de 2026-11-12** (comandos preparados para o usuário):
+- `RollStabilizer` e seus testes no `marta_control`;
+- marcha omnidirecional: docs, figuras, scripts de análise, desenhos, logs,
+  diagnóstico de gol e bola;
+- `viz_marcha.py` e layout `marta_omni.json`.
 
 Os submódulos recebem commit próprio **antes** do ponteiro na raiz. Commits do
 usuário vão **sem** a linha `Co-Authored-By`.
@@ -593,7 +742,31 @@ git.
 
 ---
 
-## 7. Próximos passos, em ordem de valor (revisto em 2026-10-28)
+## 7. Próximos passos, em ordem de valor (revisto em 2026-11-12)
+
+**Feito em nov/2026** ([marcha_omnidirecional.md](marcha_omnidirecional.md)):
+os antigos itens 1–4 desta lista.
+- estabilizador de roll implementado e confirmado;
+- ganhos de pitch e rumo verificados;
+- curvas e giro testados;
+- o termo integral do rumo não foi necessário (erro de regime < 10°).
+
+**Agora:**
+1. **Validar kd 0,06 fora do que a E7 cobriu:** velocidades de borda do
+   envelope (E6env) e o teleop em M33 e M38.
+2. **Avanço espúrio do gerador** (achado AA). Corrigir o lateral exige
+   mexer no `OmnidirectionalWalkZMP`.
+3. **Velocidades e posturas além do testado com roll:** reta > 0,15 e
+   lateral > 0,05 sem o gol; posturas mais esticadas, que o roll pode
+   viabilizar.
+4. **Robustez:** empurrão lateral parado e andando (`push_test.py`, eixo y),
+   com e sem roll.
+5. **Robô real:** sintonia própria do roll (o código força desligado) e o
+   sentido do `hip_yaw` (achado L).
+
+**Itens anteriores, ainda válidos:**
+
+Os itens 1–4 abaixo estão concluídos (ver acima); os demais seguem válidos.
 
 1. **Estabilizador de roll (Fase 3, segunda metade).**
    - **Por que agora:**

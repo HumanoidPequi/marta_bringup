@@ -7,3 +7,5 @@ __pycache__/
 .vscode/
 # dados brutos das campanhas (regeneraveis pelos rodar_*.sh; ~1,7 GB)
 src/marta_bringup/experiments/**/dados/
+# bags da demo do Foxglove (~35 MB cada; regeneraveis com BAG_DIR=... rodar_panorama.sh)
+src/marta_bringup/experiments/**/demo/

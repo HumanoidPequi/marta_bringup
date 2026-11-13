@@ -1,9 +1,26 @@
-# Fase 3: compensação de gravidade (implementada) e estabilizador de roll (plano, não implementado)
+# Fase 3: compensação de gravidade e estabilizador de roll (ambos implementados)
 
 > Parte de [README.md](README.md) — leia o mapa central primeiro.
 > Documento irmão: [estabilizadores.md](estabilizadores.md) (Fases 1 e 2).
 
-**Estado (2026-10-22): a compensação de gravidade (§4.1, §4.2, parte da §4.4) está implementada e testada; resultados e ressalvas em [ajustes_marcha.md](ajustes_marcha.md) §Compensação de gravidade. O estabilizador de roll (§4.3) não foi implementado.** Este documento guarda:
+**Estado (2026-11-12): os dois blocos estão implementados.**
+- **Compensação de gravidade** (§4.1, §4.2, parte da §4.4): resultados em
+  [ajustes_marcha.md](ajustes_marcha.md) §Compensação de gravidade.
+- **Estabilizador de roll** (§4.3): `RollStabilizer` em `marta_control`,
+  desligado por default. Foi testado na marcha omnidirecional; a implementação,
+  os ganhos escolhidos e os resultados estão em
+  [marcha_omnidirecional.md](marcha_omnidirecional.md).
+- **Mudanças em relação ao desenho abaixo:**
+  - pesos de carga do gerador (`getLoadWeights`);
+  - teste do washout a 0,83 Hz, a frequência da passada atual;
+  - viés de roll remedido no regime atual (−0,1 a −0,3° em reta).
+- **Resultado (E5, 88 corridas intercaladas):** com quatorn K1 (kp 0,5 / kd
+  0,075 no quadril e no tornozelo), completaram 42/44 com roll contra 13/44
+  sem. O giro e o lateral passaram de 0 para todas as corridas nas duas
+  massas. Só derivativo não basta.
+
+Estado anterior (2026-10-22): a compensação de gravidade estava implementada e
+o roll, não. Este documento guarda:
 - os dados que motivam o projeto;
 - as referências conferidas, com página;
 - o desenho completo dos dois blocos;

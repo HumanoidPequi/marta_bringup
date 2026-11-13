@@ -1,0 +1,29 @@
+09:02:29  panorama: src/marta_bringup/experiments/omni/desenho_demo.csv, semente 20261121, 9 corridas a fazer
+09:02:29  [1/9] D_M33_roll_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:03:49  [2/9] D_M38_roll_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:05:09  [3/9] D_M33_roll_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:06:29  [4/9] D_M33_off_giro+0.175_pD_r1
+        RESULTADO .................. CAIU em 11.6 s  por pitch
+        fator de tempo real ........  0.999
+09:07:28  [5/9] D_M33_roll_curva+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:08:47  [6/9] D_M38_roll_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+09:10:07  [7/9] D_M33_roll_diag+0.03_pD_r1
+        RESULTADO .................. CAIU em 31.7 s  por pitch
+        fator de tempo real ........  0.999
+09:11:28  [8/9] D_M38_off_giro+0.175_pD_r1
+        RESULTADO .................. CAIU em 4.2 s  por pitch
+        fator de tempo real ........  0.999
+09:12:19  [9/9] D_M38_roll_reta0.10_pD_r1
+        RESULTADO .................. CAIU em 31.1 s  por pitch
+        fator de tempo real ........  0.999
+09:13:38  fim.

@@ -1,0 +1,13 @@
+16:24:45  T_M34_kd06_w0.175_pD
+        RESULTADO .................. andou 95 s sem cair
+        fator de tempo real ........  0.999
+16:27:12  T_M34_kd06_w0.175_pE
+        RESULTADO .................. andou 94 s sem cair
+        fator de tempo real ........  0.999
+16:29:38  T_M34_kd06_w0.35_pD
+        RESULTADO .................. andou 94 s sem cair
+        fator de tempo real ........  0.999
+16:32:04  T_M34_kd06_w0.35_pE
+        RESULTADO .................. andou 94 s sem cair
+        fator de tempo real ........  0.999
+16:34:30  fim.
