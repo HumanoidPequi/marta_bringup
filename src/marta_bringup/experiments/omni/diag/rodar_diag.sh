@@ -13,7 +13,7 @@ tail -n +2 "$S/desenho_diag.csv" | while IFS=, read -r TAG MUNDO TMS ZC HX G EXT
   echo "$(date +%H:%M:%S)  $TAG"
   timeout 300 docker run --rm -v "$RAIZ":/ws -v "$S":/scratch -w /ws marta_bringup:1.0 bash -lc "
     source /opt/ros/noetic/setup.bash && source devel/setup.bash
-    PYTHONUNBUFFERED=1 roslaunch marta_bringup stabilizer_test.launch gui:=false \
+    PYTHONUNBUFFERED=1 roslaunch marta_bringup stabilizer_test.launch gui:=false arm_shoulder_roll_deg:=50 arm_shoulder_pitch_deg:=0 arm_elbow_deg:=0 \
       stabilizer_enabled:=true heading_enabled:=true foot_collision:=box $MX \
       torso_mass_scale:=$TMS z_com:=$ZC hip_offset_x:=$HX \
       gravity_comp_enabled:=true gravity_comp_joints:=hip_roll,knee gravity_comp_gain:=$G \

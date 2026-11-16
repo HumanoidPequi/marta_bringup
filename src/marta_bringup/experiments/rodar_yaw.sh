@@ -110,7 +110,7 @@ for C in "${CORRIDAS[@]}"; do
   echo "$(date +%H:%M:%S)  [$N/$TOTAL] $TAG"
   timeout 300 docker run --rm -v "$RAIZ":/ws -w /ws marta_bringup:1.0 bash -lc "
     source /opt/ros/noetic/setup.bash && source devel/setup.bash
-    roslaunch marta_bringup stabilizer_test.launch gui:=false \
+    roslaunch marta_bringup stabilizer_test.launch gui:=false arm_shoulder_roll_deg:=50 arm_shoulder_pitch_deg:=0 arm_elbow_deg:=0 \
       stabilizer_enabled:=$STAB joint_effort:=$TAU foot_mu:=$MU foot_collision:=$COL \\
       start_left_swing:=$([ "$PARTIDA" = esq ] && echo true || echo false) \\
       start_ramp_steps:=$RAMPA heading_enabled:=$RUMO skip_initial_stop_steps:=$PULA \\

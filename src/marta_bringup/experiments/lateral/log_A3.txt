@@ -1,0 +1,110 @@
+23:57:47  panorama: src/marta_bringup/experiments/lateral/desenho_A3.csv, semente 20261118, 36 corridas a fazer
+23:57:47  [1/36] A3_M38_lat-0.075_y0.06_T0.7_pD_r1
+        RESULTADO .................. CAIU em 4.7 s  por pitch
+        fator de tempo real ........  0.996
+23:58:41  [2/36] A3_M38_lat+0.075_y0.07_T0.5_pD_r1
+        RESULTADO .................. CAIU em 3.1 s  por pitch
+        fator de tempo real ........  0.990
+23:59:33  [3/36] A3_M38_lat-0.075_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.992
+00:00:56  [4/36] A3_M38_lat+0.075_y0.07_T0.6_pD_r1
+        RESULTADO .................. CAIU em 4.2 s  por pitch
+        fator de tempo real ........  0.995
+00:01:50  [5/36] A3_M38_lat-0.075_y0.05_T0.7_pD_r1
+        RESULTADO .................. CAIU em 5.1 s  por pitch
+        fator de tempo real ........  0.996
+00:02:45  [6/36] A3_M38_lat-0.075_y0.05_T0.6_pD_r1
+        RESULTADO .................. CAIU em 10.5 s  por pitch
+        fator de tempo real ........  0.995
+00:03:45  [7/36] A3_M38_lat+0.075_y0.05_T0.6_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.996
+00:05:08  [8/36] A3_M33_lat-0.075_y0.06_T0.7_pD_r1
+        RESULTADO .................. CAIU em 4.5 s  por pitch
+        fator de tempo real ........  0.997
+00:06:02  [9/36] A3_M33_lat+0.075_y0.07_T0.7_pD_r1
+        RESULTADO .................. CAIU em 3.8 s  por pitch
+        fator de tempo real ........  0.997
+00:06:54  [10/36] A3_M33_lat-0.075_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.996
+00:08:16  [11/36] A3_M38_lat+0.075_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.996
+00:09:38  [12/36] A3_M33_lat-0.075_y0.07_T0.6_pD_r1
+        RESULTADO .................. CAIU em 4.3 s  por pitch
+        fator de tempo real ........  0.996
+00:10:31  [13/36] A3_M38_lat+0.075_y0.06_T0.7_pD_r1
+        RESULTADO .................. CAIU em 4.1 s  por pitch
+        fator de tempo real ........  0.996
+00:11:24  [14/36] A3_M38_lat-0.075_y0.07_T0.5_pD_r1
+        RESULTADO .................. CAIU em 4.3 s  por pitch
+        fator de tempo real ........  0.997
+00:12:17  [15/36] A3_M33_lat+0.075_y0.06_T0.5_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.997
+00:13:39  [16/36] A3_M38_lat+0.075_y0.05_T0.7_pD_r1
+        RESULTADO .................. CAIU em 4.5 s  por pitch
+        fator de tempo real ........  0.997
+00:14:33  [17/36] A3_M33_lat-0.075_y0.05_T0.7_pD_r1
+        RESULTADO .................. CAIU em 11.3 s  por pitch
+        fator de tempo real ........  0.997
+00:15:34  [18/36] A3_M38_lat-0.075_y0.06_T0.6_pD_r1
+        RESULTADO .................. CAIU em 5.1 s  por pitch
+        fator de tempo real ........  0.998
+00:16:28  [19/36] A3_M33_lat-0.075_y0.07_T0.7_pD_r1
+        RESULTADO .................. CAIU em 4.4 s  por pitch
+        fator de tempo real ........  0.995
+00:17:21  [20/36] A3_M38_lat-0.075_y0.06_T0.5_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.997
+00:18:43  [21/36] A3_M33_lat+0.075_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.995
+00:20:06  [22/36] A3_M38_lat-0.075_y0.07_T0.6_pD_r1
+        RESULTADO .................. CAIU em 4.7 s  por pitch
+        fator de tempo real ........  0.996
+00:21:00  [23/36] A3_M33_lat+0.075_y0.07_T0.5_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.997
+00:22:22  [24/36] A3_M33_lat+0.075_y0.06_T0.7_pD_r1
+        RESULTADO .................. CAIU em 3.9 s  por pitch
+        fator de tempo real ........  0.997
+00:23:15  [25/36] A3_M38_lat+0.075_y0.07_T0.7_pD_r1
+        RESULTADO .................. CAIU em 3.8 s  por pitch
+        fator de tempo real ........  0.983
+00:24:09  [26/36] A3_M38_lat-0.075_y0.07_T0.7_pD_r1
+        RESULTADO .................. CAIU em 4.3 s  por pitch
+        fator de tempo real ........  0.990
+00:25:04  [27/36] A3_M38_lat+0.075_y0.06_T0.6_pD_r1
+        RESULTADO .................. CAIU em 5.4 s  por pitch
+        fator de tempo real ........  0.990
+00:26:00  [28/36] A3_M33_lat-0.075_y0.07_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.990
+00:27:23  [29/36] A3_M33_lat-0.075_y0.05_T0.6_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.993
+00:28:46  [30/36] A3_M33_lat-0.075_y0.06_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.994
+00:30:10  [31/36] A3_M33_lat+0.075_y0.07_T0.6_pD_r1
+        RESULTADO .................. CAIU em 4.0 s  por pitch
+        fator de tempo real ........  0.995
+00:31:04  [32/36] A3_M33_lat+0.075_y0.05_T0.6_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.991
+00:32:26  [33/36] A3_M33_lat+0.075_y0.05_T0.7_pD_r1
+        RESULTADO .................. CAIU em 10.0 s  por pitch
+        fator de tempo real ........  0.995
+00:33:26  [34/36] A3_M33_lat+0.075_y0.06_T0.6_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.989
+00:34:49  [35/36] A3_M38_lat+0.075_y0.06_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.995
+00:36:12  [36/36] A3_M33_lat-0.075_y0.06_T0.6_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.990
+00:37:35  fim.

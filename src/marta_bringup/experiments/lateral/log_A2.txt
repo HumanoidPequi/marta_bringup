@@ -1,0 +1,50 @@
+23:39:59  panorama: src/marta_bringup/experiments/lateral/desenho_A2.csv, semente 20261117, 16 corridas a fazer
+23:39:59  [1/16] A2_M38_lat+0.075_pE_r1
+        RESULTADO .................. CAIU em 5.4 s  por pitch
+        fator de tempo real ........  0.999
+23:40:53  [2/16] A2_M33_lat-0.10_pD_r1
+        RESULTADO .................. CAIU em 4.2 s  por pitch
+        fator de tempo real ........  0.999
+23:41:44  [3/16] A2_M33_lat+0.075_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:43:04  [4/16] A2_M33_lat-0.075_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:44:25  [5/16] A2_M33_lat-0.10_pE_r1
+        RESULTADO .................. CAIU em 3.6 s  por pitch
+        fator de tempo real ........  0.999
+23:45:16  [6/16] A2_M38_lat-0.10_pD_r1
+        RESULTADO .................. CAIU em 4.5 s  por pitch
+        fator de tempo real ........  0.999
+23:46:08  [7/16] A2_M38_lat+0.075_pD_r1
+        RESULTADO .................. CAIU em 4.7 s  por pitch
+        fator de tempo real ........  0.999
+23:47:00  [8/16] A2_M38_lat-0.075_pD_r1
+        RESULTADO .................. CAIU em 5.1 s  por pitch
+        fator de tempo real ........  0.999
+23:47:52  [9/16] A2_M38_lat-0.075_pE_r1
+        RESULTADO .................. CAIU em 5.3 s  por pitch
+        fator de tempo real ........  0.999
+23:48:45  [10/16] A2_M38_lat-0.10_pE_r1
+        RESULTADO .................. CAIU em 3.9 s  por pitch
+        fator de tempo real ........  0.998
+23:49:37  [11/16] A2_M33_lat+0.10_pE_r1
+        RESULTADO .................. CAIU em 4.4 s  por pitch
+        fator de tempo real ........  0.999
+23:50:29  [12/16] A2_M38_lat+0.10_pD_r1
+        RESULTADO .................. CAIU em 4.0 s  por pitch
+        fator de tempo real ........  0.999
+23:51:20  [13/16] A2_M38_lat+0.10_pE_r1
+        RESULTADO .................. CAIU em 4.5 s  por pitch
+        fator de tempo real ........  0.999
+23:52:12  [14/16] A2_M33_lat-0.075_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:53:32  [15/16] A2_M33_lat+0.075_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:54:51  [16/16] A2_M33_lat+0.10_pD_r1
+        RESULTADO .................. CAIU em 3.8 s  por pitch
+        fator de tempo real ........  0.998
+23:55:43  fim.

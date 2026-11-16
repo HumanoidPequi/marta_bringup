@@ -1,0 +1,21 @@
+19:06:21  panorama: src/marta_bringup/experiments/bracos/regressao/desenho.csv, semente 20261113, 6 corridas a fazer
+19:06:21  [1/6] R0_M33_reta0.10_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+19:07:42  [2/6] F_M33_r10c90_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:09:03  [3/6] R0_M33_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:10:23  [4/6] F_M33_push15y_lugar_pD_r1
+      [INFO] [1794607876.136730, 69.326000]: EMPURRAO: 15.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.9 s  por pitch
+        fator de tempo real ........  0.999
+19:11:23  [5/6] R0_M33_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:12:44  [6/6] R0_M33_curva+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:14:04  fim.

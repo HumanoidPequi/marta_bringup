@@ -20,7 +20,14 @@ queda, pitch, torque do joelho no 1o apoio...) e acrescenta:
   pe          escorr_yaw [graus/s]: |taxa de yaw do pe| media em apoio simples
               (o pe de apoio deveria ficar parado);
               sep_min_mm: menor separacao lateral pe esq - pe dir no frame do
-              corpo (< 0: os pes se cruzaram; nao ha colisao entre pernas)
+              corpo (< 0: os pes se cruzaram; nao ha colisao entre pernas);
+              vx_ar, vy_ar, vx_chao, vy_chao [m/s]: deslocamento dos pes no
+              frame do corpo, media dos dois pes, separado em no AR (o outro
+              pe em apoio simples: e a colocacao do passo) e no CHAO (apoio
+              simples ou duplo: e o escorregamento). vx_ar + vx_chao ~ vx_b
+  rumo        hc_rms [rad/s]: RMS da correcao da malha de rumo
+              (heading_correction do _estabilizador.csv); yaw_rate_rms
+              [graus/s]: RMS da taxa de yaw verdadeira menos o w comandado
   roll        a_roll [graus]: roll verdadeiro no miolo (25-75%) de cada apoio
               simples, com sinal + = para o lado da perna em balanco, media dos
               apoios com t > 5 s (plano_fase3_roll.md par. 5); roll_rms;
@@ -39,14 +46,17 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import analisar_panorama as AP  # noqa: E402
 
-PERIODO = 0.6          # step_period do launch (um passo); a passada sao 2
+PERIODO = 0.6          # default do step_period; o de cada corrida vem do _launch.log
 T_INI = 3.0            # s: descarta a partida
 MIN_JANELA = 3.0
 PARAMS = ('walk_velocity_x', 'walk_velocity_y', 'walk_velocity_yaw', 'start_left_swing',
           'heading_enabled', 'kp_heading', 'max_heading_rate', 'kp_pitch', 'kd_pitch',
           'stabilizer_enabled', 'roll_stabilizer_enabled', 'kp_roll_hip', 'kd_roll_hip',
           'kp_roll_ankle', 'kd_roll_ankle', 'roll_washout_tau', 'torso_mass_scale',
-          'gravity_comp_gain', 'z_com', 'hip_offset_x', 'joint_effort')
+          'gravity_comp_gain', 'z_com', 'hip_offset_x', 'joint_effort', 'step_period',
+          'y_separation', 'double_support_ratio', 'hip_pitch_offset_deg', 'gravity_comp_enabled',
+          'arm_shoulder_roll_deg', 'arm_shoulder_pitch_deg', 'arm_elbow_deg',
+          'arms_compensation_factor')
 
 
 def nan():
@@ -93,12 +103,13 @@ def inclinacao(t, y):
     return sum((a - mt) * (b - my) for a, b in zip(t, y)) / den if den > 0 else nan()
 
 
-def omni(pre, r, cmd, t_fim):
+def omni(pre, r, cmd, t_fim, periodo=PERIODO):
     out = {}
     tel = [x for x in csv.DictReader(open(pre + '_telemetria.csv'))] if os.path.exists(pre + '_telemetria.csv') else []
     jan = [x for x in tel if T_INI <= float(x['t']) <= t_fim]
     vazio = ('w_real', 'razao_w', 'vx_b', 'vy_b', 'razao_v', 'erro_dir', 'deriva_m',
-             'escorr_yaw', 'sep_min_mm', 'a_roll', 'roll_rms_o')
+             'escorr_yaw', 'sep_min_mm', 'a_roll', 'roll_rms_o', 'vx_ar', 'vy_ar',
+             'vx_chao', 'vy_chao', 'hc_rms', 'yaw_rate_rms')
     if t_fim - T_INI < MIN_JANELA or len(jan) < 50:
         return {k: nan() for k in vazio}
     t = [float(x['t']) for x in jan]
@@ -109,7 +120,7 @@ def omni(pre, r, cmd, t_fim):
     out['w_real'] = inclinacao(t, yaw)
     out['razao_w'] = out['w_real'] / w if abs(w) > 1e-6 else nan()
     # deslocamento por passada (2 periodos), no frame do corpo
-    passo = 2 * PERIODO
+    passo = 2 * periodo
     dt_med = (t[-1] - t[0]) / (len(t) - 1)
     k = max(1, int(round(passo / dt_med)))
     vb = []
@@ -143,6 +154,30 @@ def omni(pre, r, cmd, t_fim):
         sep.append(1000 * (-math.sin(y0) * dx + math.cos(y0) * dy))
     out['escorr_yaw'] = st.mean(esc) if esc else nan()
     out['sep_min_mm'] = min(sep) if sep else nan()
+    # pes: deslocamento no ar (colocacao) e no chao (escorregamento), frame do corpo
+    acc = {'ar': [0.0, 0.0], 'chao': [0.0, 0.0]}
+    for a, b in zip(jan, jan[1:]):
+        s = int(round(float(a['support'])))
+        y0 = float(a['yaw_true'])
+        c, si = math.cos(y0), math.sin(y0)
+        for pe, meu in (('l', 1), ('r', 2)):
+            dx = float(b[pe + '_foot_x']) - float(a[pe + '_foot_x'])
+            dy = float(b[pe + '_foot_y']) - float(a[pe + '_foot_y'])
+            f = 'ar' if (s in (1, 2) and s != meu) else 'chao'
+            acc[f][0] += 0.5 * (c * dx + si * dy)
+            acc[f][1] += 0.5 * (-si * dx + c * dy)
+    dur = t[-1] - t[0]
+    out['vx_ar'], out['vy_ar'] = acc['ar'][0] / dur, acc['ar'][1] / dur
+    out['vx_chao'], out['vy_chao'] = acc['chao'][0] / dur, acc['chao'][1] / dur
+    # malha de rumo: esforco de correcao e erro de taxa de yaw
+    out['yaw_rate_rms'] = math.sqrt(st.mean(
+        math.degrees(float(x['yaw_rate_true']) - w) ** 2 for x in jan))
+    hc = []
+    if os.path.exists(pre + '_estabilizador.csv'):
+        for x in csv.DictReader(open(pre + '_estabilizador.csv')):
+            if T_INI <= float(x['t']) <= t_fim and x.get('heading_correction') not in (None, ''):
+                hc.append(float(x['heading_correction']))
+    out['hc_rms'] = math.sqrt(st.mean(v * v for v in hc)) if hc else nan()
     # A_roll: miolo de cada apoio simples, + = para o lado da perna em balanco
     # (roll > 0 tomba para a direita; apoio esquerdo = balanco direito)
     ar, seg = [], []
@@ -178,7 +213,8 @@ def saturacao(pre, t_fim, effort):
 
 CAMPOS_O = ['vx_cmd', 'vy_cmd', 'w_cmd', 'pe_esq', 'w_real', 'razao_w', 'vx_b', 'vy_b', 'razao_v',
             'erro_dir', 'deriva_m', 'escorr_yaw', 'sep_min_mm', 'a_roll', 'roll_rms_o',
-            'sat_hip_roll', 'sat_ank_roll', 'sat_hip_yaw']
+            'sat_hip_roll', 'sat_ank_roll', 'sat_hip_yaw', 'vx_ar', 'vy_ar', 'vx_chao', 'vy_chao',
+            'hc_rms', 'yaw_rate_rms']
 
 
 def resumo(d, r):
@@ -190,7 +226,7 @@ def resumo(d, r):
     out['pe_esq'] = num(p, 'start_left_swing')
     out['config'] = ' '.join('%s=%s' % (k, p[k]) for k in PARAMS[3:] if k in p)
     t_fim = min(AP.DUR, float(r['t_queda']) - 0.5) if r['caiu'] == '1' else AP.DUR
-    out.update(omni(pre, r, cmd, t_fim))
+    out.update(omni(pre, r, cmd, t_fim, num(p, 'step_period', PERIODO) or PERIODO))
     out.update(saturacao(pre, t_fim, num(p, 'joint_effort', AP.STALL) or AP.STALL))
     return out
 

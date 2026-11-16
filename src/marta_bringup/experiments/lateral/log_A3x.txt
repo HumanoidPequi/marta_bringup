@@ -1,0 +1,62 @@
+04:08:01  panorama: src/marta_bringup/experiments/lateral/desenho_A3x.csv, semente 20261121, 20 corridas a fazer
+04:08:01  [1/20] A3x_M38_lat+0.0625_y0.05_T0.6_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:09:22  [2/20] A3x_M38_curva+0.175_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:10:42  [3/20] A3x_M33_giro+0.175_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:12:02  [4/20] A3x_M33_lat-0.0625_y0.05_T0.6_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:13:23  [5/20] A3x_M33_curva+0.175_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:14:43  [6/20] A3x_M33_lugar_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:16:03  [7/20] A3x_M38_lat-0.0625_y0.05_T0.6_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:17:24  [8/20] A3x_M38_lat+0.09_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:18:44  [9/20] A3x_M33_lat-0.1_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:20:04  [10/20] A3x_M38_lugar_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:21:25  [11/20] A3x_M38_lat-0.1_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:22:45  [12/20] A3x_M38_reta0.10_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:24:06  [13/20] A3x_M33_lat+0.09_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:25:26  [14/20] A3x_M33_lat-0.09_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:26:47  [15/20] A3x_M38_lat+0.1_y0.05_T0.5_pD_r1
+        RESULTADO .................. CAIU em 24.7 s  por pitch
+        fator de tempo real ........  0.999
+04:28:00  [16/20] A3x_M33_lat+0.0625_y0.05_T0.6_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:29:20  [17/20] A3x_M38_lat-0.09_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:30:41  [18/20] A3x_M33_lat+0.1_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:32:01  [19/20] A3x_M33_reta0.10_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:33:21  [20/20] A3x_M38_giro+0.175_y0.05_T0.5_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+04:34:42  fim.

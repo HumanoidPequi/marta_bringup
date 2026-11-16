@@ -69,19 +69,20 @@ CORR_A, CORR_B, CORR_J0 = 1.73, 0.0457, 53.17
 # "anda" = 30 s nos dois pes iniciais. Dois niveis testados: M33 (I 2,53) e
 # M38 (I 2,92). Notas: (1) 0,15 so sem o gol do campo; (2) lateral sai torto
 # (avanco espurio do gerador, erro de direcao 12-34 graus); (3) quedas no gol
-# e na bola, anda sem eles; (4) varia entre corridas.
+# e na bola, anda sem eles; (4) varia entre corridas; (5) lateral acima do
+# limite: A2-A3x de docs/marcha_lateral.md (T 0,5 / y 0,05 anda +-0,09).
 VEL_MOVS = [  # (movimento, faixa testada)
     ('reta vx [m/s]', '0,05-0,15'),
     ('giro no lugar w [rad/s]', '+-0,10 a +-0,35'),
     ('curva (vx 0,1; w)', '+-0,10 a +-0,25'),
-    ('lateral vy [m/s]', '+-0,025 e +-0,05'),
+    ('lateral vy [m/s]', '+-0,025 a +-0,10'),
     ('diagonal (0,1; vy)', '+-0,03'),
     ('combinado (0,1; 0,03; w)', '+-0,175'),
 ]
 VEL = {  # nivel -> (I, com roll, sem roll), na ordem de VEL_MOVS
-    'M33': (2.53, ['0,05-0,15 (1)', 'toda', 'toda', 'toda (2)', 'toda', 'toda'],
+    'M33': (2.53, ['0,05-0,15 (1)', 'toda', 'toda', 'ate +-0,075 (2)(5)', 'toda', 'toda'],
             ['0,05-0,15 (1)', 'nenhuma', 'so +0,10', '+-0,025 (2)', 'toda', 'so +0,175']),
-    'M38': (2.92, ['0,05-0,15 (1)', 'toda', 'toda', 'toda (2)', 'toda (3)', '+0,175 (-0,175: 1 de 2)'],
+    'M38': (2.92, ['0,05-0,15 (1)', 'toda', 'toda', 'ate +-0,05 (2)(5)', 'toda (3)', '+0,175 (-0,175: 1 de 2)'],
             ['0,10-0,15 (1)', 'nenhuma', 'so -0,10', 'nenhuma', 'instavel (4)', 'so +0,175']),
 }
 ROLL_ARGS = ['roll_stabilizer_enabled:=true', 'kp_roll_hip:=0.5', 'kd_roll_hip:=0.075',
@@ -241,6 +242,8 @@ def relatorio(r, s):
     w('    (1) 0,15 so testada sem o gol do campo (world.world tem gol em x = 3 m)')
     w('    (2) o lateral sai torto: avanco espurio do gerador, erro de direcao 12-34 graus')
     w('    (3) quedas no gol e (inferencia) na bola; sem eles anda   (4) varia entre corridas')
+    w('    (5) acima disso cai para tras; step_period:=0.5 y_separation:=0.05 anda +-0,09')
+    w('        (proposta, nao default: docs/marcha_lateral.md A3/A3x; ff vx -0,010/-0,015)')
     w('    Sem roll o giro nao anda: use o estabilizador de roll fora da reta.')
     w('')
     w(' Avisos')

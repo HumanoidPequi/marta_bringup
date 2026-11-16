@@ -25,7 +25,7 @@ for TAU in 1000 6; do
       echo "$(date +%H:%M:%S)  [$N/$((2*2*REPS))] $TAG"
       timeout 300 docker run --rm -v "$RAIZ":/ws -w /ws marta_bringup:1.0 bash -lc "
         source /opt/ros/noetic/setup.bash && source devel/setup.bash
-        roslaunch marta_bringup stabilizer_test.launch gui:=false \
+        roslaunch marta_bringup stabilizer_test.launch gui:=false arm_shoulder_roll_deg:=50 arm_shoulder_pitch_deg:=0 arm_elbow_deg:=0 \
           stabilizer_enabled:=false joint_effort:=$TAU \
           com_swing_factor:=$CSF > /tmp/l.log 2>&1 &
         sleep 24

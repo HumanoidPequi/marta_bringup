@@ -1,0 +1,38 @@
+20:08:18  panorama: src/marta_bringup/experiments/lateral/desenho_A1x.csv, semente 20261115, 12 corridas a fazer
+20:08:18  [1/12] A1x_M38_hpo8_lat-0.05_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+20:09:38  [2/12] A1x_M38_ff_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:10:59  [3/12] A1x_M38_ff_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:12:19  [4/12] A1x_M38_ff_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:13:40  [5/12] A1x_M33_hpo8_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:15:00  [6/12] A1x_M38_hpo8_lat+0.05_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+20:16:20  [7/12] A1x_M33_hpo8_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:17:41  [8/12] A1x_M33_hpo8_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:19:01  [9/12] A1x_M33_ff_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:20:21  [10/12] A1x_M38_hpo8_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:21:42  [11/12] A1x_M33_ff_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:23:02  [12/12] A1x_M33_ff_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:24:22  fim.

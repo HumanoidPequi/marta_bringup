@@ -16,7 +16,7 @@ tail -n +2 "$1" | while IFS=, read -r TAG TMS ZC HX OM EXTRA; do
   echo "$(date +%H:%M:%S)  $TAG"
   timeout 400 docker run --rm -v "$RAIZ":/ws -w /ws marta_bringup:1.0 bash -lc "
     source /opt/ros/noetic/setup.bash && source devel/setup.bash
-    PYTHONUNBUFFERED=1 roslaunch marta_bringup stabilizer_test.launch gui:=false \
+    PYTHONUNBUFFERED=1 roslaunch marta_bringup stabilizer_test.launch gui:=false arm_shoulder_roll_deg:=50 arm_shoulder_pitch_deg:=0 arm_elbow_deg:=0 \
       stabilizer_enabled:=true heading_enabled:=true foot_collision:=box $MX \
       torso_mass_scale:=$TMS z_com:=$ZC hip_offset_x:=$HX hip_pitch_offset_deg:=-5 \
       gravity_comp_enabled:=true gravity_comp_joints:=hip_roll,knee gravity_comp_gain:=0.3 \

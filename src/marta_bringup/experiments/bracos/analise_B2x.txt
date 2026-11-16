@@ -1,0 +1,16 @@
+Completou (de 12) e pitch_marcha mediano nas que completam / dur. mediana:
+  P0    2/12  pitch_marcha +0.58  roll RMS 2.40  queda med  5.4 s  direcoes lado tras tras tras tras tras tras tras tras tras
+        giro+0.175 0/4  lat+0.05 1/4  lat-0.05 1/4
+  P2   11/12  pitch_marcha +2.50  roll RMS 2.50  queda med  5.9 s  direcoes tras
+        giro+0.175 4/4  lat+0.05 3/4  lat-0.05 4/4
+  P1    3/12  pitch_marcha +0.63  roll RMS 2.30  queda med  9.3 s  direcoes lado lado tras tras tras tras tras tras tras
+        giro+0.175 0/4  lat+0.05 1/4  lat-0.05 2/4
+  P2c   4/12  pitch_marcha +0.71  roll RMS 2.16  queda med  6.7 s  direcoes lado lado tras tras tras tras tras tras
+        giro+0.175 0/4  lat+0.05 2/4  lat-0.05 2/4
+  P0f  11/12  pitch_marcha +2.62  roll RMS 2.45  queda med 11.4 s  direcoes tras
+        giro+0.175 4/4  lat+0.05 4/4  lat-0.05 3/4
+
+Contra P0 s1 (sinal; Holm sobre 3) e contra P2 s1 (descritivo):
+  P1   (12 pares): vs P0 so P1 1, so P0 0, p 1, Holm 1 | vs P2 so P1 0, so P2 8, p 0.0078
+  P2c  (12 pares): vs P0 so P2c 2, so P0 0, p 0.5, Holm 1 | vs P2 so P2c 0, so P2 7, p 0.016
+  P0f  (12 pares): vs P0 so P0f 9, so P0 0, p 0.0039, Holm 0.012 | vs P2 so P0f 1, so P2 1, p 1

@@ -1,0 +1,95 @@
+16 pares (massa, mov, pe); posturas P0, P1, P2, P3
+
+Desfecho por postura e s (completou / total):
+  P0   s0: 16/16   roll RMS med 1.41  pitch RMS med 2.75  hc_rms med 0.0302
+  P0   s1: 16/16   roll RMS med 1.37  pitch RMS med 2.68  hc_rms med 0.0288
+  P1   s0: 16/16   roll RMS med 1.49  pitch RMS med 2.92  hc_rms med 0.0253
+  P1   s1: 16/16   roll RMS med 1.47  pitch RMS med 2.83  hc_rms med 0.0257
+  P2   s0: 16/16   roll RMS med 1.41  pitch RMS med 3.82  hc_rms med 0.0289
+  P2   s1: 16/16   roll RMS med 1.41  pitch RMS med 3.74  hc_rms med 0.0284
+  P3   s0: 16/16   roll RMS med 1.42  pitch RMS med 3.50  hc_rms med 0.0258
+  P3   s1: 16/16   roll RMS med 1.47  pitch RMS med 3.46  hc_rms med 0.0260
+
+Q1: postura (s = 1) contra P0
+  P1: completou 16/16 (P0 16/16); so P1 0, so P0 0, sinal p 1, Holm 1
+      roll RMS: n 16, mediana (P1 - P0) +0.06 graus (P0 med 1.37), p 0.12, Holm 0.47
+      vetos: pitch RMS +4.5%, |erro_dir| -0.04, |w/wc-1| +0.002, sep_min 107 -> nenhum
+      secundarias: oscilacao de pitch +0.05 graus, A_roll +0.08 graus
+      decomposicao do pitch: vies medio (pitch_marcha) +0.02 graus, oscilacao +0.05 graus
+      -> nao passa
+  P2: completou 16/16 (P0 16/16); so P2 0, so P0 0, sinal p 1, Holm 1
+      roll RMS: n 16, mediana (P2 - P0) +0.11 graus (P0 med 1.37), p 0.051, Holm 0.25
+      vetos: pitch RMS +46.2%, |erro_dir| -1.89, |w/wc-1| +0.003, sep_min 106 -> pitch RMS +46%
+      secundarias: oscilacao de pitch +0.14 graus, A_roll +0.07 graus
+      decomposicao do pitch: vies medio (pitch_marcha) +1.58 graus, oscilacao +0.14 graus
+      -> nao passa
+  P3: completou 16/16 (P0 16/16); so P3 0, so P0 0, sinal p 1, Holm 1
+      roll RMS: n 16, mediana (P3 - P0) +0.07 graus (P0 med 1.37), p 0.039, Holm 0.23
+      vetos: pitch RMS +29.3%, |erro_dir| -1.47, |w/wc-1| +0.003, sep_min 106 -> pitch RMS +29%
+      secundarias: oscilacao de pitch +0.18 graus, A_roll +0.05 graus
+      decomposicao do pitch: vies medio (pitch_marcha) +1.07 graus, oscilacao +0.18 graus
+      -> nao passa
+  DECISAO Q1: P0 (nenhuma postura passou)
+
+Q2: balanco s = 1 contra s = 0, por postura
+  P0: completou s0 16/16, s1 16/16
+      hc_rms: n 16, mediana (s1 - s0) -0.0002 rad/s (s0 med 0.0302), p 0.069, Holm 0.48
+      escorr_yaw: n 16, mediana (s1 - s0) +0.007 graus/s (s0 med 0.147), p 0.78, Holm 1
+        giro+0.175   hc_rms s0 0.0261 -> s1 0.0267   escorr s0 0.014 -> s1 0.024   (n 4)
+        giro+0.35    hc_rms s0 0.0503 -> s1 0.0488   escorr s0 0.305 -> s1 0.205   (n 4)
+        lat+0.05     hc_rms s0 0.0466 -> s1 0.0462   escorr s0 0.963 -> s1 1.177   (n 4)
+        reta0.10     hc_rms s0 0.0159 -> s1 0.0139   escorr s0 0.009 -> s1 0.019   (n 4)
+      vetos (s1 contra s0): nenhum
+  P1: completou s0 16/16, s1 16/16
+      hc_rms: n 16, mediana (s1 - s0) -0.0002 rad/s (s0 med 0.0253), p 0.44, Holm 1
+      escorr_yaw: n 16, mediana (s1 - s0) -0.003 graus/s (s0 med 0.145), p 0.98, Holm 1
+        giro+0.175   hc_rms s0 0.0253 -> s1 0.0257   escorr s0 0.043 -> s1 0.039   (n 4)
+        giro+0.35    hc_rms s0 0.0479 -> s1 0.0492   escorr s0 0.253 -> s1 0.321   (n 4)
+        lat+0.05     hc_rms s0 0.0353 -> s1 0.0348   escorr s0 1.219 -> s1 1.078   (n 4)
+        reta0.10     hc_rms s0 0.0145 -> s1 0.0132   escorr s0 0.013 -> s1 0.009   (n 4)
+      vetos (s1 contra s0): nenhum
+  P2: completou s0 16/16, s1 16/16
+      hc_rms: n 16, mediana (s1 - s0) -0.0010 rad/s (s0 med 0.0289), p 0.23, Holm 1
+      escorr_yaw: n 16, mediana (s1 - s0) +0.011 graus/s (s0 med 0.026), p 0.18, Holm 1
+        giro+0.175   hc_rms s0 0.0266 -> s1 0.0264   escorr s0 0.018 -> s1 0.025   (n 4)
+        giro+0.35    hc_rms s0 0.0558 -> s1 0.0559   escorr s0 0.034 -> s1 0.092   (n 4)
+        lat+0.05     hc_rms s0 0.0362 -> s1 0.0299   escorr s0 0.185 -> s1 0.430   (n 4)
+        reta0.10     hc_rms s0 0.0204 -> s1 0.0190   escorr s0 0.012 -> s1 0.011   (n 4)
+      vetos (s1 contra s0): nenhum
+  P3: completou s0 16/16, s1 16/16
+      hc_rms: n 16, mediana (s1 - s0) -0.0005 rad/s (s0 med 0.0258), p 0.018, Holm 0.15
+      escorr_yaw: n 16, mediana (s1 - s0) -0.009 graus/s (s0 med 0.069), p 0.53, Holm 1
+        giro+0.175   hc_rms s0 0.0258 -> s1 0.0260   escorr s0 0.031 -> s1 0.018   (n 4)
+        giro+0.35    hc_rms s0 0.0552 -> s1 0.0530   escorr s0 0.128 -> s1 0.104   (n 4)
+        lat+0.05     hc_rms s0 0.0289 -> s1 0.0285   escorr s0 0.369 -> s1 0.507   (n 4)
+        reta0.10     hc_rms s0 0.0188 -> s1 0.0173   escorr s0 0.012 -> s1 0.009   (n 4)
+      vetos (s1 contra s0): nenhum
+  DECISAO Q2: sem efeito significativo
+
+Q2b (adendo pre-registrado): reta, s = 2 contra s = 1, 4 posturas juntas
+  completou s1 16/16, s2 16/16
+  hc_rms: n 16, mediana (s2 - s1) -0.0016 rad/s (s1 med 0.0146), p 0.00053, Holm 0.0011; s2 < s1 em 15/16
+  escorr_yaw: n 16, mediana (s2 - s1) -0.001 graus/s (s1 med 0.010), p 0.16, Holm 0.16
+  vetos: pitch RMS -7.7%, |erro_dir| +0.01, |w/wc-1| +nan, sep_min 106 -> nenhum
+    P0  hc_rms mediano  s0 0.0159  s1 0.0139  s2 0.0123
+    P1  hc_rms mediano  s0 0.0145  s1 0.0132  s2 0.0120
+    P2  hc_rms mediano  s0 0.0204  s1 0.0190  s2 0.0166
+    P3  hc_rms mediano  s0 0.0188  s1 0.0173  s2 0.0146
+
+Exploratorio (nao pre-registrado): s1 contra s0 por movimento, 4 posturas juntas
+  giro+0.175  hc_rms     n 16  s0 med 0.0256  mediana (s1 - s0) +0.0003 (+1%)  p 0.27  s1 < s0 em 6
+  giro+0.175  escorr_yaw n 16  s0 med 0.0297  mediana (s1 - s0) +0.0016 (+5%)  p 0.59  s1 < s0 em 8
+  giro+0.175  roll_rms_o n 16  s0 med 1.4060  mediana (s1 - s0) -0.0544 (-4%)  p 0.14  s1 < s0 em 11
+  giro+0.175  pitch_rms  n 16  s0 med 3.3541  mediana (s1 - s0) -0.1265 (-4%)  p 3.1e-05  s1 < s0 em 16
+  giro+0.35   hc_rms     n 16  s0 med 0.0518  mediana (s1 - s0) -0.0010 (-2%)  p 0.025  s1 < s0 em 11
+  giro+0.35   escorr_yaw n 16  s0 med 0.2086  mediana (s1 - s0) -0.0090 (-4%)  p 0.9  s1 < s0 em 9
+  giro+0.35   roll_rms_o n 16  s0 med 1.8668  mediana (s1 - s0) -0.0168 (-1%)  p 0.76  s1 < s0 em 9
+  giro+0.35   pitch_rms  n 16  s0 med 4.8325  mediana (s1 - s0) -0.1494 (-3%)  p 3.1e-05  s1 < s0 em 16
+  lat+0.05    hc_rms     n 16  s0 med 0.0356  mediana (s1 - s0) -0.0002 (-1%)  p 0.4  s1 < s0 em 9
+  lat+0.05    escorr_yaw n 16  s0 med 0.7441  mediana (s1 - s0) +0.0754 (+10%)  p 0.23  s1 < s0 em 6
+  lat+0.05    roll_rms_o n 16  s0 med 1.4875  mediana (s1 - s0) +0.0306 (+2%)  p 0.14  s1 < s0 em 7
+  lat+0.05    pitch_rms  n 16  s0 med 2.8786  mediana (s1 - s0) -0.0017 (-0%)  p 0.63  s1 < s0 em 9
+  reta0.10    hc_rms     n 16  s0 med 0.0177  mediana (s1 - s0) -0.0015 (-8%)  p 0.00077  s1 < s0 em 14
+  reta0.10    escorr_yaw n 16  s0 med 0.0115  mediana (s1 - s0) -0.0022 (-19%)  p 0.74  s1 < s0 em 11
+  reta0.10    roll_rms_o n 16  s0 med 1.0108  mediana (s1 - s0) +0.0430 (+4%)  p 0.19  s1 < s0 em 7
+  reta0.10    pitch_rms  n 16  s0 med 2.3861  mediana (s1 - s0) -0.0682 (-3%)  p 0.46  s1 < s0 em 10

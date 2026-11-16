@@ -1,0 +1,23 @@
+(a) dissociacao (assimetria de fase com +vy; com -vy o sinal inverte)
+  A3x_M33_lat+0.09_y0.05_T0.5_pD_r1    passo 45.0 mm  completou              E - D -0.33 osc 2.01
+  A3x_M33_lat-0.09_y0.05_T0.5_pD_r1    passo 45.0 mm  completou              E - D +0.68 osc 2.07
+  A3x_M33_lat+0.0625_y0.05_T0.6_pD_r1  passo 37.5 mm  completou              E - D -2.86 osc 2.57
+  A3x_M33_lat-0.0625_y0.05_T0.6_pD_r1  passo 37.5 mm  completou              E - D +3.04 osc 2.51
+  A3x_M38_lat+0.09_y0.05_T0.5_pD_r1    passo 45.0 mm  completou              E - D -0.83 osc 1.81
+  A3x_M38_lat-0.09_y0.05_T0.5_pD_r1    passo 45.0 mm  completou              E - D +0.84 osc 1.90
+  A3x_M38_lat+0.0625_y0.05_T0.6_pD_r1  passo 37.5 mm  completou              E - D -2.35 osc 2.78
+  A3x_M38_lat-0.0625_y0.05_T0.6_pD_r1  passo 37.5 mm  completou              E - D +2.40 osc 2.51
+
+(b) validacao de y 0,05 / T 0,5 contra a base (0,06 / 0,6)
+  M33 lugar       ref completou      -> novo completou      pitch RMS 1.76 -> 1.70 (-4%)  roll RMS 0.96 -> 1.25 (+30%)  -> PREJUDICA
+  M33 reta0.10    ref completou      -> novo completou      pitch RMS 2.00 -> 1.58 (-21%)  roll RMS 1.14 -> 1.26 (+11%)  vx_b 103.0 -> 97.6 mm/s  -> PREJUDICA
+  M33 giro+0.175  ref completou      -> novo completou      pitch RMS 2.70 -> 1.72 (-37%)  roll RMS 1.30 -> 1.33 (+2%)  |w/wc-1| 0.000 -> 0.002  -> nao prejudica
+  M33 curva+0.175 ref completou      -> novo completou      pitch RMS 2.13 -> 1.77 (-17%)  roll RMS 1.46 -> 1.27 (-13%)  |w/wc-1| 0.001 -> 0.005  vx_b 103.4 -> 97.0 mm/s  -> nao prejudica
+  M33 lat+0.1     ref caiu 3.8 tras  -> novo completou      (melhora: a referencia cai)  pitch RMS 2.60 roll RMS 1.37
+  M33 lat-0.1     ref caiu 4.2 tras  -> novo completou      (melhora: a referencia cai)  pitch RMS 2.59 roll RMS 1.43
+  M38 lugar       ref completou      -> novo completou      pitch RMS 1.15 -> 0.78 (-32%)  roll RMS 0.98 -> 1.42 (+46%)  -> PREJUDICA
+  M38 reta0.10    ref completou      -> novo completou      pitch RMS 1.76 -> 1.20 (-32%)  roll RMS 1.11 -> 1.20 (+8%)  vx_b 104.6 -> 103.6 mm/s  -> nao prejudica
+  M38 giro+0.175  ref completou      -> novo completou      pitch RMS 2.63 -> 1.03 (-61%)  roll RMS 1.30 -> 1.48 (+14%)  |w/wc-1| 0.005 -> 0.001  -> PREJUDICA
+  M38 curva+0.175 ref completou      -> novo completou      pitch RMS 1.74 -> 1.29 (-26%)  roll RMS 1.46 -> 1.34 (-8%)  |w/wc-1| 0.002 -> 0.004  vx_b 105.8 -> 104.2 mm/s  -> nao prejudica
+  M38 lat+0.1     ref caiu 4.0 tras  -> novo caiu 24.7 tras -> ambos caem
+  M38 lat-0.1     ref caiu 4.5 tras  -> novo completou      (melhora: a referencia cai)  pitch RMS 2.24 roll RMS 1.65

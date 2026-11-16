@@ -126,7 +126,7 @@ iniciais. As velocidades são lidas só na partida (`walk_velocity_x/y/yaw`).
 | reta vx [m/s] | 0,05–0,15 | 0,05–0,15¹ | 0,05–0,15¹ | 0,05–0,15¹ | 0,10–0,15¹ (0,05 cai) |
 | giro no lugar ω [rad/s] | ±0,10 a ±0,35 | **toda** | **toda** | nenhuma | nenhuma |
 | curva (vx 0,1; ω) | ±0,10 a ±0,25 | toda | toda | só +0,10 | só −0,10 |
-| lateral vy [m/s] | ±0,025 e ±0,05 | toda² | toda² | ±0,025² | nenhuma |
+| lateral vy [m/s] | ±0,025 a ±0,10 | até ±0,075²⁵ | até ±0,05²⁵ | ±0,025² | nenhuma |
 | diagonal (0,1; vy) | ±0,03 | toda | toda³ | toda | instável⁴ |
 | combinado (0,1; 0,03; ω) | ±0,175 | toda | +0,175 (−0,175: 1 de 2) | +0,175 | +0,175 |
 
@@ -134,10 +134,17 @@ iniciais. As velocidades são lidas só na partida (`walk_velocity_x/y/yaw`).
    braço). No `world.world`, a reta e a diagonal batem no gol em x = 3 m.
 2. **O lateral sai torto.** O gerador acrescenta um avanço de ~1 cm/s, e o
    erro de direção fica em 12–19° a 0,05 m/s e 26–34° a 0,025 m/s.
+   A causa é da marcha, não do lateral (marcha no lugar avança igual).
 3. Duas quedas na E5, no gol e (inferência) na bola. Sem os obstáculos,
    anda.
 4. Sem roll, o M38 na diagonal varia entre corridas e cai na partida em
    algumas.
+5. **Lateral acima disso** ([marcha_lateral.md](marcha_lateral.md) A2–A3x):
+   as quedas são para trás, por pitch. Com `step_period:=0.5
+   y_separation:=0.05` anda ±0,09 nas duas massas e ±0,10 no M33 (+0,10
+   cai no M38). É proposta, não default: fora do lateral, troca pitch por
+   roll. O avanço espúrio é compensável com `walk_velocity_x` −0,010
+   (M33) / −0,015 (M38).
 
 **Recomendação:**
 - **Use o estabilizador de roll** (quatorn K1) para tudo que não seja reta.

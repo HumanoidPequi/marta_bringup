@@ -1,0 +1,36 @@
+24 corridas (A2 + referencia E7 kd06 em 0,05)
+
+== M33 ==
+  |vy| 0.050: 4/4 completaram -> ANDA
+     -0.050 pD  completou          razao_v 0.91  erro_dir  +13.1  sep_min 115.2  roll RMS 1.54  pitch RMS 2.72  vx_b +10.3 mm/s
+     -0.050 pE  completou          razao_v 0.91  erro_dir  +13.2  sep_min 115.2  roll RMS 1.50  pitch RMS 2.68  vx_b +10.3 mm/s
+     +0.050 pD  completou          razao_v 0.92  erro_dir  -13.0  sep_min 115.2  roll RMS 1.44  pitch RMS 2.79  vx_b +10.3 mm/s
+     +0.050 pE  completou          razao_v 0.92  erro_dir  -14.4  sep_min 115.1  roll RMS 1.50  pitch RMS 2.82  vx_b +11.5 mm/s
+  |vy| 0.075: 4/4 completaram -> ANDA
+     -0.075 pD  completou          razao_v 1.06  erro_dir  +12.0  sep_min 117.9  roll RMS 1.75  pitch RMS 4.44  vx_b +16.5 mm/s
+     -0.075 pE  completou          razao_v 1.06  erro_dir  +11.4  sep_min 117.7  roll RMS 1.75  pitch RMS 4.44  vx_b +15.8 mm/s
+     +0.075 pD  completou          razao_v 1.04  erro_dir  -12.4  sep_min 117.3  roll RMS 1.75  pitch RMS 4.36  vx_b +16.8 mm/s
+     +0.075 pE  completou          razao_v 1.05  erro_dir  -11.9  sep_min 117.8  roll RMS 1.71  pitch RMS 4.42  vx_b +16.2 mm/s
+  |vy| 0.100: 0/4 completaram -> nao anda
+     -0.100 pD  caiu  4.2 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+     -0.100 pE  caiu  3.6 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+     +0.100 pD  caiu  3.8 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+     +0.100 pE  caiu  4.4 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+
+== M38 ==
+  |vy| 0.050: 4/4 completaram -> ANDA
+     -0.050 pD  completou          razao_v 0.94  erro_dir  +18.9  sep_min 116.9  roll RMS 1.62  pitch RMS 2.51  vx_b +15.1 mm/s
+     -0.050 pE  completou          razao_v 0.94  erro_dir  +18.8  sep_min 117.0  roll RMS 1.64  pitch RMS 2.51  vx_b +15.2 mm/s
+     +0.050 pD  completou          razao_v 0.94  erro_dir  -19.2  sep_min 116.9  roll RMS 1.48  pitch RMS 2.44  vx_b +15.5 mm/s
+     +0.050 pE  completou          razao_v 0.94  erro_dir  -21.3  sep_min 116.6  roll RMS 1.68  pitch RMS 2.75  vx_b +17.0 mm/s
+  |vy| 0.075: 0/4 completaram -> nao anda
+     -0.075 pD  caiu  5.1 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+     -0.075 pE  caiu  5.3 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+     +0.075 pD  caiu  4.7 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+     +0.075 pE  caiu  5.4 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+  |vy| 0.100: 0/4 completaram -> nao anda
+     -0.100 pD  caiu  4.5 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+     -0.100 pE  caiu  3.9 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+     +0.100 pD  caiu  4.0 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+     +0.100 pE  caiu  4.5 s tras   razao_v nan  erro_dir   +nan  sep_min   nan  roll RMS nan  pitch RMS nan  vx_b  +nan mm/s
+

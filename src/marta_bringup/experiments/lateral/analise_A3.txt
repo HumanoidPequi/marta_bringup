@@ -1,0 +1,26 @@
+18 celulas
+
+== M33 ==  (referencia 0,06 / 0,6: completou 2/2; pitch RMS 4.44)
+  y 0.05 T 0.5: 2/2  |erro_dir|   1.9  roll RMS 1.19  pitch RMS 1.81  sep_min  97.4  vetos: nenhum  
+  y 0.05 T 0.6: 2/2  |erro_dir|   8.8  roll RMS 1.61  pitch RMS 3.40  sep_min  96.6  vetos: nenhum  
+  y 0.05 T 0.7: 0/2  |erro_dir|   nan  roll RMS nan  pitch RMS nan  sep_min   nan  vetos: nenhum  +0.075 caiu 10.0 s tras -0.075 caiu 11.3 s tras
+  y 0.06 T 0.5: 2/2  |erro_dir|   3.4  roll RMS 1.19  pitch RMS 2.11  sep_min 118.3  vetos: nenhum  
+  y 0.06 T 0.6: 2/2  |erro_dir|  11.8  roll RMS 1.80  pitch RMS 4.44  sep_min 117.5  vetos: nenhum  
+  y 0.06 T 0.7: 0/2  |erro_dir|   nan  roll RMS nan  pitch RMS nan  sep_min   nan  vetos: nenhum  +0.075 caiu 3.9 s tras -0.075 caiu 4.5 s tras
+  y 0.07 T 0.5: 2/2  |erro_dir|   8.9  roll RMS 1.47  pitch RMS 2.61  sep_min 140.0  vetos: nenhum  
+  y 0.07 T 0.6: 0/2  |erro_dir|   nan  roll RMS nan  pitch RMS nan  sep_min   nan  vetos: nenhum  +0.075 caiu 4.0 s tras -0.075 caiu 4.3 s tras
+  y 0.07 T 0.7: 0/2  |erro_dir|   nan  roll RMS nan  pitch RMS nan  sep_min   nan  vetos: nenhum  +0.075 caiu 3.8 s tras -0.075 caiu 4.4 s tras
+  -> melhor celula sem veto: y 0.05 T 0.5 (2/2, |erro_dir| 1.9, roll RMS 1.19)
+
+== M38 ==  (referencia 0,06 / 0,6: NAO completou; pitch RMS nan)
+  y 0.05 T 0.5: 2/2  |erro_dir|  12.7  roll RMS 1.25  pitch RMS 1.16  sep_min  99.3  vetos: nenhum  
+  y 0.05 T 0.6: 1/2  |erro_dir|  15.7  roll RMS 2.32  pitch RMS 4.00  sep_min  99.6  vetos: nenhum  -0.075 caiu 10.5 s tras
+  y 0.05 T 0.7: 0/2  |erro_dir|   nan  roll RMS nan  pitch RMS nan  sep_min   nan  vetos: nenhum  +0.075 caiu 4.5 s tras -0.075 caiu 5.1 s tras
+  y 0.06 T 0.5: 2/2  |erro_dir|  15.4  roll RMS 1.32  pitch RMS 1.80  sep_min 119.9  vetos: nenhum  
+  y 0.06 T 0.6: 0/2  |erro_dir|   nan  roll RMS nan  pitch RMS nan  sep_min   nan  vetos: nenhum  +0.075 caiu 5.4 s tras -0.075 caiu 5.1 s tras
+  y 0.06 T 0.7: 0/2  |erro_dir|   nan  roll RMS nan  pitch RMS nan  sep_min   nan  vetos: nenhum  +0.075 caiu 4.1 s tras -0.075 caiu 4.7 s tras
+  y 0.07 T 0.5: 0/2  |erro_dir|   nan  roll RMS nan  pitch RMS nan  sep_min   nan  vetos: nenhum  +0.075 caiu 3.1 s tras -0.075 caiu 4.3 s tras
+  y 0.07 T 0.6: 0/2  |erro_dir|   nan  roll RMS nan  pitch RMS nan  sep_min   nan  vetos: nenhum  +0.075 caiu 4.2 s tras -0.075 caiu 4.7 s tras
+  y 0.07 T 0.7: 0/2  |erro_dir|   nan  roll RMS nan  pitch RMS nan  sep_min   nan  vetos: nenhum  +0.075 caiu 3.8 s tras -0.075 caiu 4.3 s tras
+  -> melhor celula sem veto: y 0.05 T 0.5 (2/2, |erro_dir| 12.7, roll RMS 1.25)
+

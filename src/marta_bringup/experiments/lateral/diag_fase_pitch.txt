@@ -1,0 +1,56 @@
+1) pitch medio por fase [graus] (positivo = para frente)
+  A1_M33_ref_lugar_pD_r1         apoio E +1.94  apoio D +1.96  E - D -0.01  oscilacao 0.43
+  A1_M33_ref_lat+0.05_pD_r1      apoio E -0.43  apoio D +2.77  E - D -3.20  oscilacao 2.64
+  A1_M33_ref_lat-0.05_pD_r1      apoio E +2.65  apoio D -0.38  E - D +3.03  oscilacao 2.56
+  A1_M33_hpo0_lugar_pD_r1        apoio E -6.18  apoio D -6.11  E - D -0.08  oscilacao 0.96
+  A1_M33_hpo0_lat+0.05_pD_r1     apoio E -9.27  apoio D -6.52  E - D -2.76  oscilacao 3.43
+  A1_M33_hpo0_lat-0.05_pD_r1     apoio E -6.30  apoio D -8.46  E - D +2.15  oscilacao 2.74
+  A1_M33_hx0_lugar_pD_r1         apoio E +1.21  apoio D +1.15  E - D +0.06  oscilacao 0.60
+  A1_M33_hx0_lat+0.05_pD_r1      apoio E -1.25  apoio D +1.54  E - D -2.79  oscilacao 2.55
+  A1_M33_hx0_lat-0.05_pD_r1      apoio E +1.41  apoio D -1.30  E - D +2.71  oscilacao 2.55
+  A1_M33_s0_lugar_pD_r1          apoio E +1.85  apoio D +1.87  E - D -0.01  oscilacao 0.44
+  A1_M33_s0_lat+0.05_pD_r1       apoio E -0.50  apoio D +2.74  E - D -3.24  oscilacao 2.74
+  A1_M33_s0_lat-0.05_pD_r1       apoio E +2.65  apoio D -0.39  E - D +3.04  oscilacao 2.57
+  A1_M33_gc0_lugar_pD_r1         apoio E -2.22  apoio D -2.27  E - D +0.05  oscilacao 1.00
+  A1_M33_gc0_lat+0.05_pD_r1      (caiu ou sem marcha na janela)
+  A1_M33_gc0_lat-0.05_pD_r1      apoio E -1.29  apoio D -5.64  E - D +4.35  oscilacao 4.42
+  A1_M33_rumo0_lugar_pD_r1       apoio E +1.93  apoio D +1.90  E - D +0.03  oscilacao 0.44
+  A1_M33_rumo0_lat+0.05_pD_r1    apoio E -0.40  apoio D +2.54  E - D -2.94  oscilacao 2.55
+  A1_M33_rumo0_lat-0.05_pD_r1    apoio E +2.54  apoio D -0.44  E - D +2.98  oscilacao 2.52
+  A1_M33_pitch0_lugar_pD_r1      apoio E +2.82  apoio D +2.87  E - D -0.06  oscilacao 0.49
+  A1_M33_pitch0_lat+0.05_pD_r1   apoio E +0.65  apoio D +2.33  E - D -1.68  oscilacao 3.57
+  A1_M33_pitch0_lat-0.05_pD_r1   apoio E +2.38  apoio D +0.38  E - D +2.00  oscilacao 3.58
+  A1_M38_ref_lugar_pD_r1         apoio E +1.30  apoio D +1.30  E - D -0.00  oscilacao 0.47
+  A1_M38_ref_lat+0.05_pD_r1      apoio E -0.73  apoio D +1.74  E - D -2.47  oscilacao 2.50
+  A1_M38_ref_lat-0.05_pD_r1      apoio E +1.52  apoio D -0.73  E - D +2.25  oscilacao 2.73
+  A1_M38_hpo0_lugar_pD_r1        (caiu ou sem marcha na janela)
+  A1_M38_hpo0_lat+0.05_pD_r1     (caiu ou sem marcha na janela)
+  A1_M38_hpo0_lat-0.05_pD_r1     (caiu ou sem marcha na janela)
+  A1_M38_hx0_lugar_pD_r1         (caiu ou sem marcha na janela)
+  A1_M38_hx0_lat+0.05_pD_r1      (caiu ou sem marcha na janela)
+  A1_M38_hx0_lat-0.05_pD_r1      (caiu ou sem marcha na janela)
+  A1_M38_s0_lugar_pD_r1          apoio E +1.22  apoio D +1.21  E - D +0.00  oscilacao 0.49
+  A1_M38_s0_lat+0.05_pD_r1       apoio E -0.61  apoio D +1.67  E - D -2.29  oscilacao 2.52
+  A1_M38_s0_lat-0.05_pD_r1       apoio E +1.69  apoio D -0.57  E - D +2.25  oscilacao 2.56
+  A1_M38_gc0_lugar_pD_r1         (caiu ou sem marcha na janela)
+  A1_M38_gc0_lat+0.05_pD_r1      (caiu ou sem marcha na janela)
+  A1_M38_gc0_lat-0.05_pD_r1      (caiu ou sem marcha na janela)
+  A1_M38_rumo0_lugar_pD_r1       apoio E +1.30  apoio D +1.32  E - D -0.02  oscilacao 0.47
+  A1_M38_rumo0_lat+0.05_pD_r1    apoio E -0.68  apoio D +1.34  E - D -2.02  oscilacao 2.51
+  A1_M38_rumo0_lat-0.05_pD_r1    apoio E +1.59  apoio D -0.50  E - D +2.10  oscilacao 2.44
+  A1_M38_pitch0_lugar_pD_r1      apoio E +2.03  apoio D +2.02  E - D +0.02  oscilacao 0.50
+  A1_M38_pitch0_lat+0.05_pD_r1   apoio E +0.12  apoio D +1.39  E - D -1.27  oscilacao 2.85
+  A1_M38_pitch0_lat-0.05_pD_r1   apoio E +1.09  apoio D +0.08  E - D +1.00  oscilacao 2.78
+  A2_M33_lat+0.075_pD_r1         apoio E -2.56  apoio D +2.50  E - D -5.07  oscilacao 4.41
+  A2_M33_lat-0.075_pD_r1         apoio E +3.06  apoio D -2.36  E - D +5.42  oscilacao 4.51
+  A2_M38_lat+0.075_pD_r1         (caiu ou sem marcha na janela)
+  A2_M38_lat-0.075_pD_r1         (caiu ou sem marcha na janela)
+  B1_M33_P0_s1_reta0.10_pD_r1    apoio E +2.13  apoio D +2.12  E - D +0.02  oscilacao 0.74
+
+2) orientacao dos pes em relacao ao tronco por FK [graus], por fase
+  A1_M33_pitch0_lugar_pD_r1      set_point     apoio E: pitch pe E -7.57 D -4.40 | apoio D: pitch pe E -4.40 D -7.57
+  A1_M33_pitch0_lugar_pD_r1      process_value apoio E: pitch pe E -2.74 D -4.62 | apoio D: pitch pe E -4.60 D -2.89
+  A1_M33_pitch0_lat+0.05_pD_r1   set_point     apoio E: pitch pe E -7.59 D -3.98 | apoio D: pitch pe E -4.01 D -7.60
+  A1_M33_pitch0_lat+0.05_pD_r1   process_value apoio E: pitch pe E -0.66 D -4.63 | apoio D: pitch pe E -2.90 D -2.49
+  A1_M33_pitch0_lat-0.05_pD_r1   set_point     apoio E: pitch pe E -7.60 D -4.01 | apoio D: pitch pe E -3.98 D -7.59
+  A1_M33_pitch0_lat-0.05_pD_r1   process_value apoio E: pitch pe E -2.46 D -2.97 | apoio D: pitch pe E -4.57 D -0.55

@@ -8,7 +8,9 @@
 # <saida>/dados/ (marcha omnidirecional: omni/, ver docs/marcha_omnidirecional.md).
 # <desenho.csv>: uma condicao por linha, colunas
 #   base,torso_mass_scale,z_com,hip_offset_x,gain,nrep,extra
-# (extra = args adicionais do roslaunch, separados por espaco, ou vazio).
+# (extra = args adicionais do roslaunch, separados por espaco, ou vazio; os
+# tokens que comecam com _ vao para o walk_test.py, ex. _push_force:=8).
+# DURACAO=<s> muda a duracao da marcha (default 30).
 # BAG_DIR=<dir relativo a raiz> guarda o rosbag de cada corrida ali (demo do
 # Foxglove; ~35 MB por corrida). Sem ele, o bag fica so no /tmp do container.
 # Cada condicao vira nrep corridas com tag <base>_r<k>. A lista completa e
@@ -56,20 +58,22 @@ while IFS='|' read -r TAG TMS ZC HX G EXTRA; do
   LIVRE=$(df --output=avail -k "$RAIZ" | tail -1)
   if [ "$LIVRE" -lt 2000000 ]; then echo "PAROU: menos de 2 GB livres"; exit 1; fi
   N=$((N + 1))
+  LX=""; WT=""
+  for A in $EXTRA; do case "$A" in _*) WT="$WT $A";; *) LX="$LX $A";; esac; done
   echo "$(date +%H:%M:%S)  [$N/$TOTAL] $TAG"
   timeout 300 docker run --rm -v "$RAIZ":/ws -w /ws marta_bringup:1.0 bash -lc "
     source /opt/ros/noetic/setup.bash && source devel/setup.bash
-    PYTHONUNBUFFERED=1 roslaunch marta_bringup stabilizer_test.launch gui:=false \
+    PYTHONUNBUFFERED=1 roslaunch marta_bringup stabilizer_test.launch gui:=false arm_shoulder_roll_deg:=50 arm_shoulder_pitch_deg:=0 arm_elbow_deg:=0 \
       stabilizer_enabled:=true heading_enabled:=true foot_collision:=box $MX \\
       torso_mass_scale:=$TMS z_com:=$ZC hip_offset_x:=$HX \\
       gravity_comp_enabled:=true gravity_comp_joints:=hip_roll,knee gravity_comp_gain:=$G \\
-      $EXTRA > /tmp/l.log 2>&1 &
+      $LX > /tmp/l.log 2>&1 &
     sleep 24
     python3 /ws/$EXP/registrar_pe.py _out:=/ws/$OUT/dados/${TAG}_pe.csv > /dev/null 2>&1 &
-    rosrun marta_bringup walk_test.py _duration:=30 \
-      _tag:=$TAG _tau:=2.5 \
+    rosrun marta_bringup walk_test.py _duration:=${DURACAO:-30} \
+      _tag:=$TAG _tau:=2.5 _push_out:=/ws/$OUT/dados/${TAG}_empurrao.csv $WT \
       _bag_out:=/tmp/$TAG.bag _campanha_csv:=/ws/$CAMP 2>&1 \
-      | grep -E 'RESULTADO|tempo real'
+      | grep -E 'RESULTADO|tempo real|EMPURRAO|NAO aplicado'
     kill %2 2>/dev/null; sleep 1
     python3 /ws/$EXP/bag_para_csv.py /tmp/$TAG.bag /ws/$OUT/dados > /dev/null
     cp /tmp/l.log /ws/$OUT/dados/${TAG}_launch.log 2>/dev/null

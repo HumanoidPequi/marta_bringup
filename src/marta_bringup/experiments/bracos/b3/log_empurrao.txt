@@ -1,0 +1,576 @@
+== B3_M33_P0_y+
+02:21:53  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:21:53  [1/1] B3_M33_P0_y+_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:23:02  fim.
+02:23:02  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:23:02  [1/1] B3_M33_P0_y+_F020.0_r1
+      [INFO] [1794633835.608723, 69.317000]: EMPURRAO: 20.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.9 s  por pitch
+        fator de tempo real ........  0.999
+02:24:02  fim.
+02:24:02  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:24:02  [1/1] B3_M33_P0_y+_F010.0_r1
+      [INFO] [1794633895.675185, 69.327000]: EMPURRAO: 10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.1 s  por roll
+        fator de tempo real ........  0.999
+02:25:00  fim.
+02:25:00  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:25:00  [1/1] B3_M33_P0_y+_F005.0_r1
+      [INFO] [1794633953.583012, 69.339000]: EMPURRAO: 5.0 N em y (corpo) por 0.10 s, t_marcha 8.94 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:26:10  fim.
+02:26:10  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:26:10  [1/1] B3_M33_P0_y+_F007.5_r1
+      [INFO] [1794634023.463490, 69.338000]: EMPURRAO: 7.5 N em y (corpo) por 0.10 s, t_marcha 8.94 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.1 s  por pitch
+        fator de tempo real ........  0.999
+02:27:10  fim.
+02:27:10  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:27:10  [1/1] B3_M33_P0_y+_F006.2_r1
+      [INFO] [1794634083.562329, 69.327000]: EMPURRAO: 6.2 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:28:20  fim.
+== B3_M33_P0_y-
+02:28:20  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:28:20  [1/1] B3_M33_P0_y-_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:29:30  fim.
+02:29:30  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:29:30  [1/1] B3_M33_P0_y-_F020.0_r1
+      [INFO] [1794634223.317087, 69.328000]: EMPURRAO: -20.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.5 s  por pitch
+        fator de tempo real ........  0.996
+02:30:30  fim.
+02:30:30  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:30:30  [1/1] B3_M33_P0_y-_F010.0_r1
+      [INFO] [1794634282.827782, 69.327000]: EMPURRAO: -10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:31:40  fim.
+02:31:40  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:31:40  [1/1] B3_M33_P0_y-_F015.0_r1
+      [INFO] [1794634352.740311, 69.332000]: EMPURRAO: -15.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.8 s  por pitch
+        fator de tempo real ........  0.999
+02:32:40  fim.
+02:32:40  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:32:41  [1/1] B3_M33_P0_y-_F012.5_r1
+      [INFO] [1794634413.667170, 69.329000]: EMPURRAO: -12.5 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:33:50  fim.
+02:33:50  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:33:50  [1/1] B3_M33_P0_y-_F013.8_r1
+      [INFO] [1794634483.430428, 69.328000]: EMPURRAO: -13.8 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.7 s  por pitch
+        fator de tempo real ........  0.999
+02:34:51  fim.
+== B3_M33_P1_y+
+02:34:51  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:34:51  [1/1] B3_M33_P1_y+_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:36:01  fim.
+02:36:01  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:36:01  [1/1] B3_M33_P1_y+_F020.0_r1
+      [INFO] [1794634614.072996, 69.344000]: EMPURRAO: 20.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 10.9 s  por roll
+        fator de tempo real ........  0.998
+02:37:00  fim.
+02:37:00  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:37:00  [1/1] B3_M33_P1_y+_F010.0_r1
+      [INFO] [1794634671.410276, 69.328000]: EMPURRAO: 10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.1 s  por roll
+        fator de tempo real ........  0.999
+02:37:57  fim.
+02:37:57  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:37:57  [1/1] B3_M33_P1_y+_F005.0_r1
+      [INFO] [1794634729.792862, 69.332000]: EMPURRAO: 5.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.998
+02:39:06  fim.
+02:39:07  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:39:07  [1/1] B3_M33_P1_y+_F007.5_r1
+      [INFO] [1794634799.712424, 69.330000]: EMPURRAO: 7.5 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.9 s  por roll
+        fator de tempo real ........  0.999
+02:40:05  fim.
+02:40:05  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:40:05  [1/1] B3_M33_P1_y+_F006.2_r1
+      [INFO] [1794634858.296222, 69.326000]: EMPURRAO: 6.2 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:41:15  fim.
+== B3_M33_P1_y-
+02:41:15  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:41:15  [1/1] B3_M33_P1_y-_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:42:25  fim.
+02:42:25  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:42:25  [1/1] B3_M33_P1_y-_F020.0_r1
+      [INFO] [1794634997.800338, 69.327000]: EMPURRAO: -20.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.1 s  por roll
+        fator de tempo real ........  0.999
+02:43:23  fim.
+02:43:23  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:43:23  [1/1] B3_M33_P1_y-_F010.0_r1
+      [INFO] [1794635056.102615, 69.328000]: EMPURRAO: -10.0 N em y (corpo) por 0.10 s, t_marcha 8.94 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.9 s  por roll
+        fator de tempo real ........  0.999
+02:44:23  fim.
+02:44:23  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:44:23  [1/1] B3_M33_P1_y-_F005.0_r1
+      [INFO] [1794635116.570721, 69.328000]: EMPURRAO: -5.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:45:33  fim.
+02:45:33  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:45:33  [1/1] B3_M33_P1_y-_F007.5_r1
+      [INFO] [1794635186.345132, 69.327000]: EMPURRAO: -7.5 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:46:43  fim.
+02:46:43  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:46:43  [1/1] B3_M33_P1_y-_F008.8_r1
+      [INFO] [1794635256.269972, 69.320000]: EMPURRAO: -8.8 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:47:53  fim.
+== B3_M33_P2_y+
+02:47:53  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:47:53  [1/1] B3_M33_P2_y+_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:49:03  fim.
+02:49:03  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:49:03  [1/1] B3_M33_P2_y+_F020.0_r1
+      [INFO] [1794635395.910630, 69.329000]: EMPURRAO: 20.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 10.9 s  por roll
+        fator de tempo real ........  0.999
+02:50:01  fim.
+02:50:01  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:50:01  [1/1] B3_M33_P2_y+_F010.0_r1
+      [INFO] [1794635454.601998, 69.317000]: EMPURRAO: 10.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.1 s  por roll
+        fator de tempo real ........  0.999
+02:51:00  fim.
+02:51:00  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:51:00  [1/1] B3_M33_P2_y+_F005.0_r1
+      [INFO] [1794635513.110494, 69.323000]: EMPURRAO: 5.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:52:10  fim.
+02:52:10  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:52:10  [1/1] B3_M33_P2_y+_F007.5_r1
+      [INFO] [1794635582.977680, 69.318000]: EMPURRAO: 7.5 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.6 s  por roll
+        fator de tempo real ........  0.999
+02:53:09  fim.
+02:53:09  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:53:09  [1/1] B3_M33_P2_y+_F006.2_r1
+      [INFO] [1794635642.214964, 69.340000]: EMPURRAO: 6.2 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.998
+02:54:19  fim.
+== B3_M33_P2_y-
+02:54:19  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:54:19  [1/1] B3_M33_P2_y-_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:55:29  fim.
+02:55:29  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:55:29  [1/1] B3_M33_P2_y-_F020.0_r1
+      [INFO] [1794635781.765926, 69.340000]: EMPURRAO: -20.0 N em y (corpo) por 0.10 s, t_marcha 8.94 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.1 s  por roll
+        fator de tempo real ........  0.999
+02:56:27  fim.
+02:56:27  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:56:27  [1/1] B3_M33_P2_y-_F010.0_r1
+      [INFO] [1794635840.332510, 69.319000]: EMPURRAO: -10.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 14.9 s  por roll
+        fator de tempo real ........  0.999
+02:57:29  fim.
+02:57:29  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:57:29  [1/1] B3_M33_P2_y-_F005.0_r1
+      [INFO] [1794635902.633457, 69.315000]: EMPURRAO: -5.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:58:39  fim.
+02:58:39  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:58:39  [1/1] B3_M33_P2_y-_F007.5_r1
+      [INFO] [1794635972.455856, 69.328000]: EMPURRAO: -7.5 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+02:59:49  fim.
+02:59:49  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+02:59:49  [1/1] B3_M33_P2_y-_F008.8_r1
+      [INFO] [1794636042.189429, 69.326000]: EMPURRAO: -8.8 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.3 s  por roll
+        fator de tempo real ........  0.999
+03:00:49  fim.
+== B3_M33_P3_y+
+03:00:49  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:00:49  [1/1] B3_M33_P3_y+_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:01:58  fim.
+03:01:58  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:01:58  [1/1] B3_M33_P3_y+_F020.0_r1
+      [INFO] [1794636171.651235, 69.318000]: EMPURRAO: 20.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 10.9 s  por roll
+        fator de tempo real ........  0.999
+03:02:57  fim.
+03:02:57  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:02:57  [1/1] B3_M33_P3_y+_F010.0_r1
+      [INFO] [1794636230.331633, 69.327000]: EMPURRAO: 10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.1 s  por roll
+        fator de tempo real ........  0.999
+03:03:56  fim.
+03:03:56  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:03:56  [1/1] B3_M33_P3_y+_F005.0_r1
+      [INFO] [1794636288.840624, 69.316000]: EMPURRAO: 5.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:05:05  fim.
+03:05:05  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:05:05  [1/1] B3_M33_P3_y+_F007.5_r1
+      [INFO] [1794636357.077578, 69.317000]: EMPURRAO: 7.5 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.6 s  por roll
+        fator de tempo real ........  0.999
+03:06:03  fim.
+03:06:03  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:06:03  [1/1] B3_M33_P3_y+_F006.2_r1
+      [INFO] [1794636416.094076, 69.327000]: EMPURRAO: 6.2 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:07:13  fim.
+== B3_M33_P3_y-
+03:07:13  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:07:13  [1/1] B3_M33_P3_y-_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:08:22  fim.
+03:08:22  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:08:22  [1/1] B3_M33_P3_y-_F020.0_r1
+      [INFO] [1794636555.587744, 69.317000]: EMPURRAO: -20.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.1 s  por roll
+        fator de tempo real ........  0.999
+03:09:21  fim.
+03:09:21  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:09:21  [1/1] B3_M33_P3_y-_F010.0_r1
+      [INFO] [1794636613.929758, 69.327000]: EMPURRAO: -10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:10:30  fim.
+03:10:31  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:10:31  [1/1] B3_M33_P3_y-_F015.0_r1
+      [INFO] [1794636683.674755, 69.330000]: EMPURRAO: -15.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.3 s  por roll
+        fator de tempo real ........  0.999
+03:11:29  fim.
+03:11:29  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:11:29  [1/1] B3_M33_P3_y-_F012.5_r1
+      [INFO] [1794636742.078541, 69.327000]: EMPURRAO: -12.5 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.3 s  por roll
+        fator de tempo real ........  0.999
+03:12:29  fim.
+03:12:29  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:12:29  [1/1] B3_M33_P3_y-_F011.2_r1
+      [INFO] [1794636801.968782, 69.317000]: EMPURRAO: -11.2 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:13:39  fim.
+== B3_M38_P0_y+
+03:13:39  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:13:39  [1/1] B3_M38_P0_y+_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:14:48  fim.
+03:14:48  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:14:48  [1/1] B3_M38_P0_y+_F020.0_r1
+      [INFO] [1794636941.515107, 69.327000]: EMPURRAO: 20.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.0 s  por pitch
+        fator de tempo real ........  0.999
+03:15:48  fim.
+03:15:48  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:15:48  [1/1] B3_M38_P0_y+_F010.0_r1
+      [INFO] [1794637001.442912, 69.317000]: EMPURRAO: 10.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.7 s  por pitch
+        fator de tempo real ........  0.999
+03:16:48  fim.
+03:16:48  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:16:48  [1/1] B3_M38_P0_y+_F005.0_r1
+      [INFO] [1794637061.035375, 69.327000]: EMPURRAO: 5.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:17:58  fim.
+03:17:58  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:17:58  [1/1] B3_M38_P0_y+_F007.5_r1
+      [INFO] [1794637130.777368, 69.326000]: EMPURRAO: 7.5 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:19:07  fim.
+03:19:08  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:19:08  [1/1] B3_M38_P0_y+_F008.8_r1
+      [INFO] [1794637200.685317, 69.318000]: EMPURRAO: 8.8 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.8 s  por pitch
+        fator de tempo real ........  0.999
+03:20:07  fim.
+== B3_M38_P0_y-
+03:20:07  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:20:07  [1/1] B3_M38_P0_y-_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:21:17  fim.
+03:21:17  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:21:17  [1/1] B3_M38_P0_y-_F020.0_r1
+      [INFO] [1794637330.164630, 69.326000]: EMPURRAO: -20.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.6 s  por pitch
+        fator de tempo real ........  0.999
+03:22:17  fim.
+03:22:17  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:22:17  [1/1] B3_M38_P0_y-_F010.0_r1
+      [INFO] [1794637389.765523, 69.317000]: EMPURRAO: -10.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:23:26  fim.
+03:23:26  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:23:26  [1/1] B3_M38_P0_y-_F015.0_r1
+      [INFO] [1794637459.482186, 69.329000]: EMPURRAO: -15.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.7 s  por pitch
+        fator de tempo real ........  0.999
+03:24:26  fim.
+03:24:26  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:24:26  [1/1] B3_M38_P0_y-_F012.5_r1
+      [INFO] [1794637519.112963, 69.321000]: EMPURRAO: -12.5 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.4 s  por pitch
+        fator de tempo real ........  0.999
+03:25:26  fim.
+03:25:26  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:25:26  [1/1] B3_M38_P0_y-_F011.2_r1
+      [INFO] [1794637579.507704, 69.326000]: EMPURRAO: -11.2 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.1 s  por pitch
+        fator de tempo real ........  0.999
+03:26:26  fim.
+== B3_M38_P1_y+
+03:26:26  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:26:26  [1/1] B3_M38_P1_y+_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:27:36  fim.
+03:27:36  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:27:36  [1/1] B3_M38_P1_y+_F020.0_r1
+      [INFO] [1794637709.352395, 69.336000]: EMPURRAO: 20.0 N em y (corpo) por 0.10 s, t_marcha 8.94 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 10.9 s  por roll
+        fator de tempo real ........  0.999
+03:28:34  fim.
+03:28:34  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:28:34  [1/1] B3_M38_P1_y+_F010.0_r1
+      [INFO] [1794637767.076423, 69.327000]: EMPURRAO: 10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.2 s  por roll
+        fator de tempo real ........  0.999
+03:29:32  fim.
+03:29:32  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:29:32  [1/1] B3_M38_P1_y+_F005.0_r1
+      [INFO] [1794637825.528706, 69.326000]: EMPURRAO: 5.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:30:42  fim.
+03:30:42  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:30:42  [1/1] B3_M38_P1_y+_F007.5_r1
+      [INFO] [1794637895.250095, 69.316000]: EMPURRAO: 7.5 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:31:52  fim.
+03:31:52  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:31:52  [1/1] B3_M38_P1_y+_F008.8_r1
+      [INFO] [1794637964.991978, 69.337000]: EMPURRAO: 8.8 N em y (corpo) por 0.10 s, t_marcha 8.94 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.7 s  por roll
+        fator de tempo real ........  0.999
+03:32:52  fim.
+== B3_M38_P1_y-
+03:32:52  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:32:52  [1/1] B3_M38_P1_y-_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:34:01  fim.
+03:34:01  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:34:01  [1/1] B3_M38_P1_y-_F020.0_r1
+      [INFO] [1794638094.683868, 69.331000]: EMPURRAO: -20.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.2 s  por roll
+        fator de tempo real ........  0.999
+03:35:00  fim.
+03:35:00  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:35:00  [1/1] B3_M38_P1_y-_F010.0_r1
+      [INFO] [1794638152.794013, 69.329000]: EMPURRAO: -10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.6 s  por roll
+        fator de tempo real ........  0.999
+03:35:59  fim.
+03:35:59  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:35:59  [1/1] B3_M38_P1_y-_F005.0_r1
+      [INFO] [1794638212.652587, 69.338000]: EMPURRAO: -5.0 N em y (corpo) por 0.10 s, t_marcha 8.94 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:37:09  fim.
+03:37:09  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:37:09  [1/1] B3_M38_P1_y-_F007.5_r1
+      [INFO] [1794638282.426837, 69.326000]: EMPURRAO: -7.5 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:38:19  fim.
+03:38:19  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:38:19  [1/1] B3_M38_P1_y-_F008.8_r1
+      [INFO] [1794638352.179907, 69.326000]: EMPURRAO: -8.8 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:39:29  fim.
+== B3_M38_P2_y+
+03:39:29  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:39:29  [1/1] B3_M38_P2_y+_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:40:38  fim.
+03:40:38  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:40:38  [1/1] B3_M38_P2_y+_F020.0_r1
+      [INFO] [1794638491.624066, 69.317000]: EMPURRAO: 20.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 10.9 s  por roll
+        fator de tempo real ........  0.999
+03:41:37  fim.
+03:41:37  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:41:37  [1/1] B3_M38_P2_y+_F010.0_r1
+      [INFO] [1794638550.019714, 69.328000]: EMPURRAO: 10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.2 s  por roll
+        fator de tempo real ........  0.999
+03:42:36  fim.
+03:42:36  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:42:36  [1/1] B3_M38_P2_y+_F005.0_r1
+      [INFO] [1794638608.773755, 69.316000]: EMPURRAO: 5.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 23 s sem cair
+        fator de tempo real ........  0.999
+03:43:45  fim.
+03:43:45  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:43:45  [1/1] B3_M38_P2_y+_F007.5_r1
+      [INFO] [1794638678.653403, 69.326000]: EMPURRAO: 7.5 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:44:55  fim.
+03:44:55  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:44:55  [1/1] B3_M38_P2_y+_F008.8_r1
+      [INFO] [1794638748.340230, 69.327000]: EMPURRAO: 8.8 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.8 s  por roll
+        fator de tempo real ........  0.999
+03:45:54  fim.
+== B3_M38_P2_y-
+03:45:54  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:45:54  [1/1] B3_M38_P2_y-_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:47:04  fim.
+03:47:04  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:47:04  [1/1] B3_M38_P2_y-_F020.0_r1
+      [INFO] [1794638876.792624, 69.316000]: EMPURRAO: -20.0 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.2 s  por roll
+        fator de tempo real ........  0.999
+03:48:02  fim.
+03:48:02  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:48:02  [1/1] B3_M38_P2_y-_F010.0_r1
+      [INFO] [1794638935.262976, 69.326000]: EMPURRAO: -10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 12.6 s  por pitch
+        fator de tempo real ........  0.999
+03:49:03  fim.
+03:49:03  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:49:03  [1/1] B3_M38_P2_y-_F005.0_r1
+      [INFO] [1794638995.768564, 69.328000]: EMPURRAO: -5.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:50:12  fim.
+03:50:12  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:50:12  [1/1] B3_M38_P2_y-_F007.5_r1
+      [INFO] [1794639065.523761, 69.326000]: EMPURRAO: -7.5 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:51:22  fim.
+03:51:22  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:51:22  [1/1] B3_M38_P2_y-_F008.8_r1
+      [INFO] [1794639135.254341, 69.317000]: EMPURRAO: -8.8 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:52:32  fim.
+== B3_M38_P3_y+
+03:52:32  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:52:32  [1/1] B3_M38_P3_y+_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:53:42  fim.
+03:53:42  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:53:42  [1/1] B3_M38_P3_y+_F020.0_r1
+      [INFO] [1794639274.899987, 69.330000]: EMPURRAO: 20.0 N em y (corpo) por 0.10 s, t_marcha 8.97 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 10.9 s  por roll
+        fator de tempo real ........  0.999
+03:54:40  fim.
+03:54:40  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:54:40  [1/1] B3_M38_P3_y+_F010.0_r1
+      [INFO] [1794639333.178876, 69.326000]: EMPURRAO: 10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.2 s  por roll
+        fator de tempo real ........  0.999
+03:55:39  fim.
+03:55:39  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:55:39  [1/1] B3_M38_P3_y+_F005.0_r1
+      [INFO] [1794639392.032882, 69.330000]: EMPURRAO: 5.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:56:49  fim.
+03:56:49  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:56:49  [1/1] B3_M38_P3_y+_F007.5_r1
+      [INFO] [1794639461.772049, 69.316000]: EMPURRAO: 7.5 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+03:57:58  fim.
+03:57:58  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:57:58  [1/1] B3_M38_P3_y+_F008.8_r1
+      [INFO] [1794639531.514788, 69.328000]: EMPURRAO: 8.8 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.7 s  por roll
+        fator de tempo real ........  0.999
+03:58:58  fim.
+== B3_M38_P3_y-
+03:58:58  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+03:58:58  [1/1] B3_M38_P3_y-_F000.0_r1
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+04:00:08  fim.
+04:00:08  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+04:00:08  [1/1] B3_M38_P3_y-_F020.0_r1
+      [INFO] [1794639661.036557, 69.328000]: EMPURRAO: -20.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 11.2 s  por roll
+        fator de tempo real ........  0.999
+04:01:06  fim.
+04:01:06  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+04:01:06  [1/1] B3_M38_P3_y-_F010.0_r1
+      [INFO] [1794639719.368796, 69.327000]: EMPURRAO: -10.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. CAIU em 13.1 s  por pitch
+        fator de tempo real ........  0.999
+04:02:07  fim.
+04:02:07  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+04:02:07  [1/1] B3_M38_P3_y-_F005.0_r1
+      [INFO] [1794639780.394420, 69.326000]: EMPURRAO: -5.0 N em y (corpo) por 0.10 s, t_marcha 8.93 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+04:03:17  fim.
+04:03:17  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+04:03:17  [1/1] B3_M38_P3_y-_F007.5_r1
+      [INFO] [1794639850.154002, 69.316000]: EMPURRAO: -7.5 N em y (corpo) por 0.10 s, t_marcha 8.92 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+04:04:27  fim.
+04:04:27  panorama: /home/lucasolives/Documents/ic/marta_bringup/src/marta_bringup/experiments/bracos/b3/_desenho_tmp.csv, semente 1, 1 corridas a fazer
+04:04:27  [1/1] B3_M38_P3_y-_F008.8_r1
+      [INFO] [1794639919.895676, 69.327000]: EMPURRAO: -8.8 N em y (corpo) por 0.10 s, t_marcha 8.94 s, apoio esquerdo, ok
+        RESULTADO .................. andou 22 s sem cair
+        fator de tempo real ........  0.999
+04:05:36  fim.

@@ -71,6 +71,18 @@
     <!-- Somado ao hip pitch depois da IK [graus]; -5 inclina o tronco ~5 graus para
          a frente quando os servos nao cedem (panorama_parametros.md). -->
     <arg name="hip_pitch_offset_deg" default="-5.0"/>
+    <!-- Postura e balanco dos bracos (docs/bracos.md), so simulacao. Positivo:
+         abre, para frente, flexiona. Default = P2a, escolhida pelo usuario em
+         2026-11-14: ombro aberto 15 graus (cotovelo a ~25 mm do tronco), cotovelo
+         90 graus, ombro -15,8 graus (mantem o CoM da postura historica).
+         Postura historica (P0), usada em todas as campanhas ate 2026-11-14 e
+         fixada nos rodar_*.sh: arm_shoulder_roll_deg:=50 arm_shoulder_pitch_deg:=0
+         arm_elbow_deg:=0. Balanco de Maximo com fator s = 1 (cada braco segue o
+         x do pe oposto; s = 0 desliga o balanco). -->
+    <arg name="arm_shoulder_roll_deg" default="15.0"/>
+    <arg name="arm_shoulder_pitch_deg" default="-15.8"/>
+    <arg name="arm_elbow_deg" default="90.0"/>
+    <arg name="arms_compensation_factor" default="1.0"/>
     <arg name="use_link_states" default="true"/>
     <arg name="telemetry" default="true"/>
 
@@ -92,6 +104,10 @@
     <arg name="cmd_vel_enabled" default="$(arg teleop)"/>
     <arg name="teleop_vx" default="0.1"/>
     <arg name="teleop_omega" default="0.175"/>
+    <!-- Modo caranguejo do teleop (tecla c): lateral (0, +-vy, 0) e diagonal
+         (vx, +-vy_diag, 0). Defaults = envelope testado (docs/marcha_lateral.md). -->
+    <arg name="teleop_vy" default="0.05"/>
+    <arg name="teleop_vy_diag" default="0.03"/>
     <!-- Pe que balanca no primeiro passo; true espelha a partida (teste do
          espelho do desvio de direcao). -->
     <arg name="start_left_swing" default="false"/>
@@ -197,6 +213,8 @@
           output="screen">
         <param name="vx" value="$(arg teleop_vx)"/>
         <param name="omega" value="$(arg teleop_omega)"/>
+        <param name="vy" value="$(arg teleop_vy)"/>
+        <param name="vy_diag" value="$(arg teleop_vy_diag)"/>
     </node>
 
     <node if="$(arg viz_marcha)" pkg="marta_bringup" type="viz_marcha.py" name="viz_marcha"
@@ -261,6 +279,10 @@
         <param name="double_support_ratio" value="$(arg double_support_ratio)"/>
         <param name="y_separation" value="$(arg y_separation)"/>
         <param name="hip_pitch_offset_deg" value="$(arg hip_pitch_offset_deg)"/>
+        <param name="arm_shoulder_roll_deg" value="$(arg arm_shoulder_roll_deg)"/>
+        <param name="arm_shoulder_pitch_deg" value="$(arg arm_shoulder_pitch_deg)"/>
+        <param name="arm_elbow_deg" value="$(arg arm_elbow_deg)"/>
+        <param name="arms_compensation_factor" value="$(arg arms_compensation_factor)"/>
         <param name="kp_pitch" value="$(arg kp_pitch)"/>
         <param name="kd_pitch" value="$(arg kd_pitch)"/>
         <param name="roll_stabilizer_enabled" value="$(arg roll_stabilizer_enabled)"/>

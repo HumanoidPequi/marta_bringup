@@ -14,6 +14,7 @@ aponta para os dois documentos de detalhe.
 | [desvio_de_direcao.md](desvio_de_direcao.md) | a investigação do giro em yaw: instrumentação, hipóteses, resultados, malha de rumo |
 | [plano_fase3_roll.md](plano_fase3_roll.md) | Fase 3, **implementada** (compensação de gravidade em out/2026, estabilizador de roll em nov/2026): desenho, referências com página, protocolo |
 | [marcha_omnidirecional.md](marcha_omnidirecional.md) | **marcha omnidirecional + estabilizador de roll (~520 corridas, nov/2026)**: giro, curva, lateral, diagonal e combinado a 3,3 e 3,8 kg; sintonia de pitch e rumo; o roll faz o giro andar; obstáculos no campo simulado; demo no Foxglove |
+| [foxglove.md](foxglove.md) | **visualização no Foxglove**: como foi construída (tópicos, nós, layouts `marta_marcha`/`marta_omni`), passo a passo para reproduzir ao vivo e por bag, armadilhas |
 | [marcha_omnidirecional_explicacao.md](marcha_omnidirecional_explicacao.md) | a mesma marcha omnidirecional em narrativa, para reunião |
 | [plano_comparacao_darwin.md](plano_comparacao_darwin.md) | comparação Marta × Darwin-OP (por que 6 N·m): modelo comum de MX-28, métricas, hipóteses; **E0 e E1c feitos** (postura × altura do pé, 72 corridas): o gargalo é a perna em balanço |
 | [ajustes_marcha.md](ajustes_marcha.md) | **ajustes de parâmetros de out/2026**: geometria da IK (tornozelo→sola, quadril em x) e marcha (`z_com`, apoio duplo, separação e altura dos pés): o que mudou, por quê e o que falta medir |
@@ -23,12 +24,13 @@ aponta para os dois documentos de detalhe.
 
 ---
 
-## 0. Retomada rápida (estado em 2026-11-12)
+## 0. Retomada rápida (estado em 2026-11-14)
 
 **Ordem de leitura para retomar sem perder contexto:**
 1. este arquivo inteiro;
-2. [marcha_omnidirecional.md](marcha_omnidirecional.md) (o estudo mais
-   recente; narrativa em
+2. [marcha_lateral.md](marcha_lateral.md) e [bracos.md](bracos.md) (os
+   estudos mais recentes, 2026-11-13/14; cada um abre com a tabela de
+   respostas), [marcha_omnidirecional.md](marcha_omnidirecional.md) (narrativa em
    [marcha_omnidirecional_explicacao.md](marcha_omnidirecional_explicacao.md)),
    [panorama_parametros.md](panorama_parametros.md) e
    [consulta_parametros.md](consulta_parametros.md);
@@ -93,6 +95,17 @@ Para outra massa ou geometria, use
    (`experiments/omni/diag/`). **Todo comando para rodar à mão usa o campo
    completo** (`world.world`, o default). Com `gui:=true`, use as flags de
    X11 do §5, senão o `gzclient` aborta.
+
+**Estudo de 2026-11-13/14: caranguejo e braços** (decisões pendentes do usuário; **nada mudou nos defaults**):
+1. **Avanço espúrio (achado AA):** feedforward `walk_velocity_x` −0,010 (M33) / −0,015 (M38) no lateral e parado. Leva o erro de direção de 13–20° para 1–5°.
+2. **Lateral rápido:** `step_period:=0.5 y_separation:=0.05` faz o caranguejo andar a ±0,09 (±0,10 no M33). Como default global, não passa no critério: troca pitch por roll.
+3. **Braços: o usuário escolheu a P2a como default do launch (2026-11-14):** ombro aberto 15°, cotovelo 90°, ombro −15,8°.
+   - Pela geometria, deixa o cotovelo a ~25 mm do tronco (na P2c, 4,5 mm) e mantém o CoM da postura histórica.
+   - **Validação:** só corridas avulsas, sem campanha. Andou na reta e no lateral a 0,09 com `passo05`.
+   - **Campanhas:** os `rodar_*.sh` fixam a postura histórica (50°/0/0), para reproduzir tudo o que foi rodado antes. Para ver no Gazebo: `bash src/marta_bringup/experiments/bracos/ver_bracos.sh -h`.
+   - `arms_compensation_factor` 2 reduz o esforço de rumo na reta, mas não foi testado sem roll. Realimentação dos braços não é recomendada agora.
+4. **Sem roll, o que salva é o CoM ~2,7 mm à frente** (braço ou ombro). Com roll esse viés só custa (pitch RMS +46%).
+5. **Hardware:** confirmar no robô a folga braço–tronco com o ombro em roll 0 (5,2 mm) e a amplitude do cotovelo.
 
 ---
 
@@ -497,7 +510,24 @@ lateral e no giro, com ou sem estabilizadores:
 - o lateral sai a 12–34° da direção comandada;
 - no giro no lugar, o tronco descreve um círculo de 8–15 cm.
 
-Ainda não foi investigado no `OmnidirectionalWalkZMP`.
+**Investigado em 2026-11-13** ([marcha_lateral.md](marcha_lateral.md) A1/A1x):
+- é da marcha, não do lateral: marchando no lugar, o robô avança igual (+10 a +13 mm/s);
+- 99–108% vem da colocação do passo (o pé pousa à frente), não de escorregamento;
+- nenhuma das 6 ablações explica (balanço, rumo, pitch, `hip_offset_x`, `hip_pitch_offset`, compensação);
+- correlação r = −0,84 com o pitch médio do tronco (exploratória).
+
+Correção proposta, **não adotada (decisão do usuário):** `walk_velocity_x` −0,010 (M33) / −0,015 (M38) em malha aberta. Leva o erro de direção do lateral de 13–20° para 1–5°.
+
+**AB.** **Os braços não melhoram o equilíbrio com roll; sem roll, o que importa é o CoM** ([bracos.md](bracos.md)):
+- **Com roll:**
+  - nenhuma postura (junto ao corpo, cotovelo 45° ou 90°) reduz o roll RMS;
+  - as contraídas inclinam o tronco para frente;
+  - a aberta atual (P0) tolera o mesmo ou mais empurrão lateral.
+- **O balanço do Maximo (s):**
+  - na reta, reduz o esforço da malha de rumo de forma monotônica (s = 2 melhor que s = 1);
+  - não muda sobrevivência em nenhuma campanha.
+- **Sem roll:** a postura contraída anda (11/12 contra 2/12) só porque leva o CoM 2,7 mm à frente. O braço aberto com o ombro +18,7° faz igual.
+- **Realimentação dos braços:** não recomendada agora (§8 do doc). Fica aberta com atrito baixo (campo livre μ = 100).
 
 ---
 
@@ -621,6 +651,9 @@ teclado não está chegando à janela; clique nela de novo.
 
 ### Visualização no Foxglove
 
+Relatório completo (como foi feito, tópicos, layouts e reprodução):
+[foxglove.md](foxglove.md).
+
 Uma tela só com o robô 3D andando no mundo e os gráficos sincronizados: rumo
 atual × desejado, `correction` da malha de rumo, roll e pitch verdadeiros,
 torque das juntas e estado de apoio. Layout pronto em
@@ -742,7 +775,7 @@ git.
 
 ---
 
-## 7. Próximos passos, em ordem de valor (revisto em 2026-11-12)
+## 7. Próximos passos, em ordem de valor (revisto em 2026-11-14)
 
 **Feito em nov/2026** ([marcha_omnidirecional.md](marcha_omnidirecional.md)):
 os antigos itens 1–4 desta lista.
@@ -751,17 +784,23 @@ os antigos itens 1–4 desta lista.
 - curvas e giro testados;
 - o termo integral do rumo não foi necessário (erro de regime < 10°).
 
+**Feito em 2026-11-13/14** ([marcha_lateral.md](marcha_lateral.md), [bracos.md](bracos.md)):
+- o avanço espúrio foi investigado (antigo item 2): a causa no gerador não foi isolada, e há um feedforward proposto;
+- lateral acima de 0,05 (parte do antigo item 3);
+- empurrão lateral andando, com roll (parte do antigo item 4);
+- postura e balanço dos braços.
+
 **Agora:**
-1. **Validar kd 0,06 fora do que a E7 cobriu:** velocidades de borda do
+1. **Decisões do §0 (estudo de 2026-11-13/14).** Se adotar T 0,5 global, antes rodar uma campanha com replicação nos movimentos em que o roll piorou (lugar, reta M33, giro M38).
+2. **Atrito baixo:** repetir a Q2 dos braços (reta, s 0/1/2) e o lateral com μ realista. Tudo até aqui usou μ = 100.
+3. **Validar kd 0,06 fora do que a E7 cobriu:** velocidades de borda do
    envelope (E6env) e o teleop em M33 e M38.
-2. **Avanço espúrio do gerador** (achado AA). Corrigir o lateral exige
-   mexer no `OmnidirectionalWalkZMP`.
-3. **Velocidades e posturas além do testado com roll:** reta > 0,15 e
-   lateral > 0,05 sem o gol; posturas mais esticadas, que o roll pode
-   viabilizar.
-4. **Robustez:** empurrão lateral parado e andando (`push_test.py`, eixo y),
-   com e sem roll.
-5. **Robô real:** sintonia própria do roll (o código força desligado) e o
+4. **Causa do avanço espúrio** (achado AA): o feedforward contorna, mas a causa não foi isolada. Pista: a correlação com o pitch do tronco e o fato de T 0,5 anulá-lo na M33.
+5. **Velocidades e posturas além do testado com roll:** reta > 0,15 sem o
+   gol; posturas mais esticadas, que o roll pode viabilizar.
+6. **Robustez:** empurrão parado, empurrão no apoio direito e em x, e
+   empurrão sem roll (a B3 cobriu só y, com roll, no apoio esquerdo).
+7. **Robô real:** sintonia própria do roll (o código força desligado) e o
    sentido do `hip_yaw` (achado L).
 
 **Itens anteriores, ainda válidos:**

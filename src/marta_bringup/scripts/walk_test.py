@@ -45,6 +45,7 @@ O que e medido, e por que:
 """
 
 import math
+import os
 
 import rospy
 from gazebo_msgs.msg import ModelStates
@@ -127,6 +128,20 @@ class WalkTest(object):
         self.tag = rospy.get_param('~tag', '')
         self.tau = rospy.get_param('~tau', float('nan'))
         self.rep = rospy.get_param('~rep', 0)
+        # Empurrao durante a marcha (docs/bracos.md, B3). push_force = 0 desliga.
+        # O pulso sai na primeira ENTRADA em apoio simples do pe push_support
+        # (1 esquerdo, 2 direito) depois de push_time s de marcha, no frame do
+        # CORPO (eixo push_axis, sinal de push_force), na altura do base_link.
+        # Disparar por fase, e nao por relogio, deixa o empurrao reprodutivel.
+        self.push_force = float(rospy.get_param('~push_force', 0.0))
+        self.push_axis = rospy.get_param('~push_axis', 'y')
+        self.push_time = float(rospy.get_param('~push_time', 10.0))
+        self.push_duration = float(rospy.get_param('~push_duration', 0.1))
+        self.push_support = int(rospy.get_param('~push_support', 1))
+        self.push_out = rospy.get_param('~push_out', '')
+        self.push_done = None        # (t_marcha, fx, fy, apoio, ok)
+        self.prev_support = None
+        self.walk_t0 = None
 
         rospy.Subscriber('/marta/torso_attitude', Float64MultiArray, self.attitude_cb)
         rospy.Subscriber('/marta/stabilizer_debug', Float64MultiArray, self.debug_cb)
@@ -178,9 +193,58 @@ class WalkTest(object):
             self.debug = msg.data
 
     def lipm_cb(self, msg):
+        if (self.push_force != 0.0 and self.push_done is None and self.recording
+                and self.walk_t0 is not None and self.sim_clock is not None):
+            t_marcha = self.sim_clock - self.walk_t0
+            sup = int(msg.support_state)
+            if (t_marcha >= self.push_time and sup == self.push_support
+                    and self.prev_support is not None and self.prev_support != sup):
+                self.push_done = (t_marcha, 0.0, 0.0, sup, False)
+                import threading
+                threading.Thread(target=self.empurrar, args=(t_marcha, sup), daemon=True).start()
+            self.prev_support = int(msg.support_state)
         if self.recording:
             self.lipm.append((msg.support_state, msg.com_support.x, msg.com_vel.x,
                               msg.com_support.y, msg.com_vel.y, msg.z_com_measured))
+
+    def empurrar(self, t_marcha, sup):
+        from geometry_msgs.msg import Point, Wrench
+        from gazebo_msgs.srv import ApplyBodyWrench
+        yaw = self.yaw or 0.0
+        bx, by = (self.push_force, 0.0) if self.push_axis == 'x' else (0.0, self.push_force)
+        w = Wrench()
+        w.force.x = math.cos(yaw) * bx - math.sin(yaw) * by
+        w.force.y = math.sin(yaw) * bx + math.cos(yaw) * by
+        ok = False
+        try:
+            rospy.wait_for_service('/gazebo/apply_body_wrench', timeout=2.0)
+            resp = rospy.ServiceProxy('/gazebo/apply_body_wrench', ApplyBodyWrench)(
+                body_name='marta::base_link', reference_frame='',
+                reference_point=Point(0, 0, 0), wrench=w, start_time=rospy.Time(0),
+                duration=rospy.Duration(self.push_duration))
+            ok = bool(resp.success)
+        except Exception as exc:  # noqa: BLE001
+            rospy.logerr('Empurrao falhou: %s', exc)
+        self.push_done = (t_marcha, w.force.x, w.force.y, sup, ok)
+        rospy.loginfo('EMPURRAO: %.1f N em %s (corpo) por %.2f s, t_marcha %.2f s, apoio %s, %s',
+                      self.push_force, self.push_axis, self.push_duration, t_marcha,
+                      SUPPORT_NAMES.get(sup, sup), 'ok' if ok else 'FALHOU')
+
+    def escrever_empurrao(self, fell_at):
+        if not self.push_out or self.push_force == 0.0:
+            return
+        try:
+            novo = not os.path.exists(self.push_out)
+            with open(self.push_out, 'a') as f:
+                if novo:
+                    f.write('tag,force,axis,duration,t_alvo,t_push,fx,fy,apoio,ok,caiu,t_queda\n')
+                pd = self.push_done or (float('nan'), 0.0, 0.0, -1, False)
+                f.write('%s,%.3f,%s,%.3f,%.2f,%.3f,%.3f,%.3f,%d,%d,%d,%s\n' % (
+                    self.tag, self.push_force, self.push_axis, self.push_duration,
+                    self.push_time, pd[0], pd[1], pd[2], pd[3], int(pd[4]),
+                    int(fell_at is not None), '' if fell_at is None else '%.2f' % fell_at))
+        except Exception as exc:  # noqa: BLE001
+            rospy.logerr('Nao consegui gravar %s: %s', self.push_out, exc)
 
     ZC_GERADOR = 0.297509   # o que o gerador assume (torso-pe da IK)
 
@@ -451,6 +515,7 @@ class WalkTest(object):
         self.t0 = None
         self.recording = True
         self.start_bag()
+        self.walk_t0 = self.sim_clock
         self.set_walking(True)
 
         # Marca de tempo simulado x tempo real. Se o RTF cair muito, a corrida
@@ -507,6 +572,10 @@ class WalkTest(object):
         self.escrever_csv()
         self.report(start_pos, end_pos, fell_at)
         self.escrever_linha_campanha(start_pos, end_pos, fell_at)
+        self.escrever_empurrao(fell_at)
+        if self.push_force != 0.0 and (self.push_done is None or not self.push_done[4]):
+            rospy.logwarn('Empurrao pedido (%.1f N) mas NAO aplicado: corrida invalida '
+                          'para o teste de empurrao.', self.push_force)
 
     # ------------------------------------------------------------------
 

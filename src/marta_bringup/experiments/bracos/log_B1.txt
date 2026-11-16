@@ -1,0 +1,434 @@
+20:24:30  panorama: src/marta_bringup/experiments/bracos/desenho_B1.csv, semente 20261116, 144 corridas a fazer
+20:24:30  [1/144] B1_M33_P0_s1_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:25:50  [2/144] B1_M38_P1_s1_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:27:11  [3/144] B1_M33_P2_s2_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:28:31  [4/144] B1_M33_P2_s0_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:29:51  [5/144] B1_M33_P0_s0_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:31:12  [6/144] B1_M38_P2_s0_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:32:33  [7/144] B1_M38_P0_s1_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:33:53  [8/144] B1_M38_P0_s1_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:35:13  [9/144] B1_M38_P0_s1_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:36:34  [10/144] B1_M38_P0_s1_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:37:54  [11/144] B1_M33_P0_s2_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:39:14  [12/144] B1_M38_P2_s0_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:40:35  [13/144] B1_M33_P0_s1_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:41:55  [14/144] B1_M33_P1_s2_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:43:15  [15/144] B1_M38_P0_s0_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:44:36  [16/144] B1_M33_P2_s1_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:45:56  [17/144] B1_M33_P2_s1_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:47:16  [18/144] B1_M38_P2_s1_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:48:37  [19/144] B1_M33_P1_s0_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:49:57  [20/144] B1_M38_P1_s0_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:51:17  [21/144] B1_M38_P2_s1_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:52:38  [22/144] B1_M33_P1_s0_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:53:58  [23/144] B1_M33_P1_s1_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:55:18  [24/144] B1_M38_P2_s1_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:56:38  [25/144] B1_M33_P0_s1_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:57:59  [26/144] B1_M38_P0_s0_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:59:19  [27/144] B1_M38_P3_s1_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:00:39  [28/144] B1_M38_P1_s0_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:02:00  [29/144] B1_M33_P2_s0_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:03:20  [30/144] B1_M33_P0_s1_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:04:41  [31/144] B1_M33_P3_s0_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:06:01  [32/144] B1_M33_P3_s0_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:07:21  [33/144] B1_M33_P0_s1_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:08:42  [34/144] B1_M33_P1_s1_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:10:02  [35/144] B1_M33_P2_s1_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:11:22  [36/144] B1_M33_P3_s0_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:12:42  [37/144] B1_M33_P0_s0_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:14:03  [38/144] B1_M38_P2_s0_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:15:23  [39/144] B1_M38_P1_s1_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:16:43  [40/144] B1_M33_P1_s0_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:18:04  [41/144] B1_M38_P0_s2_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:19:24  [42/144] B1_M38_P1_s2_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:20:44  [43/144] B1_M33_P3_s0_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:22:04  [44/144] B1_M33_P2_s0_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:23:25  [45/144] B1_M33_P3_s1_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:24:45  [46/144] B1_M38_P0_s2_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:26:05  [47/144] B1_M38_P0_s0_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:27:26  [48/144] B1_M33_P0_s1_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:28:46  [49/144] B1_M33_P2_s0_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:30:06  [50/144] B1_M33_P2_s1_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:31:27  [51/144] B1_M33_P3_s1_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:32:47  [52/144] B1_M38_P2_s2_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:34:07  [53/144] B1_M38_P3_s0_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:35:27  [54/144] B1_M38_P1_s2_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:36:48  [55/144] B1_M33_P3_s1_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:38:08  [56/144] B1_M33_P0_s0_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:39:28  [57/144] B1_M38_P3_s1_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:40:49  [58/144] B1_M33_P3_s0_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:42:09  [59/144] B1_M33_P2_s0_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:43:29  [60/144] B1_M33_P1_s0_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:44:50  [61/144] B1_M38_P2_s1_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:46:10  [62/144] B1_M38_P0_s1_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:47:30  [63/144] B1_M38_P3_s0_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:48:51  [64/144] B1_M38_P1_s1_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:50:11  [65/144] B1_M38_P1_s1_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:51:31  [66/144] B1_M38_P2_s0_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:52:52  [67/144] B1_M38_P2_s1_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:54:12  [68/144] B1_M38_P0_s0_reta0.10_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+21:55:32  [69/144] B1_M33_P2_s1_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:56:53  [70/144] B1_M38_P2_s0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:58:13  [71/144] B1_M38_P2_s2_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+21:59:33  [72/144] B1_M38_P0_s0_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:00:54  [73/144] B1_M38_P2_s0_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:02:14  [74/144] B1_M33_P2_s1_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:03:34  [75/144] B1_M38_P1_s0_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:04:55  [76/144] B1_M38_P3_s1_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:06:15  [77/144] B1_M33_P2_s0_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:07:35  [78/144] B1_M33_P2_s2_reta0.10_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+22:08:56  [79/144] B1_M38_P2_s1_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:10:16  [80/144] B1_M38_P2_s0_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:11:36  [81/144] B1_M38_P3_s1_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:12:57  [82/144] B1_M38_P1_s0_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:14:17  [83/144] B1_M38_P0_s1_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:15:37  [84/144] B1_M33_P3_s1_giro+0.175_pE_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+22:16:58  [85/144] B1_M38_P3_s0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:18:18  [86/144] B1_M33_P3_s1_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:19:38  [87/144] B1_M38_P2_s0_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:20:59  [88/144] B1_M33_P0_s0_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:22:19  [89/144] B1_M38_P0_s1_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:23:39  [90/144] B1_M33_P1_s1_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:25:00  [91/144] B1_M33_P0_s0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:26:20  [92/144] B1_M38_P3_s0_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:27:40  [93/144] B1_M33_P1_s1_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:29:01  [94/144] B1_M33_P3_s1_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:30:21  [95/144] B1_M33_P3_s0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:31:41  [96/144] B1_M38_P3_s2_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:33:02  [97/144] B1_M33_P1_s1_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:34:22  [98/144] B1_M33_P0_s1_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:35:42  [99/144] B1_M38_P1_s1_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:37:02  [100/144] B1_M33_P1_s0_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:38:23  [101/144] B1_M33_P1_s1_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:39:43  [102/144] B1_M38_P3_s0_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:41:04  [103/144] B1_M38_P3_s0_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:42:24  [104/144] B1_M33_P2_s0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:43:44  [105/144] B1_M33_P1_s1_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:45:05  [106/144] B1_M38_P2_s1_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:46:25  [107/144] B1_M33_P0_s0_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:47:45  [108/144] B1_M38_P0_s1_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:49:06  [109/144] B1_M38_P1_s0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:50:26  [110/144] B1_M33_P1_s0_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:51:46  [111/144] B1_M33_P1_s2_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:53:07  [112/144] B1_M33_P1_s1_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:54:27  [113/144] B1_M33_P3_s2_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:55:47  [114/144] B1_M38_P1_s0_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:57:08  [115/144] B1_M33_P0_s0_lat+0.05_pE_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+22:58:28  [116/144] B1_M38_P3_s1_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+22:59:48  [117/144] B1_M33_P3_s2_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:01:09  [118/144] B1_M33_P2_s0_lat+0.05_pE_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+23:02:29  [119/144] B1_M33_P3_s0_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:03:50  [120/144] B1_M38_P0_s0_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:05:10  [121/144] B1_M33_P1_s0_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:06:30  [122/144] B1_M33_P0_s2_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:07:50  [123/144] B1_M38_P1_s0_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:09:11  [124/144] B1_M38_P3_s2_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:10:31  [125/144] B1_M38_P1_s1_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:11:51  [126/144] B1_M33_P1_s0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:13:12  [127/144] B1_M33_P3_s1_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:14:32  [128/144] B1_M38_P1_s0_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:15:52  [129/144] B1_M38_P2_s1_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:17:13  [130/144] B1_M33_P3_s1_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:18:33  [131/144] B1_M38_P3_s0_giro+0.175_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:19:53  [132/144] B1_M38_P1_s1_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:21:14  [133/144] B1_M38_P3_s1_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:22:34  [134/144] B1_M38_P3_s0_giro+0.175_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:23:54  [135/144] B1_M33_P0_s0_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:25:14  [136/144] B1_M33_P2_s1_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:26:35  [137/144] B1_M38_P3_s1_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:27:55  [138/144] B1_M33_P0_s1_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:29:15  [139/144] B1_M38_P0_s0_giro+0.35_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:30:36  [140/144] B1_M38_P3_s1_reta0.10_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:31:56  [141/144] B1_M38_P0_s0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:33:16  [142/144] B1_M38_P1_s1_giro+0.35_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:34:37  [143/144] B1_M33_P3_s0_reta0.10_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:35:57  [144/144] B1_M33_P2_s1_lat+0.05_pE_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+23:37:17  fim.

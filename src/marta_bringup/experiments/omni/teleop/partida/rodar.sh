@@ -5,7 +5,7 @@
 S=$(dirname "$(readlink -f "$0")"); cd /home/lucasolives/Documents/ic/marta_bringup
 docker run --rm --name "rep_$2" -v "$PWD":/ws -v "$S":/s -w /ws marta_bringup:1.0 bash -lc "
 source /opt/ros/noetic/setup.bash && source devel/setup.bash
-roslaunch marta_bringup stabilizer_test.launch gui:=false cmd_vel_enabled:=true \
+roslaunch marta_bringup stabilizer_test.launch gui:=false arm_shoulder_roll_deg:=50 arm_shoulder_pitch_deg:=0 arm_elbow_deg:=0 cmd_vel_enabled:=true \
   foot_collision:=box stabilizer_enabled:=true heading_enabled:=true \
   joint_effort:=2.5 joint_velocity:=100 implicit_damping:=true joint_damping:=0.43 \
   gains:=/ws/src/marta_description/config/controller_mx28.yaml \

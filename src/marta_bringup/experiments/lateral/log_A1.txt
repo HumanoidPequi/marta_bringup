@@ -1,0 +1,128 @@
+19:14:39  panorama: src/marta_bringup/experiments/lateral/desenho_A1.csv, semente 20261114, 42 corridas a fazer
+19:14:39  [1/42] A1_M38_pitch0_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:15:59  [2/42] A1_M33_gc0_lat+0.05_pD_r1
+        RESULTADO .................. CAIU em 16.8 s  por pitch
+        fator de tempo real ........  0.999
+19:17:04  [3/42] A1_M38_rumo0_lugar_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+19:18:25  [4/42] A1_M38_ref_lugar_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+19:19:46  [5/42] A1_M38_s0_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:21:06  [6/42] A1_M33_s0_lat+0.05_pD_r1
+        RESULTADO .................. andou 33 s sem cair
+        fator de tempo real ........  0.999
+19:22:26  [7/42] A1_M33_hx0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:23:47  [8/42] A1_M33_hx0_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:25:07  [9/42] A1_M38_rumo0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:26:27  [10/42] A1_M33_hx0_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:27:48  [11/42] A1_M33_gc0_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:29:08  [12/42] A1_M38_pitch0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:30:28  [13/42] A1_M33_s0_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:31:49  [14/42] A1_M33_rumo0_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:33:09  [15/42] A1_M38_hpo0_lat+0.05_pD_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+19:34:07  [16/42] A1_M33_pitch0_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:35:28  [17/42] A1_M38_hpo0_lat-0.05_pD_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+19:36:26  [18/42] A1_M33_ref_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:37:47  [19/42] A1_M38_gc0_lugar_pD_r1
+        RESULTADO .................. CAIU em 5.1 s  por pitch
+        fator de tempo real ........  0.999
+19:38:39  [20/42] A1_M33_ref_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:39:59  [21/42] A1_M38_gc0_lat-0.05_pD_r1
+        RESULTADO .................. CAIU em 4.3 s  por pitch
+        fator de tempo real ........  0.999
+19:40:51  [22/42] A1_M38_hpo0_lugar_pD_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+19:41:50  [23/42] A1_M33_rumo0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:43:10  [24/42] A1_M33_s0_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:44:30  [25/42] A1_M33_pitch0_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:45:51  [26/42] A1_M33_rumo0_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:47:11  [27/42] A1_M38_s0_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:48:31  [28/42] A1_M33_ref_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:49:51  [29/42] A1_M38_pitch0_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:51:12  [30/42] A1_M38_hx0_lugar_pD_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+19:52:14  [31/42] A1_M33_pitch0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:53:34  [32/42] A1_M38_rumo0_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:54:54  [33/42] A1_M38_ref_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:56:15  [34/42] A1_M33_hpo0_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:57:35  [35/42] A1_M38_s0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+19:58:55  [36/42] A1_M33_hpo0_lat+0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:00:16  [37/42] A1_M38_gc0_lat+0.05_pD_r1
+        RESULTADO .................. CAIU em 3.9 s  por pitch
+        fator de tempo real ........  0.999
+20:01:07  [38/42] A1_M38_hx0_lat+0.05_pD_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+20:02:09  [39/42] A1_M38_hx0_lat-0.05_pD_r1
+        RESULTADO .................. CAIU em 2.5 s  por pitch
+        fator de tempo real ........  0.000   <-- CORRIDA LIMITADA POR CPU
+20:03:10  [40/42] A1_M38_ref_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:04:30  [41/42] A1_M33_hpo0_lat-0.05_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:05:51  [42/42] A1_M33_gc0_lugar_pD_r1
+        RESULTADO .................. andou 32 s sem cair
+        fator de tempo real ........  0.999
+20:07:11  fim.
